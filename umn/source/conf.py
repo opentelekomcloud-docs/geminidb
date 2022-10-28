@@ -93,7 +93,7 @@ html_static_path = ['_static']
 
 # -- Options for PDF output --------------------------------------------------
 latex_documents = [
-('index',
+    ('index',
      'gauss_nosql.tex',
      u'GaussDB Distributed Multi-model NoSQL Database - User Guide',
      u'OpenTelekomCloud', 'manual'),
