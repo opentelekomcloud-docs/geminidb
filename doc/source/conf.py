@@ -25,8 +25,8 @@ extensions = [
 otcdocs_auto_name = False
 otcdocs_auto_version = False
 
-project = 'GaussDB NoSQL'
-otcdocs_repo_name = 'opentelekomcloud-docs/gaussdb-nosql'
+project = 'GeminiDB'
+otcdocs_repo_name = 'opentelekomcloud-docs/geminidb'
 # Those variables are required for edit/bug links
 
 # Those variables are needed for indexing into OpenSearch
@@ -35,8 +35,8 @@ otcdocs_doc_link = ''
 otcdocs_doc_title = ''
 otcdocs_doc_type = ''
 otcdocs_service_category = 'database'
-otcdocs_service_title = 'GaussDB NoSQL'
-otcdocs_service_type = 'gaussdb_nosql'
+otcdocs_service_title = 'GeminiDB'
+otcdocs_service_type = 'geminidb'
 otcdocs_search_environment = 'hc_de'
 otcdocs_search_url = "https://opensearch.eco.tsi-dev.otc-service.com/"
 
@@ -93,7 +93,7 @@ html_theme_options = {
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
 
-html_title = "GaussDB NoSQL - Service Based View"
+html_title = "GeminiDB - Service Based View"
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
