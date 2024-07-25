@@ -7,6 +7,6 @@ GeminiDB is a distributed, multi-model NoSQL database service with decoupled com
    :class: container-sbv
 
    .. service_card::
-      :service_type: geminid_db
+      :service_type: geminidb
       :umn: This document describes basic concepts, functions, and FAQs of the GeminiDB NoSQL service and provides instructions for quickly using the GeminiDB service.
       :api-ref: GeminiDB supports v3 APIs. You can invoke GeminiDB APIs to perform a range of operations, such as DB instance creation and deletion, backup and restoration, and parameter query and modifications.
