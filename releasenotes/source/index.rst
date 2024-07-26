@@ -1,5 +1,5 @@
 ============================================
-gaussdb-nosql Release Notes
+geminidb Release Notes
 ============================================
 
 .. toctree::
