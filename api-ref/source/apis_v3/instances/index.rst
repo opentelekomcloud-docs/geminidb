@@ -15,6 +15,8 @@ Instances
 -  :ref:`Resetting the Administrator Password of an Instance <nosql_05_0101>`
 -  :ref:`Editing the Name of an Instance <nosql_05_0102>`
 -  :ref:`Changing the Security Group of an Instance <nosql_05_0103>`
+-  :ref:`Configuring an Autoscaling Policy for Storage Space <nosql_05_0109>`
+-  :ref:`Querying the Autoscaling Policy of Storage Space <nosql_05_0115>`
 
 .. toctree::
    :maxdepth: 1
@@ -30,3 +32,5 @@ Instances
    resetting_the_administrator_password_of_an_instance
    editing_the_name_of_an_instance
    changing_the_security_group_of_an_instance
+   configuring_an_autoscaling_policy_for_storage_space
+   querying_the_autoscaling_policy_of_storage_space

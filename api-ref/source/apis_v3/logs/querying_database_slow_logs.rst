@@ -138,7 +138,7 @@ Success
      "slow_log_list" : [ {
        "time" : "513 ms",
        "database" : "cassandra",
-       "query_sample" : "SELECT * FROM cassandra.sz_user_hw LIMIT 100;",
+       "query_sample" : "SELECT * FROM cassandra.sz_user LIMIT 100;",
        "type" : "SELECT",
        "start_time" : "2020-11-15T22:49:38.643000Z"
      } ]
