@@ -15,7 +15,7 @@ Default parameter templates cannot be replicated, but you can create parameter t
 Procedure
 ---------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
 #. In the navigation pane on the left, click **Parameter Template Management**.
 

@@ -13,7 +13,7 @@ You can view the application records of a parameter template.
 Procedure
 ---------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
 #. In the navigation pane on the left, click **Parameter Template Management**.
 

@@ -17,7 +17,7 @@ You can view the change history of a parameter template.
 Viewing Change History of a Custom Parameter Template
 -----------------------------------------------------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
 #. In the navigation pane on the left, choose **Parameter Template Management**. On the **Custom Templates** page, click the parameter template you wish to view.
 
@@ -28,6 +28,6 @@ Viewing Change History of a Custom Parameter Template
 Viewing Change History of DB Instance Parameters
 ------------------------------------------------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 #. On the **Instance Management** page, click the target DB instance. The **Basic Information** page is displayed.
 #. In the navigation pane on the left, click **Parameters**. On the **Change History** tab, view the parameter name, original parameter value, new parameter value, modification status, and modification time.

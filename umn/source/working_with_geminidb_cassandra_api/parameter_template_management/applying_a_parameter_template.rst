@@ -13,11 +13,11 @@ Modifications to parameters in a custom parameter template take effect for DB in
 Procedure
 ---------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
 #. In the navigation pane on the left, click **Parameter Template Management**.
 
-#. On the **Parameter Template Management** page, apply a default template or a custom template to a target DB instance:
+#. On the **Parameter Templates** page, perform the following operations based on the template type:
 
    -  To apply a default template, click **Default Templates**, locate the target parameter template, and in the **Operation** column, click **Apply**.
    -  To apply a custom template, click **Custom Templates**, locate the target parameter template, and in the **Operation** column, choose **More** > **Apply**.
