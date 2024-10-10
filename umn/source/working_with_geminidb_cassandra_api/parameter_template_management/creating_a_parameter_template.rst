@@ -12,7 +12,7 @@ Each user can create up to 100 parameter templates. All types of instances in th
 Procedure
 ---------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 #. In the navigation pane on the left, choose **Parameter Template Management**.
 #. On the **Parameter Template Management** page, click **Create Parameter Template**.
 #. Select a compatible DB engine version, name the parameter group, add the parameter group description, and click **OK** to create a parameter group template.

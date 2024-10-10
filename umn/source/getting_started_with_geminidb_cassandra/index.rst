@@ -6,6 +6,7 @@ Getting Started with GeminiDB Cassandra
 =======================================
 
 -  :ref:`Instance Connection Methods <nosql_06_0001>`
+-  :ref:`Creating a GeminiDB Cassandra Instance <nosql_06_0003>`
 -  :ref:`Connecting to a GeminiDB Cassandra Instance Over Private Networks <nosql_02_0006>`
 -  :ref:`Connecting to a GeminiDB Cassandra Instance Over Public Networks <nosql_02_0007>`
 
@@ -14,5 +15,6 @@ Getting Started with GeminiDB Cassandra
    :hidden: 
 
    instance_connection_methods
+   creating_a_geminidb_cassandra_instance
    connecting_to_a_geminidb_cassandra_instance_over_private_networks/index
    connecting_to_a_geminidb_cassandra_instance_over_public_networks/index

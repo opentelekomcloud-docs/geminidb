@@ -22,7 +22,7 @@ Procedure
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. On the **Instance Management** page, click the DB instance you wish to scale up.
+#. On the **Instances** page, click the target instance name.
 
 #. In the **Storage Space** area on the **Basic Information** page, click **Scale**.
 
