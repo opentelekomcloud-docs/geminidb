@@ -33,7 +33,7 @@ Precautions
    |                       | -  A tag key consists of a maximum of 36 characters.                                              |                       |
    |                       | -  The key can only consist of digits, letters, underscores (_), hyphens (-), and at signs (@).   |                       |
    +-----------------------+---------------------------------------------------------------------------------------------------+-----------------------+
-   | Tag value             | -  This tag value can be left blank.                                                              | nosql_01              |
+   | Tag value             | -  This tag value can be left blank.                                                              | geminidb_01           |
    |                       | -  The value consists of up to 43 characters.                                                     |                       |
    |                       | -  The value can only consist of digits, letters, underscores (_), hyphens (-), and at signs (@). |                       |
    +-----------------------+---------------------------------------------------------------------------------------------------+-----------------------+
