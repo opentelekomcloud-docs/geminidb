@@ -22,7 +22,7 @@ Precautions
 Binding an EIP
 --------------
 
-#. On the **Instance Management** page, click the target GeminiDB Cassandra instance.
+#. On the **Instances** page, click the target GeminiDB Cassandra instance.
 
 #. On the **Basic Information** page, in the **Node Information** area, locate the target node and click **Bind EIP** in the **Operation** column.
 
@@ -37,7 +37,7 @@ Binding an EIP
 Unbinding an EIP
 ----------------
 
-#. On the **Instance Management** page, click the target GeminiDB Cassandra instance.
+#. On the **Instances** page, click the target GeminiDB Cassandra instance.
 
 #. On the **Basic Information** page, in the **Node Information** area, locate the target node and click **Unbind EIP** in the **Operation** column.
 

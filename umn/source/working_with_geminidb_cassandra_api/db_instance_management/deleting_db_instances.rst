@@ -19,9 +19,9 @@ Precautions
 Procedure
 ---------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. On the **Instance Management** page, locate the DB instance you wish to delete and choose **More** > **Delete** in the **Operation** column.
+#. On the **Instances** page, locate the instance you want to delete and choose **More** > **Delete** in the **Operation** column.
 
 #. On the displayed page, click **Yes**.
 

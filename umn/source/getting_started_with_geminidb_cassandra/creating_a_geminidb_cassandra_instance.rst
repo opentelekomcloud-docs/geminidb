@@ -1,6 +1,6 @@
-:original_name: nosql_02_0010.html
+:original_name: nosql_06_0003.html
 
-.. _nosql_02_0010:
+.. _nosql_06_0003:
 
 Creating a GeminiDB Cassandra Instance
 ======================================
@@ -10,8 +10,8 @@ This section describes how to create a DB instance that is compatible with Cassa
 Procedure
 ---------
 
-#. :ref:`Log in to the GeminiDB console. <nosql_login>`
-#. On the **Instance Management** page, click **Create DB Instance**.
+#. Log in to the GeminiDB console by following :ref:`Logging In to the GeminiDB Console <nosql_login>`.
+#. On the **Instances** page, click **Create DB Instance**.
 #. On the displayed page, select your DB instance specifications and click **Create Now**.
 
    .. table:: **Table 1** Basic information
@@ -41,23 +41,43 @@ Procedure
 
    .. table:: **Table 2** Specifications and storage
 
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter                         | Description                                                                                                                                                                                                         |
-      +===================================+=====================================================================================================================================================================================================================+
-      | Instance Specifications           | The CPU and memory of a DB instance.                                                                                                                                                                                |
-      |                                   |                                                                                                                                                                                                                     |
-      |                                   | Different performance specifications support different numbers of connections and maximum IOPSs. Select CPU and memory specifications based on your service requirements.                                           |
-      |                                   |                                                                                                                                                                                                                     |
-      |                                   | After a DB instance is created, you can change its CPU and memory. For details, see :ref:`Changing a DB Instance Class <nosql_03_0026>`.                                                                            |
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Nodes                             | The number of nodes ranges from 3 to 200. Select the number of nodes based on the site requirements.                                                                                                                |
-      |                                   |                                                                                                                                                                                                                     |
-      |                                   | After a DB instance is created, you can add nodes. For details, see :ref:`Adding Nodes <nosql_increase_nodes>`.                                                                                                     |
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Storage Space                     | Storage space depends on the instance specifications. The minimum storage space is 100 GB, and the storage space you set must be an integer. You can select a minimum of 1 GB each time you scale up storage space. |
-      |                                   |                                                                                                                                                                                                                     |
-      |                                   | After a DB instance is created, you can scale up its storage space. For details, see :ref:`Scaling Up Storage Space <nosql_increase_storage>`.                                                                      |
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                                                                                                                                                                                      |
+      +===================================+==================================================================================================================================================================================================================================================================================+
+      | Instance Specifications           | The CPU and memory of a DB instance.                                                                                                                                                                                                                                             |
+      |                                   |                                                                                                                                                                                                                                                                                  |
+      |                                   | Different performance specifications support different numbers of connections and maximum IOPSs. Select CPU and memory specifications based on your service requirements.                                                                                                        |
+      |                                   |                                                                                                                                                                                                                                                                                  |
+      |                                   | After a DB instance is created, you can change its CPU and memory. For details, see :ref:`Changing a DB Instance Class <nosql_03_0026>`.                                                                                                                                         |
+      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Nodes                             | The number of nodes ranges from 3 to 200. Select the number of nodes based on the site requirements.                                                                                                                                                                             |
+      |                                   |                                                                                                                                                                                                                                                                                  |
+      |                                   | After a DB instance is created, you can add nodes. For details, see :ref:`Adding Nodes <nosql_increase_nodes>`.                                                                                                                                                                  |
+      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Storage Space                     | Storage space depends on the instance specifications. The minimum storage space is 10 GB, and the storage space you set must be an integer. You can select a minimum of 10 GB each time.                                                                                         |
+      |                                   |                                                                                                                                                                                                                                                                                  |
+      |                                   | After a DB instance is created, you can scale up its storage space. For details, see :ref:`Scaling Up Storage Space <nosql_increase_storage>`.                                                                                                                                   |
+      |                                   |                                                                                                                                                                                                                                                                                  |
+      |                                   | When configuring storage space of a GeminiDB Cassandra instance, you are advised to enable autoscaling. Then set trigger conditions and limit of autoscaling. When trigger conditions are met, the system will scale up the storage to ensure that the instance keeps available. |
+      |                                   |                                                                                                                                                                                                                                                                                  |
+      |                                   | .. _nosql_06_0003__fig69401752125613:                                                                                                                                                                                                                                            |
+      |                                   |                                                                                                                                                                                                                                                                                  |
+      |                                   | .. figure:: /_static/images/en-us_image_0000002067697405.png                                                                                                                                                                                                                     |
+      |                                   |    :alt: **Figure 1** Auto Scale                                                                                                                                                                                                                                                 |
+      |                                   |                                                                                                                                                                                                                                                                                  |
+      |                                   |    **Figure 1** Auto Scale                                                                                                                                                                                                                                                       |
+      |                                   |                                                                                                                                                                                                                                                                                  |
+      |                                   | Pay attention to the following parameters:                                                                                                                                                                                                                                       |
+      |                                   |                                                                                                                                                                                                                                                                                  |
+      |                                   | -  **Trigger If Available Storage Drops To**: storage threshold for triggering autoscaling. When the available storage usage drops to this value or the available storage space drops to 10 GB, autoscaling is triggered.                                                        |
+      |                                   | -  **Increase By**: percentage that your instance storage will be scaled up at. If the increased storage is not a multiple of 10 GB, the system will round it up to the nearest multiple of 10 GB. At least 100 GB is added each time.                                           |
+      |                                   | -  **Storage Limit**: maximum amount that the system can automatically scale up an instance's storage space to. The value must be no less than the current storage of your instance and cannot exceed the storage space upper limit defined by your instance specifications.     |
+      |                                   |                                                                                                                                                                                                                                                                                  |
+      |                                   | .. note::                                                                                                                                                                                                                                                                        |
+      |                                   |                                                                                                                                                                                                                                                                                  |
+      |                                   |    -  Once autoscaling is enabled, an agency will be created and fees will be automatically deducted.                                                                                                                                                                            |
+      |                                   |    -  You can enable autoscaling after an instance is created. For details, see :ref:`Configuring Auto Scale <nosql_increase_storage1>`.                                                                                                                                         |
+      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
    .. table:: **Table 3** Network
 
@@ -66,7 +86,7 @@ Procedure
       +===================================+=====================================================================================================================================================================================+
       | VPC                               | The virtual network where your DB instances are located. A VPC isolates networks for different services. You can select an existing VPC or create a VPC.                            |
       |                                   |                                                                                                                                                                                     |
-      |                                   | If there are no VPCs available, the system allocates resources to you by default.                                                                                                   |
+      |                                   | If no VPC is available, the system creates one for you.                                                                                                                             |
       |                                   |                                                                                                                                                                                     |
       |                                   | For details on how to create a subnet, see the "Creating a VPC" section in the *Virtual Private Cloud User Guide*.                                                                  |
       |                                   |                                                                                                                                                                                     |
@@ -78,7 +98,7 @@ Procedure
       +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Security Group                    | A security group controls access between GeminiDB instances and other services. When you select a security group, you must ensure that it allows the client to access DB instances. |
       |                                   |                                                                                                                                                                                     |
-      |                                   | If there are no security groups available, the system allocates resources to you by default.                                                                                        |
+      |                                   | If no security group is available, the system creates one for you.                                                                                                                  |
       +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
    .. table:: **Table 4** Database configuration
@@ -91,7 +111,7 @@ Procedure
       | Administrator Password            | Set a password for the administrator. The password:                                                                                                                         |
       |                                   |                                                                                                                                                                             |
       |                                   | -  Must be 8 to 32 characters long.                                                                                                                                         |
-      |                                   | -  Must contain uppercase letters, lowercase letters, digits, and any of the following special characters: ``~!@#%^*-_=+?``                                                 |
+      |                                   | -  Must contain uppercase letters, lowercase letters, digits, and any of the following special characters:``~!@#%^*-_=+?``                                                  |
       |                                   | -  For security reasons, you must select a strong password. The system will verify the password strength.                                                                   |
       |                                   |                                                                                                                                                                             |
       |                                   | Keep this password secure. If you lose it, the system cannot retrieve it.                                                                                                   |
@@ -105,30 +125,30 @@ Procedure
 
    .. table:: **Table 5** Tags
 
-      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter                         | Description                                                                                                                                                    |
-      +===================================+================================================================================================================================================================+
-      | Tags                              | The setting is optional. Adding tags helps you better identify and manage your DB instances. Each DB instance can have up to 20 tags.                          |
-      |                                   |                                                                                                                                                                |
-      |                                   | A tag is composed of a key-value pair.                                                                                                                         |
-      |                                   |                                                                                                                                                                |
-      |                                   | -  Key: Mandatory if the DB instance is going to be tagged                                                                                                     |
-      |                                   |                                                                                                                                                                |
-      |                                   |    Each tag key must be unique for each DB instance. The key can include up to 36 characters, including digits, letters, underscores (_), and hyphens (-).     |
-      |                                   |                                                                                                                                                                |
-      |                                   | -  Value: Optional if the DB instance is going to be tagged                                                                                                    |
-      |                                   |                                                                                                                                                                |
-      |                                   |    The value can contain up to 43 characters, including digits, letters, underscores (_), periods (.), and hyphens (-).                                        |
-      |                                   |                                                                                                                                                                |
-      |                                   | After a DB instance is created, you can view its tag details on the **Tags** tab. In addition, you can add, modify, and delete tags for existing DB instances. |
-      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                                                                                                                           |
+      +===================================+=======================================================================================================================================================================================================================+
+      | Tags                              | The setting is optional. Adding tags helps you better identify and manage your DB instances. Up to 20 tags can be added for each instance.                                                                            |
+      |                                   |                                                                                                                                                                                                                       |
+      |                                   | A tag is composed of a key-value pair.                                                                                                                                                                                |
+      |                                   |                                                                                                                                                                                                                       |
+      |                                   | -  Key: Mandatory if the DB instance is going to be tagged                                                                                                                                                            |
+      |                                   |                                                                                                                                                                                                                       |
+      |                                   |    Each tag key must be unique for each DB instance. The key can include up to 36 characters, including digits, letters, underscores (_), and hyphens (-).                                                            |
+      |                                   |                                                                                                                                                                                                                       |
+      |                                   | -  Value: Optional if the DB instance is going to be tagged                                                                                                                                                           |
+      |                                   |                                                                                                                                                                                                                       |
+      |                                   |    The value can contain up to 43 characters, including digits, letters, underscores (_), periods (.), and hyphens (-).                                                                                               |
+      |                                   |                                                                                                                                                                                                                       |
+      |                                   | After a DB instance is created, you can view its tag details on the **Tags** tab. In addition, you can add, modify, and delete tags for existing DB instances. For details, see :ref:`Managing Tags <nosql_03_0014>`. |
+      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #. On the displayed page, confirm the DB instance details.
 
    -  If you need to modify the specifications, click **Previous** to return to the previous page.
    -  If you do not need to modify the specifications, click **Submit** to start creating the instance.
 
-#. On the **Instance Management** page, view and manage your DB instances.
+#. On the **Instances** page, view and manage your DB instances.
 
    -  Creating a DB instance takes about 5 to 9 minutes. During the process, the instance status displayed in the DB instance list is **Creating**.
 

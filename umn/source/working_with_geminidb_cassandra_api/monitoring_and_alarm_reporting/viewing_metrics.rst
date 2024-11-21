@@ -8,7 +8,7 @@ Viewing Metrics
 Scenarios
 ---------
 
-Cloud Eye monitors GeminiDB running statuses. You can obtain the monitoring metrics of GeminiDB on the management console.
+Cloud Eye monitors GeminiDB running statuses. You can obtain the metrics of GeminiDB on the management console.
 
 Monitored data requires a period of time for transmission and display. The status of the monitored object displayed on the Cloud Eye page is the status obtained 5 to 10 minutes before. You can view the monitored data of a newly created DB instance 5 to 10 minutes later.
 
@@ -26,7 +26,7 @@ Prerequisites
 Procedure
 ---------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
 #. On the **Instance Management** page, click the target DB instance.
 

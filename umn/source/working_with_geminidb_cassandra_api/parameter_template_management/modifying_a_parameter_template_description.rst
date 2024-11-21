@@ -13,7 +13,7 @@ You can modify the description of a custom parameter template if needed.
 Procedure
 ---------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 #. In the navigation pane on the left, click **Parameter Template Management**.
 #. On the **Parameter Template Management** page, click the **Custom Templates** tab. Locate the target parameter template and click |image1| in the **Description** column.
 #. Enter a new description. You can click |image2| to submit or |image3| to cancel the modification.

@@ -13,7 +13,7 @@ GeminiDB allows you to view slow query logs of databases. The unit of the execut
 Viewing Log Details
 -------------------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 #. On the **Instance Management** page, click the target DB instance.
 #. In the navigation pane on the left, click **Slow Query Logs**.
 #. On the **Slow Query Logs** page, set search criteria and click **Search** to view log information.

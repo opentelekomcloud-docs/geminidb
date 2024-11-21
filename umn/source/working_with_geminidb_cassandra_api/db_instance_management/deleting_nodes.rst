@@ -18,8 +18,8 @@ Deleted nodes cannot be recovered. Exercise caution when performing this operati
 Procedure
 ---------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
-#. On the **Instance Management** page, click the instance whose nodes you wish to delete.
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
+#. On the **Instances** page, locate the target instance and click its name.
 #. In the **Node Information** area on the **Basic Information** page, locate the node you wish to delete and click **Delete** in the **Operation** column.
 #. In the displayed dialog box, click **Yes**.
 
