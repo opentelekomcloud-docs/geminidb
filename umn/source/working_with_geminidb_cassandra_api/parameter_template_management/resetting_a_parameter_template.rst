@@ -13,7 +13,7 @@ You can reset all parameters in a custom parameter template to their default set
 Procedure
 ---------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 #. In the navigation pane on the left, click **Parameter Template Management**.
 #. On the **Parameter Template Management** page, click the **Custom Templates** tab. Locate the target parameter template and choose **More** > **Reset** in the **Operation** column.
 #. Click **Yes** to reset the parameter template.

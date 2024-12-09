@@ -18,7 +18,7 @@ You can delete a custom parameter template that is no longer in use.
 Procedure
 ---------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 #. In the navigation pane on the left, click **Parameter Template Management**.
-#. On the **Parameter Template Management** page, click **Custom Templates**. Locate the parameter template you wish to delete and choose **More** > **Delete** in the **Operation** column.
+#. On the **Parameter Templates** page, click **Custom Templates**. Locate the parameter template you want to delete and choose **More** > **Delete** in the **Operation** column.
 #. Click **Yes** to delete the parameter template.

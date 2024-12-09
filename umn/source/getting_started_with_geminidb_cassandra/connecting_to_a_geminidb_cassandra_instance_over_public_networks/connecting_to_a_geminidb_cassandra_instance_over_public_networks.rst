@@ -49,27 +49,27 @@ Connecting to a DB Instance Through a Cassandra Client
 
       rwuser@cqlsh>
 
-**Follow-up Operations**
-------------------------
+Follow-up Operations
+--------------------
 
 After logging in to the GeminiDB Cassandra instance, you can perform the following operations:
 
 -  Run the **HELP** command to view all supported commands.
 
--  **HELP** *<COMMAND>*: This command queries the usage of a command. Example: **HELP DESC**
+-  Run **HELP** *<COMMAND>* to query the usage of a command. Example: **HELP DESC**
 -  Keyspace syntax
 
    -  Create a keyspace. Example:
 
       **CREATE KEYSPACE IF NOT EXISTS nosql WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '3'};**
 
-      Set the keyspace name to **nosql**, **replication** to **SimpleStrategy**, and number of replicas to **3**.
+      Set the keyspace name to **nosql**, **replication** to **SimpleStrategy**, and **replication_factor** to **3**.
 
-   -  **DESC** *<keyspace_name>*: This command verifies the creation result.
+   -  Run **DESC** *<keyspace_name>* to verify the creation results.
 
-   -  **use** *<keyspace_name>*: This command switches to the keyspace you created.
+   -  Run **use** *<keyspace_name>* to switch to the keyspace you created.
 
-   -  **DROP** **KEYSPACE** *<keyspace_name>*: This command deletes the keyspace you created.
+   -  Run **DROP** **KEYSPACE** *<keyspace_name>* to delete the keyspace you created.
 
 -  Table syntax
 
@@ -77,9 +77,9 @@ After logging in to the GeminiDB Cassandra instance, you can perform the followi
 
       **CREATE TABLE nosql_table(user_id int, age int, user_name text, PRIMARY KEY(user_id));**
 
-      The table name is **nosql_table**, and the following three columns are defined: **user_id**, **age**, and **user_name**. **user_id** is of the int type and indicates the user ID. **age** is of the int type and indicates the age of a user. **user_name** is of the text type and indicates the user name. The primary key is **user_id**.
+      **nosql_table** indicates the table name, and the following three columns are defined: **user_id**, **age**, and **user_name**. **user_id** is the user ID of the INT type. **age** is the user age of the INT type. **user_name** is the username of the TEXT type. The primary key is **user_id**.
 
-   -  **DESC** *<table_name>*: This command verifies the creation result.
+   -  Run **DESC** *<table_name>* to verify the creation results.
 
    -  Insert data into the table. Example:
 
@@ -89,13 +89,13 @@ After logging in to the GeminiDB Cassandra instance, you can perform the followi
 
       **INSERT INTO nosql_table (user_id, age, user_name) VALUES (3, 30, 'user3');**
 
-   -  **SELECT \* FROM** *<table_name>*: This command queries table data.
+   -  Run **SELECT \* FROM** *<table_name>* to query table data.
 
-   -  Add a column to the table. Example
+   -  Add a column to the table. Example:
 
       **ALTER TABLE nosql_table ADD gender text;**
 
-   -  Insert data to the added column. Example:
+   -  Update data in a table of a keyspace. Example:
 
       **UPDATE nosql.nosql_table SET prename = 'user_prename1' WHERE user_id = 1;**
 
@@ -103,7 +103,7 @@ After logging in to the GeminiDB Cassandra instance, you can perform the followi
 
       **UPDATE nosql.nosql_table SET prename = 'user_prename3' WHERE user_id = 3;**
 
-   -  Delete data in a keyspace. Example:
+   -  Delete data from a table in a keyspace. Example:
 
       Delete the age data of the user whose ID is **1**.
 

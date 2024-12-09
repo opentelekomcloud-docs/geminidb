@@ -72,11 +72,11 @@ After logging in to the GeminiDB Cassandra instance, you can perform the followi
 -  **HELP** *<COMMAND>*: This command queries the usage of a command. Example: **HELP DESC**
 -  Keyspace syntax
 
-   -  Create a keyspace. Example:
+   -  Create a keyspace, for example:
 
-      **CREATE KEYSPACE IF NOT EXISTS nosql WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '3'};**
+      **CREATE KEYSPACE IF NOT EXISTS test_keyspace WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '3'};**
 
-      Set the keyspace name to **nosql**, **replication** to **SimpleStrategy**, and number of replicas to **3**.
+      Set the keyspace name to **test_keyspace**, **replication** to **SimpleStrategy**, and number of replicas to **3**.
 
    -  **DESC** *<keyspace_name>*: This command verifies the creation result.
 
@@ -86,50 +86,50 @@ After logging in to the GeminiDB Cassandra instance, you can perform the followi
 
 -  Table syntax
 
-   -  Create a table. Example:
+   -  Create a table, for example:
 
-      **CREATE TABLE nosql_table(user_id int, age int, user_name text, PRIMARY KEY(user_id));**
+      **CREATE TABLE test_table(user_id int, age int, user_name text, PRIMARY KEY(user_id));**
 
-      The table name is **nosql_table**, and the following three columns are defined: **user_id**, **age**, and **user_name**. **user_id** is of the int type and indicates the user ID. **age** is of the int type and indicates the age of a user. **user_name** is of the text type and indicates the user name. The primary key is **user_id**.
+      **test_table** is a table name defined by the following three columns: **user_id**, **age**, and **user_name**. **user_id** indicates a user ID of the INT data type. **age** indicates user age of the INT data type. **user_name** indicates a username of the TEXT data type. The primary key is **user_id**.
 
    -  **DESC** *<table_name>*: This command verifies the creation result.
 
-   -  Insert data into the table. Example:
+   -  Insert data into the table, for example:
 
-      **INSERT INTO nosql_table (user_id, age, user_name) VALUES (1, 10, 'user1');**
+      **INSERT INTO test_table (user_id, age, user_name) VALUES (1, 10, 'user1');**
 
-      **INSERT INTO nosql_table (user_id, age, user_name) VALUES (2, 20, 'user2');**
+      **INSERT INTO test_table (user_id, age, user_name) VALUES (2, 20, 'user2');**
 
-      **INSERT INTO nosql_table (user_id, age, user_name) VALUES (3, 30, 'user3');**
+      **INSERT INTO test_table (user_id, age, user_name) VALUES (3, 30, 'user3');**
 
    -  **SELECT \* FROM** *<table_name>*: This command queries table data.
 
-   -  Add a column to the table. Example
+   -  Add a column to the table, for example:
 
-      **ALTER TABLE nosql_table ADD gender text;**
+      **ALTER TABLE test_table ADD gender text;**
 
-   -  Insert data to the added column. Example:
+   -  Update data in a table of a keyspace, for example:
 
-      **UPDATE nosql.nosql_table SET prename = 'user_prename1' WHERE user_id = 1;**
+      **UPDATE test_keyspace.test_table SET prename = 'user_prename1' WHERE user_id = 1;**
 
-      **UPDATE nosql.nosql_table SET prename = 'user_prename2' WHERE user_id = 2;**
+      **UPDATE test_keyspace.test_table SET prename = 'user_prename2' WHERE user_id = 2;**
 
-      **UPDATE nosql.nosql_table SET prename = 'user_prename3' WHERE user_id = 3;**
+      **UPDATE test_keyspace.test_table SET prename = 'user_prename3' WHERE user_id = 3;**
 
-   -  Delete data in a keyspace. Example:
+   -  Delete data from a table in a keyspace, for example:
 
       Delete the age data of the user whose ID is **1**.
 
-      **DELETE age FROM nosql.nosql_table WHERE user_id=1;**
+      **DELETE age FROM test_keyspace.test_table WHERE user_id=1;**
 
       Delete the entire record of the user whose ID is **2**.
 
-      **DELETE FROM nosql.nosql_table WHERE user_id=2;**
+      **DELETE FROM test_keyspace.test_table WHERE user_id=2;**
 
-   -  Clear all records in the table. Example:
+   -  Clear all records in the table, for example:
 
-      **TRUNCATE nosql.nosql_table;**
+      **TRUNCATE test_keyspace.test_table;**
 
-   -  Delete the entire table. Example:
+   -  Delete an entire table, for example:
 
-      **DROP TABLE nosql.nosql_table;**
+      **DROP TABLE test_keyspace.test_table;**

@@ -20,8 +20,8 @@ Precautions
 Procedure
 ---------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
-#. On the **Instance Management** page, click the DB instance you wish to add nodes for.
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
+#. On the **Instances** page, locate the target instance and click its name.
 #. In the **Node Information** area on the **Basic Information** page, click **Add Node**.
 #. Specify **Add Nodes** and click **Next**.
 
