@@ -110,7 +110,7 @@ html_copy_source = False
 latex_documents = [
     ('index',
      'geminidb-api-ref.tex',
-     u'GeminiDB - API Reference',
+    u'GeminiDB - API Reference',
      u'OpenTelekomCloud', 'manual'),
 ]
 
