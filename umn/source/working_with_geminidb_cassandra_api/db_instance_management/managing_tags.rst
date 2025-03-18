@@ -14,7 +14,7 @@ Adding tags to GeminiDB instances helps you better identify and manage them. An 
 
 After an instance is tagged, you can search for the tag key or value to quickly query the instance details.
 
-Precautions
+Usage Notes
 -----------
 
 -  You are advised to set predefined tags on the TMS console.
