@@ -14,7 +14,7 @@ Scenarios
 Procedure
 ---------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 #. In the navigation pane on the left, choose **Instance Management**. On the displayed page, click the target DB instance.
 #. In the navigation pane on the left, choose **Parameters**. On the **Parameters** tab, above the parameter list, click **Export**.
 

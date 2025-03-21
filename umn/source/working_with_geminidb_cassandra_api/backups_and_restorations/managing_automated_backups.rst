@@ -5,7 +5,7 @@
 Managing Automated Backups
 ==========================
 
-GeminiDB Cassandra creates automated backups to ensure data reliability. If a database or table is maliciously or accidentally deleted, backups can help you ensure you do not lose your data.
+GeminiDB Cassandra API creates automated backups to ensure data reliability. If a database or table is maliciously or accidentally deleted, backups can help you ensure you do not lose your data.
 
 .. _nosql_03_0007__section7348925133816:
 
@@ -39,9 +39,9 @@ When you create a DB instance, an automated backup policy is enabled by default.
 Modifying an Automated Backup Policy
 ------------------------------------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. On the **Instance Management** page, click the DB instance you wish to modify the policy for.
+#. On the **Instances** page, click the DB instance you wish to modify the policy for.
 
 #. On the **Backups & Restorations** page, click **Modify Backup Policy**. In the displayed dialog box, set the backup policy. Then, click **Yes** to save the configuration.
 
@@ -52,9 +52,9 @@ Modifying an Automated Backup Policy
 Disabling Automated Backup Policy
 ---------------------------------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. On the **Instance Management** page, click the DB instance you wish to modify the policy for.
+#. On the **Instances** page, click the DB instance you wish to modify the policy for.
 
 #. On the **Backups & Restorations** page, click **Modify Backup Policy**.
 
@@ -82,7 +82,7 @@ If the automated backup policy is enabled, the system will delete automated back
 
 -  **Method 1**
 
-   #. On the **Instance Management** page, click the DB instance you wish to delete backups for.
+   #. On the **Instances** page, click the DB instance you wish to delete backups for.
    #. On the **Backups & Restorations** page, locate the backup you wish to delete and click **Delete**.
    #. In the **Delete Backup** dialog box, confirm the backup information and click **Yes**.
 

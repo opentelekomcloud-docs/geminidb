@@ -10,7 +10,7 @@ Scenarios
 
 You can set alarm rules to customize the monitored objects and notification policies and to stay aware of the database operating status.
 
-The alarm rules include alarm rule name, instance, metric, threshold, monitoring interval and whether to send notification. This section describes how to set alarm rules.
+The alarm rules include alarm rule names, monitored objects, metric, thresholds, monitoring intervals, and whether to send notifications. This section describes how to set an alarm rule.
 
 .. note::
 

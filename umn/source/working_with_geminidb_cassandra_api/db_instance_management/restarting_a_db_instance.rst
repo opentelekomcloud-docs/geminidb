@@ -22,7 +22,7 @@ Procedure
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. On the **Instance Management** page, locate the DB instance you wish to restart and choose **More** > **Restart** in the **Operation** column.
+#. On the **Instances** page, locate the DB instance you wish to restart and choose **More** > **Restart** in the **Operation** column.
 
    Alternatively, click the DB instance you wish to restart, and on the displayed **Basic Information** page, click **Restart** in the upper right corner of the page.
 

@@ -24,37 +24,37 @@ Precautions
 Procedure
 ---------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. On the **Instance Management** page, click the DB instance you wish to change the CPU and memory for.
+#. On the **Instances** page, locate the target instance and click its name.
 
-#. In the in **DB Information** area on the **Basic Information** page, click **Change** next to the **Instance Class** field.
+#. In the in **DB Information** area on the **Basic Information** page, click **Change** next to the **Specifications** field.
 
 #. On the displayed page, select the desired vCPUs and memory and click **Next**.
 
-#. On the displayed page, confirm the instance class.
+#. On the displayed page, confirm the specifications.
 
    -  If you need to modify your settings, click **Previous** to go back to the page where you specify details.
-   -  If you do not need to modify your settings, click **Submit** to change the instance class.
+   -  If you do not need to modify your settings, click **Submit**.
 
 #. View the DB instance class change result.
 
-   Go to the **Basic Information** page and in the **DB Information** area you can see the new instance class.
+   Go to the **Basic Information** page and in the **Specifications** area you can see the new specifications.
 
 Method 2
 --------
 
-#. :ref:`Log in to the GaussDB NoSQL console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. On the **Instance Management** page, locate the instance you want to change the class for and choose **More** > **Change Instance Class** in the **Operation** column.
+#. On the **Instances** page, locate the instance whose specifications you want to change and choose **Change Specifications** in the **Operation** column.
 
 #. On the displayed page, select the desired vCPUs and memory and click **Next**.
 
-#. On the displayed page, confirm the instance class.
+#. On the displayed page, confirm the specifications.
 
    -  If you need to modify your settings, click **Previous** to go back to the page where you specify details.
-   -  If you do not need to modify your settings, click **Submit** to change the instance class.
+   -  If you do not need to modify your settings, click **Submit**.
 
 #. View the DB instance class change result.
 
-   Go to the **Basic Information** page and in the **DB Information** area you can see the new instance class.
+   Go to the **Basic Information** page and in the **Specifications** area you can see the new specifications.

@@ -14,7 +14,7 @@ Method 1
 --------
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
-#. On the **Instance Management** page, click |image1| to the right of the instance whose name you wish to change.
+#. On the **Instances** page, click |image1| to the right of the instance whose name you wish to change.
 
    -  To submit the change, click **OK**.
 
@@ -22,13 +22,13 @@ Method 1
 
    -  To cancel the change, click **Cancel**.
 
-#. View the results on the **Instance Management** page.
+#. View the results on the **Instances** page.
 
 Method 2
 --------
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
-#. On the **Instance Management** page, click the instance whose name you wish to change.
+#. On the **Instances** page, click the instance whose name you wish to change.
 #. In the **Instance Information** area on the **Basic Information** page, click |image2| in the **DB Instance Name** field to change the instance name.
 
    -  To submit the change, click |image3|.
@@ -37,7 +37,7 @@ Method 2
 
    -  To cancel the change, click |image4|.
 
-#. View the results on the **Instance Management** page.
+#. View the results on the **Instances** page.
 
 .. |image1| image:: /_static/images/en-us_image_0000001861925037.png
 .. |image2| image:: /_static/images/en-us_image_0000001815205188.png
