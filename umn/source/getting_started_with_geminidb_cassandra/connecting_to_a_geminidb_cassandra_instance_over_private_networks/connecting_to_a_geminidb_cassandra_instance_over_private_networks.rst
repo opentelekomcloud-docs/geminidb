@@ -29,8 +29,8 @@ Constraints
 Prerequisites
 -------------
 
--  Create an ECS running Linux. For details, see "Creating ECSs" in *ECS User Guide*.
--  Obtain the `Cassandra client installation package 3.11.3 <https://archive.apache.org/dist/cassandra/3.11.3/apache-cassandra-3.11.3-bin.tar.gz>`__ from the official website.
+-  You have created an ECS running Linux. For details, see "Creating ECSs" in *ECS User Guide*.
+-  You have obtained the `Cassandra client installation package 3.11.3 <https://archive.apache.org/dist/cassandra/3.11.3/apache-cassandra-3.11.3-bin.tar.gz>`__ from the official website.
 -  If Python is not installed, download and install `Python 2.7 <https://www.python.org/ftp/python/2.7.16/Python-2.7.16.tgz>`__ and `cassandra-driver <https://pypi.org/project/cassandra-driver/>`__ 3.11.0 or later.
 
 Using the Cassandra Client Tool to Connect to a DB Instance

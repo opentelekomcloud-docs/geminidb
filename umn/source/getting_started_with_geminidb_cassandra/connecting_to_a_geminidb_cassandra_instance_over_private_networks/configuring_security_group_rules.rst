@@ -10,7 +10,7 @@ Configuring Security Group Rules
 
 The default security group rule allows all outgoing data packets. ECSs and GeminiDB instances in the same security group can access each other. After a security group is created, you can create different rules for that security group, which allows you to control access to the GeminiDB instances that in it.
 
-The following describes how to configure security groups.
+The following describes how to set security groups.
 
 **Precautions**
 ---------------

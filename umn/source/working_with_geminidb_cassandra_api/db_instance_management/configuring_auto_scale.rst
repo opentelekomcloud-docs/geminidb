@@ -66,7 +66,7 @@ If you are using an IAM user, configure the following permissions before enablin
 
    Log in to the IAM console as a domain or an IAM user. Locate the IAM user that the target instance belongs to and add it to the user group created in :ref:`3 <nosql_increase_storage1__li31075139411>`. The IAM user will inherit permissions of the user group.
 
-Precautions
+Usage Notes
 -----------
 
 -  The instance is in the **Available** status.
@@ -75,9 +75,9 @@ Precautions
 Automatically Scaling Up Storage of a Single Instance
 -----------------------------------------------------
 
-#. Log in to the GeminiDB console by following :ref:`Logging In to the GeminiDB Console <nosql_login>`.
+#. :ref:`Log in to the GeminiDB console <nosql_login>`.
 
-#. On the **Instances** page, click the instance. The **Basic Information** page is displayed.
+#. On the **Instances** page, click the target instance. The **Basic Information** page is displayed.
 
 #. In the **Storage Space** area, click **Auto Scale**.
 
@@ -116,7 +116,7 @@ Automatically Scaling Up Storage of a Single Instance
 Automatically Scaling Up Storage of Multiple Instances In Batches
 -----------------------------------------------------------------
 
-#. Log in to the GeminiDB console by following :ref:`Logging In to the GeminiDB Console <nosql_login>`.
+#. :ref:`Log in to the GeminiDB console <nosql_login>`.
 
 #. Select instances and click **Auto Scale**.
 

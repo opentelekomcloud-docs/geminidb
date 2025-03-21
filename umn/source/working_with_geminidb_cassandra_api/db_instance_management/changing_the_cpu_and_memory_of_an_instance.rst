@@ -2,15 +2,15 @@
 
 .. _nosql_03_0026:
 
-Changing a DB Instance Class
-============================
+Changing the CPU and Memory of an Instance
+==========================================
 
 Scenarios
 ---------
 
 This section describes how to change the CPU or memory of your instance to suit your service requirements.
 
-Precautions
+Usage Notes
 -----------
 
 -  Instances can be scaled up or down.
