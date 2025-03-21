@@ -17,17 +17,23 @@ Prerequisites
 
 -  Bind an EIP to the GeminiDB Cassandra instance node and set security group rules.
 -  Create an ECS running Linux. For details, see "Creating ECSs" in *ECS User Guide*.
--  Obtain the Cassandra client installation package from the Cassandra official website.
--  Before using this tool, install the Python dependency package `cassandra-driver <https://pypi.org/project/cassandra-driver/>`__ 3.11.0 or later.
+-  Obtain the `Cassandra client installation package 3.11.3 <https://archive.apache.org/dist/cassandra/3.11.3/apache-cassandra-3.11.3-bin.tar.gz>`__ from the official website.
+-  If Python is not installed, download and install `Python 2.7 <https://www.python.org/ftp/python/2.7.16/Python-2.7.16.tgz>`__ and `cassandra-driver <https://pypi.org/project/cassandra-driver/>`__ 3.11.0 or later.
 
 Connecting to a DB Instance Through a Cassandra Client
 ------------------------------------------------------
 
 #. Log in to the ECS. For details, see the section "Logging In to an ECS" in the *Elastic Cloud Server User Guide*.
 
-#. Upload the Cassandra client installation package to ECS.
+#. Upload the Cassandra client installation package 3.11.3 to the ECS. If Wget fails to be downloaded, download it to your local PC and then upload it to the ECS.
+
+   wget https://archive.apache.org/dist/cassandra/3.11.3/apache-cassandra-3.11.3-bin.tar.gz
+
+   tar -zxvf apache-cassandra-3.11.3-bin.tar.gz
 
 #. Obtain the client tool cqlsh.
+
+   cd apache-cassandra-3.11.3/bin
 
 #. Connect to the DB instance in the directory where the cqlsh tool is located.
 

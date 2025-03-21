@@ -16,7 +16,7 @@ Constraints
 -  The DB instances must be in the same VPC subnet as the ECS.
 -  The ECS must be allowed in a security group that has access to the DB instances.
 
-   -  If the security group that the target DB instance belongs to is the default security group, you do not need to configure security group rules.
+   -  If the target DB instance belongs to the default security group, you do not need to configure security group rules.
 
    -  If the security group that the target DB instance belongs to is not the default security group, check whether the security group rules allow the ECS to connect to the DB instance. For details, see section :ref:`Configuring Security Group Rules <nosql_02_0004>`.
 
@@ -30,17 +30,23 @@ Prerequisites
 -------------
 
 -  Create an ECS running Linux. For details, see "Creating ECSs" in *ECS User Guide*.
--  Obtain the Cassandra client installation package from the Cassandra official website.
--  Before using this tool, install the Python dependency package `cassandra-driver <https://pypi.org/project/cassandra-driver/>`__ 3.11.0 or later.
+-  Obtain the `Cassandra client installation package 3.11.3 <https://archive.apache.org/dist/cassandra/3.11.3/apache-cassandra-3.11.3-bin.tar.gz>`__ from the official website.
+-  If Python is not installed, download and install `Python 2.7 <https://www.python.org/ftp/python/2.7.16/Python-2.7.16.tgz>`__ and `cassandra-driver <https://pypi.org/project/cassandra-driver/>`__ 3.11.0 or later.
 
 Using the Cassandra Client Tool to Connect to a DB Instance
 -----------------------------------------------------------
 
 #. Log in to the ECS. For details, see the section "Logging In to an ECS" in the *Elastic Cloud Server User Guide*.
 
-#. Upload the Cassandra client installation package to ECS.
+#. Upload the Cassandra client installation package 3.11.3 to the ECS. If Wget fails to be downloaded, download it to your local PC and then upload it to the ECS.
+
+   wget https://archive.apache.org/dist/cassandra/3.11.3/apache-cassandra-3.11.3-bin.tar.gz
+
+   tar -zxvf apache-cassandra-3.11.3-bin.tar.gz
 
 #. Obtain the client tool cqlsh.
+
+   cd apache-cassandra-3.11.3/bin
 
 #. Connect to the DB instance in the directory where the cqlsh tool is located.
 
