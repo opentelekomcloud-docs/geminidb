@@ -41,8 +41,8 @@ Usage Notes
 Adding a Tag
 ------------
 
-#. :ref:`Log in to the GeminiDB console. <nosql_login>`
-#. On the **Instances** page, click the name of the target instance to go to the **Basic Information** page.
+#. :ref:`Log in to the GeminiDB console <nosql_login>`.
+#. On the **Instances** page, click the target instance. The **Basic Information** page is displayed.
 #. In the navigation pane on the left, click **Tags**.
 #. On the **Tags** page, click **Add Tag**. In the displayed dialog box, enter a tag key and value, and click **OK**.
 #. View and manage tags on the **Tags** page.
@@ -50,9 +50,9 @@ Adding a Tag
 Editing a Tag
 -------------
 
-#. :ref:`Log in to the GeminiDB console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console <nosql_login>`.
 
-#. On the **Instances** page, click the name of the target instance to go to the **Basic Information** page.
+#. On the **Instances** page, click the target instance. The **Basic Information** page is displayed.
 
 #. In the navigation pane on the left, click **Tags**.
 
@@ -65,8 +65,8 @@ Editing a Tag
 Deleting a Tag
 --------------
 
-#. :ref:`Log in to the GeminiDB console. <nosql_login>`
-#. On the **Instances** page, click the name of the target instance to go to the **Basic Information** page.
+#. :ref:`Log in to the GeminiDB console <nosql_login>`.
+#. On the **Instances** page, click the target instance. The **Basic Information** page is displayed.
 #. In the navigation pane on the left, click **Tags**.
 #. On the **Tags** page, locate the tag to be deleted and click **Delete** in the **Operation** column. In the displayed dialog box, click **Yes**.
 #. After a tag has been deleted, it will not be displayed on the **Tags** page.
@@ -74,6 +74,6 @@ Deleting a Tag
 Searching an Instance by Tag
 ----------------------------
 
-#. :ref:`Log in to the GeminiDB console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console <nosql_login>`.
 #. On the **Instances** page, click **Search by Tag** in the upper right corner of the instance list.
 #. Enter the key or value of the tag to be queried and click **Search** to query the instance associated with the tag.
