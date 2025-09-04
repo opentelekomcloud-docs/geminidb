@@ -5,7 +5,7 @@
 Making an API Request
 =====================
 
-This section describes the structure of a REST API, and uses the IAM API for `obtaining a user token <https://docs.otc.t-systems.com/en-us/api/iam/en-us_topic_0057845583.html>`__ as an example to describe how to call an API. The obtained token is used to authenticate the calling of other APIs.
+This section describes the structure of a REST API, and uses the IAM API for `obtaining a user token <https://docs.otc.t-systems.com/en-us/api/iam/en-us_topic_0057845583.html>`__ as an example to describe how to call an API. The obtained token is used to authenticate other APIs.
 
 Request URI
 -----------
@@ -23,7 +23,7 @@ Although a request URI is included in the request header, most programming langu
    +===============+============================================================================================================================================================================================================================================================+
    | URI-scheme    | Protocol used to transmit requests. All APIs use HTTPS.                                                                                                                                                                                                    |
    +---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Endpoint      | Domain name or IP address of the server bearing the REST service endpoint. The endpoint varies depending on services and regions. It can be obtained from `Regions and Endpoints <https://docs.otc.t-systems.com/en-us/endpoint/index.html>`__.            |
+   | Endpoint      | Domain name or IP address of a server where a REST service endpoint is hosted. The endpoint varies depending on services and regions. It can be obtained from `Regions and Endpoints <https://docs.otc.t-systems.com/en-us/endpoint/index.html>`__.        |
    +---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | resource-path | Access path of an API for performing a specified operation. Obtain the path from the URI of the API. For example, the **resource-path** of the API for obtaining a user token is **/v3/auth/tokens**.                                                      |
    +---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -69,7 +69,7 @@ You can also add additional header fields to a request, such as the fields requi
    +-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+--------------------------------------------+
    | Parameter       | Description                                                                                                                                                        | Mandatory                                                                          | Example Value                              |
    +=================+====================================================================================================================================================================+====================================================================================+============================================+
-   | Content-Type    | MIME type of the request body. Use the default value **application/json**. For APIs used to upload objects or images, the value varies depending on the flow type. | Yes                                                                                | application/json                           |
+   | Content-Type    | MIME type of the request body. Use the default value **application/json**. For APIs used to upload objects or images, the value varies depending on the flow type. | This field is optional for GET requests and mandatory for other requests.          | application/json                           |
    +-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+--------------------------------------------+
    | Content-Length  | Length of the request body. The unit is byte.                                                                                                                      | This field is optional for POST requests, but must be left blank for GET requests. | 3495                                       |
    +-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+--------------------------------------------+
@@ -94,7 +94,7 @@ This part is optional. The request body is often sent in a structured format (fo
 
 Request bodies vary depending on APIs. Some APIs do not require a request body, such as the APIs requested using the GET and DELETE methods.
 
-For the API of `obtaining a user token <https://docs.otc.t-systems.com/identity-access-management/api-ref/apis/token_management/obtaining_a_user_token.html>`__, request parameters and parameter description can be obtained from the API request. The following is an example request with a body included. Replace *username*, *domianname*, ``********`` (login password), and *xxxxxxxxxxxxxxxxxx* (project name) with required values. You can obtain the values from `Regions and Endpoints <https://docs.otc.t-systems.com/en-us/endpoint/index.html>`__.
+For the API of `obtaining a user token <https://docs.otc.t-systems.com/identity-access-management/api-ref/apis/token_management/obtaining_a_user_token.html>`__, request parameters and parameter description can be obtained from the API request. The following is an example request with a body included. Replace *username*, *domainname*, ``********`` (login password), and *xxxxxxxxxxxxxxxxxx* (project name) with required values. You can obtain the values from `Regions and Endpoints <https://docs.otc.t-systems.com/en-us/endpoint/index.html>`__.
 
 .. note::
 
@@ -116,7 +116,7 @@ For the API of `obtaining a user token <https://docs.otc.t-systems.com/identity-
                        "name": "username",
                        "password": "********",
                        "domain": {
-                           "name": "domianname"
+                           "name": "domainname"
                        }
                    }
                }

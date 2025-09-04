@@ -92,13 +92,13 @@ Response Parameters
 
 .. table:: **Table 4** Response body parameters
 
-   +-------------+---------------------------------------------------------------------------+-----------------------------------------+
-   | Parameter   | Type                                                                      | Description                             |
-   +=============+===========================================================================+=========================================+
-   | jobs        | Array of objects (:ref:`Table 5 <nosql_10_0100__response_slowlogresult>`) | Task list.                              |
-   +-------------+---------------------------------------------------------------------------+-----------------------------------------+
-   | total_count | Integer                                                                   | Total number of tasks in the task list. |
-   +-------------+---------------------------------------------------------------------------+-----------------------------------------+
+   +-------------+----------------------------------------------------------------------------+-----------------------------------------+
+   | Parameter   | Type                                                                       | Description                             |
+   +=============+============================================================================+=========================================+
+   | jobs        | Array of objects in :ref:`Table 5 <nosql_10_0100__response_slowlogresult>` | Task list.                              |
+   +-------------+----------------------------------------------------------------------------+-----------------------------------------+
+   | total_count | Integer                                                                    | Total number of tasks in the task list. |
+   +-------------+----------------------------------------------------------------------------+-----------------------------------------+
 
 .. _nosql_10_0100__response_slowlogresult:
 
@@ -115,11 +115,11 @@ Response Parameters
    +-----------------------+--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | start_time            | String                                                       | Creation time in the "yyyy-mm-ddThh:mm:ssZ" format.                                                                                                                                                                                |
    |                       |                                                              |                                                                                                                                                                                                                                    |
-   |                       |                                                              | **T** is the separator between calendar and hourly notation of time. **Z** indicates the time zone offset. For example, in the Beijing time zone, the offset is **+0800**.                                                         |
+   |                       |                                                              | **T** is the separator between the calendar and the hourly notation of time. **Z** indicates the time zone offset.                                                                                                                 |
    +-----------------------+--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | end_time              | String                                                       | End time in the yyyy-mm-ddThh:mm:ssZ format.                                                                                                                                                                                       |
    |                       |                                                              |                                                                                                                                                                                                                                    |
-   |                       |                                                              | **T** is the separator between calendar and hourly notation of time. **Z** indicates the time zone offset. For example, in the Beijing time zone, the offset is **+0800**.                                                         |
+   |                       |                                                              | **T** is the separator between the calendar and the hourly notation of time. **Z** indicates the time zone offset.                                                                                                                 |
    +-----------------------+--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | progress              | String                                                       | Task execution progress.                                                                                                                                                                                                           |
    |                       |                                                              |                                                                                                                                                                                                                                    |
@@ -181,9 +181,9 @@ Success
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

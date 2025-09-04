@@ -20,7 +20,7 @@ URI
 
 POST https://{Endpoint}/v3/{project_id}/instances/{instance_id}/reduce-node
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameters
 
    +-------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter   | Mandatory | Type   | Description                                                                                                    |
@@ -33,13 +33,15 @@ POST https://{Endpoint}/v3/{project_id}/instances/{instance_id}/reduce-node
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameters
+.. table:: **Table 2** Request header parameter
 
-   ============ ========= ====== ===========
-   Parameter    Mandatory Type   Description
-   ============ ========= ====== ===========
-   X-Auth-Token Yes       String User token.
-   ============ ========= ====== ===========
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | Parameter    | Mandatory | Type   | Description                                                         |
+   +==============+===========+========+=====================================================================+
+   | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | X-Auth-Token | Yes       | String | User token.                                                         |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
 
 .. table:: **Table 3** Request body parameters
 
@@ -52,7 +54,7 @@ Request Parameters
    |                 |                 |                  |                                                                                                                                                                                              |
    |                 |                 |                  | .. note::                                                                                                                                                                                    |
    |                 |                 |                  |                                                                                                                                                                                              |
-   |                 |                 |                  |    If users connect to nodes using the client, do no choose to delete node randomly.                                                                                                         |
+   |                 |                 |                  |    If the client is directly connected to a node, random scale-in is not recommended.                                                                                                        |
    +-----------------+-----------------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | node_list       | No              | Array of strings | ID of the node to be deleted. Make sure that the node can be deleted. If this parameter is not transferred, the number of nodes to be deleted is based on the internal policy of the system. |
    |                 |                 |                  |                                                                                                                                                                                              |
@@ -63,7 +65,7 @@ Request Parameters
    |                 |                 |                  |       -  If **node_list** is transferred, its value can contain 1 to 10 characters for GeminiDB Cassandra.                                                                                   |
    |                 |                 |                  |       -  If **num** and **node_list** are both transferred, the value of **node_list** takes effect.                                                                                         |
    |                 |                 |                  |                                                                                                                                                                                              |
-   |                 |                 |                  |    -  If **node_list** is empty, instance nodes are deleted randomly. If **node_list** is not empty, only the node whose ID is specified is deleted.                                         |
+   |                 |                 |                  |    -  If **node_list** is empty, instance nodes are deleted randomly. If **node_list** is not empty, only the node with a specified ID is is deleted.                                        |
    |                 |                 |                  |    -  Before a node is deleted, do not connect to the node directly to avoid service interruptions.                                                                                          |
    +-----------------+-----------------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -80,8 +82,8 @@ Response Parameters
    | job_id    | String | Task ID. This parameter is returned only for pay-per-use instances. |
    +-----------+--------+---------------------------------------------------------------------+
 
-Example Requests
-----------------
+Example Request
+---------------
 
 -  URI example
 
@@ -98,8 +100,8 @@ Example Requests
          "node_list" : [ "116ba14da34a42d28ecd83a38c218907no12" ]
       }
 
-Example Responses
------------------
+Example Response
+----------------
 
 **Status code: 202**
 
@@ -114,9 +116,9 @@ Accepted
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

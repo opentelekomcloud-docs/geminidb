@@ -5,12 +5,14 @@
 Backups and Restorations
 ========================
 
--  :ref:`Querying an Automated Backup Policy <nosql_api_0030>`
 -  :ref:`Configuring an Automated Backup Policy <nosql_api_0031>`
+-  :ref:`Querying the Time Window When a Backup Can Be Restored <listrestoretime>`
+-  :ref:`Creating a Manual Backup <nosql_api_0032>`
 
 .. toctree::
    :maxdepth: 1
    :hidden: 
 
-   querying_an_automated_backup_policy
    configuring_an_automated_backup_policy
+   querying_the_time_window_when_a_backup_can_be_restored
+   creating_a_manual_backup
