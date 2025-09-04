@@ -13,14 +13,14 @@ This API is used to query instance parameter settings.
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra instances.
 
 URI
 ---
 
 GET https://{Endpoint}/v3/{project_id}/instances/{instance_id}/configurations
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameters
 
    +-------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter   | Mandatory | Type   | Description                                                                                                    |
@@ -33,7 +33,7 @@ GET https://{Endpoint}/v3/{project_id}/instances/{instance_id}/configurations
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameters
+.. table:: **Table 2** Request header parameter
 
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description
@@ -44,7 +44,7 @@ Request Parameters
 Response Parameters
 -------------------
 
-**Status code: 200**
+Status code: 200
 
 .. table:: **Table 3** Response body parameters
 
@@ -68,8 +68,6 @@ Response Parameters
    | mode                     | String                                                                                                      | Instance type. The value can be:                                                                           |
    |                          |                                                                                                             |                                                                                                            |
    |                          |                                                                                                             | **Cluster**, indicating that the instance is of the GeminiDB Cassandra cluster type.                       |
-   |                          |                                                                                                             |                                                                                                            |
-   |                          |                                                                                                             | **Cluster**, indicating that the instance is of the GeminiDB Influx cluster type.                          |
    +--------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
    | configuration_parameters | Array of :ref:`ConfigurationParameterResult <nosql_06_0007__response_configurationparameterresult>` objects | Parameters defined by users based on a default parameter template.                                         |
    +--------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
@@ -102,8 +100,8 @@ Response Parameters
    | description           | String                | Parameter description.                                                                                                                          |
    +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Example Requests
-----------------
+Example Request
+---------------
 
 URI example
 
@@ -111,10 +109,10 @@ URI example
 
    GET https://{Endpoint}/v3/375d8d8fad1f43039e23d3b6c0f60a19/instances/9136fd2a9fcd405ea4674276ce36dae8in02/configurations
 
-Example Responses
------------------
+Example Response
+----------------
 
-**Status code: 200**
+Status code: 200
 
 Success
 
@@ -141,9 +139,9 @@ Success
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

@@ -13,14 +13,14 @@ This API is used to obtain parameter templates, including all of the default and
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra instances.
 
 URI
 ---
 
 GET https://{Endpoint}/v3.1/{project_id}/configurations
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameter
 
    +------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter  | Mandatory | Type   | Description                                                                                                    |
@@ -30,35 +30,37 @@ GET https://{Endpoint}/v3.1/{project_id}/configurations
 
 .. table:: **Table 2** Query parameters
 
-   +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter       | Mandatory       | Type            | Description                                                                                                                                                                                                              |
-   +=================+=================+=================+==========================================================================================================================================================================================================================+
-   | offset          | No              | Integer         | Index offset.                                                                                                                                                                                                            |
-   |                 |                 |                 |                                                                                                                                                                                                                          |
-   |                 |                 |                 | -  If **offset** is set to *N*, the resource query starts from the N+1 piece of data. If **action** is set to **filter**, **offset** is **0** by default, indicating that the query starts from the first piece of data. |
-   |                 |                 |                 | -  The value must be a positive integer.                                                                                                                                                                                 |
-   +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | limit           | No              | Integer         | Maximum number of instances that can be queried.                                                                                                                                                                         |
-   |                 |                 |                 |                                                                                                                                                                                                                          |
-   |                 |                 |                 | -  The value ranges from **1** to **100**.                                                                                                                                                                               |
-   |                 |                 |                 | -  If this parameter is not transferred, the first 100 records are queried by default.                                                                                                                                   |
-   +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                                                                                                                                      |
+   +=================+=================+=================+==================================================================================================================================================================================+
+   | offset          | No              | Integer         | Index offset.                                                                                                                                                                    |
+   |                 |                 |                 |                                                                                                                                                                                  |
+   |                 |                 |                 | -  If **offset** is set to *N*, the query starts from the *N*\ +1 piece of data. The default value is **0**, which indicates that the query starts from the first piece of data. |
+   |                 |                 |                 | -  The value must be a non-negative number.                                                                                                                                      |
+   +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | limit           | No              | Integer         | Maximum records to be queried.                                                                                                                                                   |
+   |                 |                 |                 |                                                                                                                                                                                  |
+   |                 |                 |                 | -  The value ranges from **1** to **100**.                                                                                                                                       |
+   |                 |                 |                 | -  If this parameter is not transferred, the first 100 records are queried by default.                                                                                           |
+   +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Request Parameters
 ------------------
 
-.. table:: **Table 3** Request header parameters
+.. table:: **Table 3** Request header parameter
 
-   ============ ========= ====== ===========
-   Parameter    Mandatory Type   Description
-   ============ ========= ====== ===========
-   X-Auth-Token Yes       String User token.
-   ============ ========= ====== ===========
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | Parameter    | Mandatory | Type   | Description                                                         |
+   +==============+===========+========+=====================================================================+
+   | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | X-Auth-Token | Yes       | String | User token.                                                         |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
 
 Response Parameters
 -------------------
 
-**Status code: 200**
+Status code: 200
 
 .. table:: **Table 4** Response body parameters
 
@@ -100,8 +102,6 @@ Response Parameters
    | mode                   | String                | Instance type. The value can be:                                                                           |
    |                        |                       |                                                                                                            |
    |                        |                       | **Cluster**, indicating that the instance is of the GeminiDB Cassandra cluster type.                       |
-   |                        |                       |                                                                                                            |
-   |                        |                       | **Cluster**, indicating that the instance is of the GeminiDB Influx cluster type.                          |
    +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
    | user_defined           | Boolean               | Whether the parameter template is a custom template. The value can be:                                     |
    |                        |                       |                                                                                                            |
@@ -109,8 +109,8 @@ Response Parameters
    |                        |                       | -  **true**, indicating that the parameter template is a custom template.                                  |
    +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
 
-Example Requests
-----------------
+Example Request
+---------------
 
 URI example
 
@@ -118,12 +118,12 @@ URI example
 
    GET https://{Endpoint}/v3.1/375d8d8fad1f43039e23d3b6c0f60a19/configurations?offset=0&limit=10
 
-Example Responses
------------------
+Example Response
+----------------
 
-**Status code: 200**
+Status code: 200
 
-Success
+Successful request
 
 .. code-block::
 
@@ -156,9 +156,9 @@ Success
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

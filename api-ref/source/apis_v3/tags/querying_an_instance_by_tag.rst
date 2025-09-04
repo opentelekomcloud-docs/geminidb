@@ -13,7 +13,7 @@ This API is used to query a specified instance by tag.
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra instances.
 
 A maximum of 20 tags can be added to a DB instance. The tag key must be unique.
 
@@ -22,7 +22,7 @@ URI
 
 POST https://{Endpoint}/v3/{project_id}/instances/resource-instances/action
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameter
 
    +------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter  | Mandatory | Type   | Description                                                                                                    |
@@ -33,13 +33,15 @@ POST https://{Endpoint}/v3/{project_id}/instances/resource-instances/action
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameters
+.. table:: **Table 2** Request header parameter
 
-   ============ ========= ====== ===========
-   Parameter    Mandatory Type   Description
-   ============ ========= ====== ===========
-   X-Auth-Token Yes       String User token.
-   ============ ========= ====== ===========
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | Parameter    | Mandatory | Type   | Description                                                         |
+   +==============+===========+========+=====================================================================+
+   | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | X-Auth-Token | Yes       | String | User token.                                                         |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
 
 .. table:: **Table 3** Request body parameters
 
@@ -96,13 +98,13 @@ Request Parameters
    +-----------------+-----------------+------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | values          | Yes             | Array of strings | Tag values. Each tag value can contain a maximum of 43 Unicode characters and cannot contain spaces. Before using **values**, delete spaces before and after the value.                   |
    |                 |                 |                  |                                                                                                                                                                                           |
-   |                 |                 |                  | If the **values** is not specified, any parameter value can be queried. All values are in the OR relationship.                                                                            |
+   |                 |                 |                  | If **values** is not specified, any value can be queried. All values are in the OR relationship.                                                                                          |
    +-----------------+-----------------+------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Response Parameters
 -------------------
 
-**Status code: 200**
+Status code: 200
 
 .. table:: **Table 6** Response body parameters
 
@@ -144,8 +146,8 @@ Response Parameters
    |                       |                       | It is case-sensitive and can contain digits, letters, underscores (_), and hyphens (-).             |
    +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------+
 
-Example Requests
-----------------
+Example Request
+---------------
 
 -  URI example
 
@@ -195,10 +197,10 @@ Example Requests
         } ]
       }
 
-Example Responses
------------------
+Example Response
+----------------
 
-**Status code: 200**
+Status code: 200
 
 Success
 
@@ -222,9 +224,9 @@ Success
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

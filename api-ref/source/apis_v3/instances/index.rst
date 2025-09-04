@@ -11,6 +11,7 @@ Instances
 -  :ref:`Scaling Up Storage Space of an Instance <nosql_05_0050>`
 -  :ref:`Adding Nodes for an Instance <nosql_05_0051>`
 -  :ref:`Deleting Nodes from a Specified Instance <nosql_05_0052>`
+-  :ref:`Querying Changeable Specifications <nosql_05_0156>`
 -  :ref:`Changing Specifications of an Instance <nosql_05_0100>`
 -  :ref:`Resetting the Administrator Password of an Instance <nosql_05_0101>`
 -  :ref:`Editing the Name of an Instance <nosql_05_0102>`
@@ -28,6 +29,7 @@ Instances
    scaling_up_storage_space_of_an_instance
    adding_nodes_for_an_instance
    deleting_nodes_from_a_specified_instance
+   querying_changeable_specifications
    changing_specifications_of_an_instance
    resetting_the_administrator_password_of_an_instance
    editing_the_name_of_an_instance

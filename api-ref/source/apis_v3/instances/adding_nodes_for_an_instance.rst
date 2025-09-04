@@ -20,7 +20,7 @@ URI
 
 POST https://{Endpoint}/v3/{project_id}/instances/{instance_id}/enlarge-node
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameters
 
    +-------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter   | Mandatory | Type   | Description                                                                                                    |
@@ -33,13 +33,15 @@ POST https://{Endpoint}/v3/{project_id}/instances/{instance_id}/enlarge-node
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameters
+.. table:: **Table 2** Request header parameter
 
-   ============ ========= ====== ===========
-   Parameter    Mandatory Type   Description
-   ============ ========= ====== ===========
-   X-Auth-Token Yes       String User token.
-   ============ ========= ====== ===========
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | Parameter    | Mandatory | Type   | Description                                                         |
+   +==============+===========+========+=====================================================================+
+   | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | X-Auth-Token | Yes       | String | User token.                                                         |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
 
 .. table:: **Table 3** Request body parameters
 
@@ -50,7 +52,7 @@ Request Parameters
    +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------+
    | subnet_id       | No              | String          | ID of the subnet where the new node is deployed.                                                                          |
    |                 |                 |                 |                                                                                                                           |
-   |                 |                 |                 | -  This parameter can be transferred when nodes are added to the GeminiDB Cassandra database instances.                   |
+   |                 |                 |                 | -  This parameter can be transferred when nodes are added for GeminiDB Cassandra instances.                               |
    |                 |                 |                 | -  The transferred subnet ID must belong to the VPC where the current instance is deployed.                               |
    |                 |                 |                 | -  If this parameter is not transferred, the system will allocate a subnet with sufficient IP addresses for the new node. |
    +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------+
@@ -68,8 +70,8 @@ Response Parameters
    job_id    String Task ID.
    ========= ====== ===========
 
-Example Requests
-----------------
+Example Request
+---------------
 
 -  URI example
 
@@ -85,8 +87,8 @@ Example Requests
         "num" : 1
       }
 
-Example Responses
------------------
+Example Response
+----------------
 
 **Status code: 202**
 
@@ -101,9 +103,9 @@ Accepted
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.
