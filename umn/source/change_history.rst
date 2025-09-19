@@ -9,12 +9,14 @@ Change History
 | Released                          | Change History                                                                                                                                           |
 +===================================+==========================================================================================================================================================+
 | 2025-02-28                        | This issue is the ninth official release.                                                                                                                |
+|                                   |                                                                                                                                                          |
+|                                   | Added :ref:`Restoring a Backup to a Specified Point in Time <nosql_02_0116>`.                                                                            |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 2024-11-30                        | This issue is the eighth official release.                                                                                                               |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 2024-08-30                        | This issue is the seventh official release, which incorporates the following change:                                                                     |
 |                                   |                                                                                                                                                          |
-|                                   | Added :ref:`Configuring Auto Scale <nosql_increase_storage1>`.                                                                                           |
+|                                   | Added :ref:`Configuring Autoscaling <nosql_increase_storage1>`.                                                                                          |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 2024-04-30                        | This issue is the sixth official release, which incorporates the following change:                                                                       |
 |                                   |                                                                                                                                                          |
@@ -30,7 +32,7 @@ Change History
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 2020-11-30                        | This issue is the third official release, which incorporates the following changes:                                                                      |
 |                                   |                                                                                                                                                          |
-|                                   | :ref:`GeminiDB Cassandra Metrics <nosql_03_0011>`                                                                                                        |
+|                                   | :ref:`GeminiDB Cassandra Instance Metrics <nosql_03_0011>`                                                                                               |
 |                                   |                                                                                                                                                          |
 |                                   | :ref:`Setting Alarm Rules <nosql_03_0012>`                                                                                                               |
 |                                   |                                                                                                                                                          |

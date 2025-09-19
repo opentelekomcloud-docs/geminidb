@@ -9,7 +9,7 @@ DB Instance Management
 -  :ref:`Resetting the Administrator Password <nosql_03_0016>`
 -  :ref:`Restarting a DB Instance <nosql_03_0003>`
 -  :ref:`Scaling Up Storage Space <nosql_increase_storage>`
--  :ref:`Configuring Auto Scale <nosql_increase_storage1>`
+-  :ref:`Configuring Autoscaling <nosql_increase_storage1>`
 -  :ref:`Changing the CPU and Memory of an Instance <nosql_03_0026>`
 -  :ref:`Adding Nodes <nosql_increase_nodes>`
 -  :ref:`Deleting Nodes <nosql_03_0004>`
@@ -24,7 +24,7 @@ DB Instance Management
    resetting_the_administrator_password
    restarting_a_db_instance
    scaling_up_storage_space
-   configuring_auto_scale
+   configuring_autoscaling
    changing_the_cpu_and_memory_of_an_instance
    adding_nodes
    deleting_nodes

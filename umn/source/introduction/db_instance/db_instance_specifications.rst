@@ -14,10 +14,10 @@ GeminiDB Cassandra Instance Specifications
 
 .. _nosql_01_0006__table33151750124715:
 
-.. table:: **Table 1** GeminiDB Cassandra cluster instance specifications
+.. table:: **Table 1** Specifications of a GeminiDB Cassandra instance in a cluster
 
    ============================= ===== =========== =======================
-   Specification                 vCPUs Memory (GB) Max. Storage Space (GB)
+   Flavor                        vCPUs Memory (GB) Max. Storage Space (GB)
    ============================= ===== =========== =======================
    geminidb.cassandra.xlarge.8   4     32          96,000
    geminidb.cassandra.2xlarge.8  8     64          96,000
