@@ -12,10 +12,10 @@ This section describes how to scale up the storage space of a DB instance to sui
 
 During the scale-up process, the DB instance will not restart, and your services will not be interrupted.
 
-Precautions
+Usage Notes
 -----------
 
-Storage space can only be scaled up. It cannot be scaled down.
+Storage space can only be scaled up.
 
 Procedure
 ---------

@@ -2,8 +2,8 @@
 
 .. _nosql_increase_storage1:
 
-Configuring Auto Scale
-======================
+Configuring Autoscaling
+=======================
 
 You can enable autoscaling for GeminiDB Cassandra instances. When storage usage reaches the limit, autoscaling is triggered.
 
@@ -108,7 +108,7 @@ Automatically Scaling Up Storage of a Single Instance
       +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Storage Limit                         | Limit of storage (GB) that can be automatically scaled to.                                                                                                                                                   |
       |                                       |                                                                                                                                                                                                              |
-      |                                       | The value must be no less than the current storage of your instance and cannot exceed the storage space upper limit defined by your instance specifications.                                                 |
+      |                                       | The value must be no less than the current storage of your instance and cannot exceed the maximum storage supported by your instance.                                                                        |
       +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #. Click **OK**.

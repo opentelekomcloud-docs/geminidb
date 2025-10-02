@@ -5,7 +5,7 @@
 Monitoring and Alarm Reporting
 ==============================
 
--  :ref:`GeminiDB Cassandra Metrics <nosql_03_0011>`
+-  :ref:`GeminiDB Cassandra Instance Metrics <nosql_03_0011>`
 -  :ref:`Setting Alarm Rules <nosql_03_0012>`
 -  :ref:`Viewing Metrics <nosql_03_0013>`
 
@@ -13,6 +13,6 @@ Monitoring and Alarm Reporting
    :maxdepth: 1
    :hidden: 
 
-   geminidb_cassandra_metrics
+   geminidb_cassandra_instance_metrics
    setting_alarm_rules
    viewing_metrics

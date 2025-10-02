@@ -7,7 +7,8 @@ Backups and Restorations
 
 -  :ref:`Managing Automated Backups <nosql_03_0007>`
 -  :ref:`Managing Manual Backups <nosql_03_0008>`
--  :ref:`Restoring Data to a New DB Instance <nosql_03_0009>`
+-  :ref:`Restoring a Backup to a New Instance <nosql_03_0009>`
+-  :ref:`Restoring a Backup to a Specified Point in Time <nosql_02_0116>`
 
 .. toctree::
    :maxdepth: 1
@@ -15,4 +16,5 @@ Backups and Restorations
 
    managing_automated_backups
    managing_manual_backups
-   restoring_data_to_a_new_db_instance
+   restoring_a_backup_to_a_new_instance
+   restoring_a_backup_to_a_specified_point_in_time
