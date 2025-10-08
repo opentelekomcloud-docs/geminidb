@@ -1,6 +1,6 @@
-:original_name: nosql_06_0005.html
+:original_name: nosql_06_0218.html
 
-.. _nosql_06_0005:
+.. _nosql_06_0218:
 
 Applying a Parameter Template
 =============================
@@ -10,10 +10,14 @@ Function
 
 This API is used to apply a parameter template to one or more instances.
 
+.. important::
+
+   This API will be unavailable. You are advised to switch workloads to the new API described in :ref:`Applying a Parameter Template <nosql_06_0005>`.
+
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra instances.
 
 This API is an asynchronous API. A successful response does not indicate that the parameter template is successfully applied.
 
@@ -22,7 +26,7 @@ URI
 
 PUT https://{Endpoint}/v3/{project_id}/configurations/{config_id}/apply
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameters
 
    +------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter  | Mandatory | Type   | Description                                                                                                    |
@@ -40,7 +44,7 @@ Request Parameters
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description
    ============ ========= ====== ===========
-   X-Auth-Token Yes       String User token.
+   X-Auth-Token Yes       String User token
    ============ ========= ====== ===========
 
 .. table:: **Table 3** Request body parameters
@@ -54,23 +58,23 @@ Request Parameters
 Response Parameters
 -------------------
 
-**Status code: 200**
+Status code: 200
 
 .. table:: **Table 4** Response body parameters
 
    +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
    | Parameter             | Type                  | Description                                                                                       |
    +=======================+=======================+===================================================================================================+
-   | job_id                | String                | ID of the asynchronous task that applies the parameter template.                                  |
+   | job_id                | String                | ID of an asynchronous task that applies the parameter template                                    |
    +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
    | success               | Boolean               | Whether the task for applying the parameter template is successfully submitted. The value can be: |
    |                       |                       |                                                                                                   |
-   |                       |                       | -  **true**, indicating the task is successfully submitted.                                       |
-   |                       |                       | -  **false**, indicating the task fails to be submitted.                                          |
+   |                       |                       | -  **true**: The task is successfully submitted.                                                  |
+   |                       |                       | -  **false**: The task failed to be submitted.                                                    |
    +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
 
-Example Requests
-----------------
+Example Request
+---------------
 
 -  URI example
 
@@ -86,10 +90,10 @@ Example Requests
         "instance_ids" : [ "73ea2bf70c73497f89ee0ad4ee008aa2in06" ]
       }
 
-Example Responses
------------------
+Example Response
+----------------
 
-**Status code: 200**
+Status code: 200
 
 Success
 
@@ -103,9 +107,9 @@ Success
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

@@ -13,7 +13,7 @@ This API is used to reset the administrator password of an instance.
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra instances.
 
 Abnormal instances do not support this operation.
 
@@ -24,7 +24,7 @@ URI
 
 PUT https://{Endpoint}/v3/{project_id}/instances/{instance_id}/password
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameters
 
    +-------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter   | Mandatory | Type   | Description                                                                                                    |
@@ -37,15 +37,17 @@ PUT https://{Endpoint}/v3/{project_id}/instances/{instance_id}/password
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameters
+.. table:: **Table 2** Request header parameter
 
-   ============ ========= ====== ===========
-   Parameter    Mandatory Type   Description
-   ============ ========= ====== ===========
-   X-Auth-Token Yes       String User token.
-   ============ ========= ====== ===========
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | Parameter    | Mandatory | Type   | Description                                                         |
+   +==============+===========+========+=====================================================================+
+   | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | X-Auth-Token | Yes       | String | User token.                                                         |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
 
-.. table:: **Table 3** Request body parameters
+.. table:: **Table 3** Request body parameter
 
    +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                                                                                                                                                                              |
@@ -60,12 +62,12 @@ Request Parameters
 Response Parameters
 -------------------
 
-**Status code: 204**
+Status code: 204
 
-No response parameters
+None
 
-Example Requests
-----------------
+Example Request
+---------------
 
 -  URI example
 
@@ -81,8 +83,8 @@ Example Requests
         "password" : "******"
       }
 
-Example Responses
------------------
+Example Response
+----------------
 
 **Status code: 204**
 
@@ -91,9 +93,9 @@ No Content
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

@@ -13,14 +13,14 @@ This API is used to query instances and details based on specified conditions.
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra instances.
 
 URI
 ---
 
 GET https://{Endpoint}/v3/{project_id}/instances
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameter
 
    +------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter  | Mandatory | Type   | Description                                                                                                    |
@@ -44,10 +44,12 @@ GET https://{Endpoint}/v3/{project_id}/instances
    | datastore_type  | No              | String          | Database type. The value can be:                                                                                                                                                                        |
    |                 |                 |                 |                                                                                                                                                                                                         |
    |                 |                 |                 | **cassandra**, indicating that GeminiDB Cassandra instances are queried.                                                                                                                                |
+   |                 |                 |                 |                                                                                                                                                                                                         |
+   |                 |                 |                 | If this parameter is not transferred, all database instances are queried.                                                                                                                               |
    +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | mode            | No              | String          | Instance type. The value can be:                                                                                                                                                                        |
    |                 |                 |                 |                                                                                                                                                                                                         |
-   |                 |                 |                 | **Cluster**, indicating that GeminiDB Cassandra cluster instances are queried.                                                                                                                          |
+   |                 |                 |                 | **Cluster**: GeminiDB Cassandra cluster instances                                                                                                                                                       |
    |                 |                 |                 |                                                                                                                                                                                                         |
    |                 |                 |                 | The system ignores this parameter if parameter **datastore_type** is not transferred.                                                                                                                   |
    +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,7 +75,7 @@ GET https://{Endpoint}/v3/{project_id}/instances
 Request Parameters
 ------------------
 
-.. table:: **Table 3** Request header parameters
+.. table:: **Table 3** Request header parameter
 
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description
@@ -84,7 +86,7 @@ Request Parameters
 Response Parameters
 -------------------
 
-**Status code: 200**
+Status code: 200
 
 .. table:: **Table 4** Response body parameters
 
@@ -268,8 +270,8 @@ Response Parameters
    |                       |                       | -  **false**, indicating that instance nodes cannot be deleted.                                                                                                        |
    +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Example Requests
-----------------
+Example Request
+---------------
 
 -  URI example
 
@@ -287,10 +289,10 @@ Example Requests
 
       GET https://{Endpoint}/v3/0483b6b16e954cb88930a360d2c4e663/instances?offset=0&limit=10&id=ed7cc6166ec24360a5ed5c5c9c2ed726in06&name=hy&mode={mode}&datastore_type={datastore_type}&vpc_id=19e5d45d-70fd-4a91-87e9-b27e71c9891f&subnet_id=bd51fb45-2dcb-4296-8783-8623bfe89bb7
 
-Example Responses
------------------
+Example Response
+----------------
 
-**Status code: 200**
+Status code: 200
 
 Success
 
@@ -427,9 +429,9 @@ Success
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

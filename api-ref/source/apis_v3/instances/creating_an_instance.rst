@@ -8,19 +8,21 @@ Creating an Instance
 Function
 --------
 
-This API can be used to create an instance.
+-  This API can be used to create an instance.
+-  This API is used to restore data from a specified backup to a new instance. The number of nodes of the new instance must be greater than or equal to that in the original instance, and the storage of the new instance must be greater than or equal to that of the original instance.
+-  This API is used to restore data of a specified instance at a specified point in time to a new instance. The number of nodes of the new instance must be greater than or equal to that in the original instance, and the storage of the new instance must be greater than or equal to that of the original instance.
 
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra instances.
 
 URI
 ---
 
 POST https://{Endpoint}/v3/{project_id}/instances
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameter
 
    +------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter  | Mandatory | Type   | Description                                                                                                    |
@@ -31,13 +33,15 @@ POST https://{Endpoint}/v3/{project_id}/instances
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameters
+.. table:: **Table 2** Request header parameter
 
-   ============ ========= ====== ===========
-   Parameter    Mandatory Type   Description
-   ============ ========= ====== ===========
-   X-Auth-Token Yes       String User token.
-   ============ ========= ====== ===========
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | Parameter    | Mandatory | Type   | Description                                                         |
+   +==============+===========+========+=====================================================================+
+   | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | X-Auth-Token | Yes       | String | User token.                                                         |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
 
 .. table:: **Table 3** Request body parameters
 
@@ -46,13 +50,13 @@ Request Parameters
    +=======================+=================+======================================================================+==================================================================================================================================================================================================================================================================================================================================+
    | name                  | Yes             | String                                                               | Instance name, which can be the same as an existing instance name.                                                                                                                                                                                                                                                               |
    |                       |                 |                                                                      |                                                                                                                                                                                                                                                                                                                                  |
-   |                       |                 |                                                                      | The name must start with a letter and can include 4 to 64 characters. It is case-sensitive and can contain only letters, digits, hyphens (-), and underscores (_).                                                                                                                                                               |
+   |                       |                 |                                                                      | The name can contain 4 to 64 bytes and must start with a letter. It is case-sensitive and can contain only letters, digits, hyphens (-), and underscores (_).                                                                                                                                                                    |
    +-----------------------+-----------------+----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | datastore             | Yes             | :ref:`Datastore <nosql_05_0014__request_datastore>` object           | Database information.                                                                                                                                                                                                                                                                                                            |
    +-----------------------+-----------------+----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | region                | Yes             | String                                                               | Region ID.                                                                                                                                                                                                                                                                                                                       |
    |                       |                 |                                                                      |                                                                                                                                                                                                                                                                                                                                  |
-   |                       |                 |                                                                      | The value cannot be empty. For value details, see `Regions and Endpoints <https://docs.otc.t-systems.com/en-us/endpoint/index.html>`__.                                                                                                                                                                                          |
+   |                       |                 |                                                                      | The value cannot be empty. For details, see `Regions and Endpoints <https://docs.otc.t-systems.com/en-us/endpoint/index.html>`__.                                                                                                                                                                                                |
    +-----------------------+-----------------+----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | availability_zone     | Yes             | String                                                               | AZ ID.                                                                                                                                                                                                                                                                                                                           |
    |                       |                 |                                                                      |                                                                                                                                                                                                                                                                                                                                  |
@@ -71,7 +75,7 @@ Request Parameters
    | security_group_id     | Yes             | String                                                               | Security group ID. You can obtain the security group ID with either of the following methods:                                                                                                                                                                                                                                    |
    |                       |                 |                                                                      |                                                                                                                                                                                                                                                                                                                                  |
    |                       |                 |                                                                      | -  Method 1: Log in to the VPC console. Choose **Access Control** > **Security Groups** in the navigation pane on the left. On the displayed page, click the target security group. You can view the security group ID on the displayed page.                                                                                    |
-   |                       |                 |                                                                      | -  Method 2: See section "Querying Security Groups" in the *Virtual Private Cloud API Reference*.                                                                                                                                                                                                                                |
+   |                       |                 |                                                                      | -  Method 2: See "Querying Security Groups" in *Virtual Private Cloud API Reference*.                                                                                                                                                                                                                                            |
    +-----------------------+-----------------+----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | password              | Yes             | String                                                               | Database password.                                                                                                                                                                                                                                                                                                               |
    |                       |                 |                                                                      |                                                                                                                                                                                                                                                                                                                                  |
@@ -104,6 +108,10 @@ Request Parameters
    |                       |                 |                                                                      | -  **1**, indicating that SSL is enabled by default.                                                                                                                                                                                                                                                                             |
    |                       |                 |                                                                      | -  If this parameter is not transferred, SSL is disabled by default.                                                                                                                                                                                                                                                             |
    +-----------------------+-----------------+----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | restore_info          | No              | :ref:`RestoreInfo <nosql_05_0014__table17573172501019>` object       | Backup information. You can restore data from a specific backup or instance to a specific point in time during the backup retention period.                                                                                                                                                                                      |
+   |                       |                 |                                                                      |                                                                                                                                                                                                                                                                                                                                  |
+   |                       |                 |                                                                      | You can restore data only of a GeminiDB Cassandra cluster instance to a specific point in time.                                                                                                                                                                                                                                  |
+   +-----------------------+-----------------+----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _nosql_05_0014__request_datastore:
 
@@ -114,9 +122,10 @@ Request Parameters
    +=================+=================+=================+======================================================================================================+
    | type            | Yes             | String          | Database type.                                                                                       |
    |                 |                 |                 |                                                                                                      |
+   |                 |                 |                 | -  GeminiDB Cassandra instances are supported.                                                       |
    |                 |                 |                 | -  If you set this parameter to **cassandra**, GeminiDB Cassandra instances will be created.         |
    +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------+
-   | version         | Yes             | String          | Database version. The value can be:                                                                  |
+   | version         | Yes             | String          | Database version.                                                                                    |
    |                 |                 |                 |                                                                                                      |
    |                 |                 |                 | -  **3.11**, indicating that GeminiDB Cassandra 3.11 is supported.                                   |
    +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------+
@@ -134,7 +143,7 @@ Request Parameters
    +=================+=================+=================+============================================================================================================================================+
    | num             | Yes             | String          | Number of nodes.                                                                                                                           |
    |                 |                 |                 |                                                                                                                                            |
-   |                 |                 |                 | -  Each GeminiDB Cassandra instance can contain 3 to 200 nodes.                                                                            |
+   |                 |                 |                 | -  Each GeminiDB Cassandra instance can run on 3 to 200 nodes.                                                                             |
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | size            | Yes             | String          | Storage space. It must be an integer, in GB.                                                                                               |
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -171,12 +180,32 @@ Request Parameters
    |                 |                 |                 | -  If this parameter is not transferred, the automated backup policy is enabled by default. Backup files are stored for 7 days by default. |
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. _nosql_05_0014__table17573172501019:
+
+.. table:: **Table 7** RestoreInfo
+
+   +--------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter          | Mandatory       | Type            | Description                                                                                                                                                                                                                                                                                                   |
+   +====================+=================+=================+===============================================================================================================================================================================================================================================================================================================+
+   | backup_id          | No              | String          | Full backup file ID.                                                                                                                                                                                                                                                                                          |
+   |                    |                 |                 |                                                                                                                                                                                                                                                                                                               |
+   |                    |                 |                 | This parameter cannot be left blank when you create an instance to restore data using a specific backup.                                                                                                                                                                                                      |
+   +--------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | source_instance_id | No              | String          | ID of the specified instance that backup data is restored to.                                                                                                                                                                                                                                                 |
+   |                    |                 |                 |                                                                                                                                                                                                                                                                                                               |
+   |                    |                 |                 | This parameter cannot be left blank when you restore data at a specific time point from a specific instance to a new instance.                                                                                                                                                                                |
+   +--------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | restore_time       | No              | Long            | Time point that backup data is restored to.                                                                                                                                                                                                                                                                   |
+   |                    |                 |                 |                                                                                                                                                                                                                                                                                                               |
+   |                    |                 |                 | This parameter cannot be left blank when you restore data at a specific point in time from a specific instance to a new instance. The value is a 13-digit number in milliseconds (UTC). You can query the value by following :ref:`Querying the Time Window When a Backup Can Be Restored <listrestoretime>`. |
+   +--------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Response Parameters
 -------------------
 
-**Status code: 202**
+Status code: 202
 
-.. table:: **Table 7** Response body parameters
+.. table:: **Table 8** Response body parameters
 
    +-------------------+-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
    | Parameter         | Type                                                                  | Description                                                                                        |
@@ -214,16 +243,17 @@ Response Parameters
 
 .. _nosql_05_0014__response_datastore:
 
-.. table:: **Table 8** Datastore
+.. table:: **Table 9** Datastore
 
    +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------+
    | Parameter             | Type                  | Description                                                                                          |
    +=======================+=======================+======================================================================================================+
    | type                  | String                | Database type.                                                                                       |
    |                       |                       |                                                                                                      |
+   |                       |                       | -  GeminiDB Cassandra instances are supported.                                                       |
    |                       |                       | -  If you set this parameter to **cassandra**, GeminiDB Cassandra instances will be created.         |
    +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------+
-   | version               | String                | Database version. The value can be:                                                                  |
+   | version               | String                | Database version.                                                                                    |
    |                       |                       |                                                                                                      |
    |                       |                       | -  **3.11**, indicating that GeminiDB Cassandra 3.11 is supported.                                   |
    +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------+
@@ -234,14 +264,14 @@ Response Parameters
 
 .. _nosql_05_0014__response_flavor:
 
-.. table:: **Table 9** Flavor
+.. table:: **Table 10** Flavor
 
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter             | Type                  | Description                                                                                                                                |
    +=======================+=======================+============================================================================================================================================+
    | num                   | String                | Number of nodes.                                                                                                                           |
    |                       |                       |                                                                                                                                            |
-   |                       |                       | -  Each GeminiDB Cassandra instance can contain 3 to 200 nodes.                                                                            |
+   |                       |                       | -  Each GeminiDB Cassandra instance can run on 3 to 200 nodes.                                                                             |
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | size                  | String                | Storage space. It must be an integer, in GB.                                                                                               |
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -256,7 +286,7 @@ Response Parameters
 
 .. _nosql_05_0014__response_backupstrategy:
 
-.. table:: **Table 10** BackupStrategy
+.. table:: **Table 11** BackupStrategy
 
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter             | Type                  | Description                                                                                                                                |
@@ -278,8 +308,8 @@ Response Parameters
    |                       |                       | -  If this parameter is not transferred, the automated backup policy is enabled by default. Backup files are stored for 7 days by default. |
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
-Example Requests
-----------------
+Example Request
+---------------
 
 -  URI example
 
@@ -322,10 +352,87 @@ Example Requests
         "ssl_option" : 1
       }
 
-Example Responses
------------------
+-  Creating a pay-per-use 3-node GeminiDB Cassandra instance with 16 vCPUs and 64 GB of memory based on data restored using a specific backup
 
-**Status code: 202**
+   .. note::
+
+      Values of **region** and **availability_zone** in the request body are only examples. Set them based on service requirements.
+
+   .. code-block::
+
+      {
+         "name" : "test-cassandra-01",
+         "datastore" : {
+           "type" : "cassandra",
+           "version" : "3.11",
+           "storage_engine" : "rocksDB"
+         },
+         "region" : "aaa",
+         "availability_zone" : "bbb",
+         "vpc_id" : "674e9b42-cd8d-4d25-a2e6-5abcc565b961",
+         "subnet_id" : "f1df08c5-71d1-406a-aff0-de435a51007",
+         "security_group_id" : "7aa51dbf-5b63-40db-9724-dad3c4828b58",
+         "password" : "******",
+         "mode" : "Cluster",
+         "flavor" : [ {
+           "num" : 3,
+           "storage" : "ULTRAHIGH",
+           "size" : 500,
+           "spec_code" : "geminidb.cassandra.4xlarge.4"
+         } ],
+         "backup_strategy" : {
+           "start_time" : "08:15-09:15",
+           "keep_days" : 8
+         },
+         "ssl_option" : 1,
+         "restore_info" : {
+           "backup_id" : "2f4ddb93b9014b0893d81d2e472f30fe"
+         }
+       }
+
+-  Creating a yearly/monthly 3-node GeminiDB Cassandra instance with 16 vCPUs and 64 GB of memory based on the data of a specified instance at a specified point in time
+
+   .. note::
+
+      Values of **region** and **availability_zone** in the request body are only examples. Set them based on service requirements.
+
+   .. code-block::
+
+      {
+         "name" : "test-cassandra-01",
+         "datastore" : {
+           "type" : "cassandra",
+           "version" : "3.11",
+           "storage_engine" : "rocksDB"
+         },
+         "region" : "aaa",
+         "availability_zone" : "bbb",
+         "vpc_id" : "674e9b42-cd8d-4d25-a2e6-5abcc565b961",
+         "subnet_id" : "f1df08c5-71d1-406a-aff0-de435a51007",
+         "security_group_id" : "7aa51dbf-5b63-40db-9724-dad3c4828b58",
+         "password" : "******",
+         "mode" : "Cluster",
+         "flavor" : [ {
+           "num" : 3,
+           "storage" : "ULTRAHIGH",
+           "size" : 500,
+           "spec_code" : "geminidb.cassandra.4xlarge.4"
+         } ],
+         "backup_strategy" : {
+           "start_time" : "08:15-09:15",
+           "keep_days" : 8
+         },
+         "ssl_option" : 1,
+         "restore_info" : {
+           "restore_time" : 1607731200000,
+           "source_instance_id" : "054e292c9880d4992f02c0196d3ein12"
+         }
+       }
+
+Example Response
+----------------
+
+Status code: 202
 
 Accepted
 
@@ -364,9 +471,9 @@ Accepted
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

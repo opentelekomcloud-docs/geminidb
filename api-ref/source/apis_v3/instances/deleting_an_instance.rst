@@ -13,14 +13,14 @@ This API is used to delete an instance. Only pay-per-use instances can be delete
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra instances.
 
 URI
 ---
 
 DELETE https://{Endpoint}/v3/{project_id}/instances/{instance_id}
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameters
 
    +-------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter   | Mandatory | Type   | Description                                                                                                    |
@@ -33,7 +33,7 @@ DELETE https://{Endpoint}/v3/{project_id}/instances/{instance_id}
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameters
+.. table:: **Table 2** Request header parameter
 
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description
@@ -54,8 +54,8 @@ Response Parameters
    job_id    String Task ID.
    ========= ====== ===========
 
-Example Requests
-----------------
+Example Request
+---------------
 
 URI example
 
@@ -63,8 +63,8 @@ URI example
 
    DELETE https://{Endpoint}/v3/375d8d8fad1f43039e23d3b6c0f60a19/instances/9136fd2a9fcd405ea4674276ce36dae8in02
 
-Example Responses
------------------
+Example Response
+----------------
 
 **Status code: 202**
 
@@ -79,9 +79,9 @@ Accepted
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.
