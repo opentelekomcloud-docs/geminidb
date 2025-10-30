@@ -13,7 +13,7 @@ This API is used to change the security group associated with an instance.
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra instances.
 
 Abnormal instances do not support this operation.
 
@@ -24,7 +24,7 @@ URI
 
 PUT https://{Endpoint}/v3/{project_id}/instances/{instance_id}/security-group
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameters
 
    +-------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter   | Mandatory | Type   | Description                                                                                                    |
@@ -37,15 +37,17 @@ PUT https://{Endpoint}/v3/{project_id}/instances/{instance_id}/security-group
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameters
+.. table:: **Table 2** Request header parameter
 
-   ============ ========= ====== ===========
-   Parameter    Mandatory Type   Description
-   ============ ========= ====== ===========
-   X-Auth-Token Yes       String User token.
-   ============ ========= ====== ===========
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | Parameter    | Mandatory | Type   | Description                                                         |
+   +==============+===========+========+=====================================================================+
+   | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | X-Auth-Token | Yes       | String | User token.                                                         |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
 
-.. table:: **Table 3** Request body parameters
+.. table:: **Table 3** Request body parameter
 
    ================= ========= ====== =============================
    Parameter         Mandatory Type   Description
@@ -58,7 +60,7 @@ Response Parameters
 
 **Status code: 202**
 
-.. table:: **Table 4** Response body parameters
+.. table:: **Table 4** Response body parameter
 
    ========= ====== ===========
    Parameter Type   Description
@@ -66,8 +68,8 @@ Response Parameters
    job_id    String Task ID.
    ========= ====== ===========
 
-Example Requests
-----------------
+Example Request
+---------------
 
 -  URI example
 
@@ -83,8 +85,8 @@ Example Requests
         "security_group_id" : "73bed21a-708b-4985-b697-a96d0e0d2b39"
       }
 
-Example Responses
------------------
+Example Response
+----------------
 
 **Status code: 202**
 
@@ -99,9 +101,9 @@ No Content
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

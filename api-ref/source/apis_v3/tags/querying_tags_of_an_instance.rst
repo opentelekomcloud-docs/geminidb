@@ -13,7 +13,7 @@ This API is used to query tags of a specified instance.
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra instances.
 
 A maximum of 20 tags can be added to a DB instance. The tag key must be unique.
 
@@ -22,7 +22,7 @@ URI
 
 GET https://{Endpoint}/v3/{project_id}/instances/{instance_id}/tags
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameters
 
    +-------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter   | Mandatory | Type   | Description                                                                                                    |
@@ -35,7 +35,7 @@ GET https://{Endpoint}/v3/{project_id}/instances/{instance_id}/tags
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameters
+.. table:: **Table 2** Request header parameter
 
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description
@@ -46,9 +46,9 @@ Request Parameters
 Response Parameters
 -------------------
 
-**Status code: 200**
+Status code: 200
 
-.. table:: **Table 3** Response body parameters
+.. table:: **Table 3** Response body parameter
 
    +-----------+----------------------------------------------------------------------------------------------------+-----------------------+
    | Parameter | Type                                                                                               | Description           |
@@ -72,8 +72,8 @@ Response Parameters
    |                       |                       | It is case-sensitive and can contain digits, letters, underscores (_), and hyphens (-).             |
    +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------+
 
-Example Requests
-----------------
+Example Request
+---------------
 
 URI example
 
@@ -81,10 +81,10 @@ URI example
 
    GET https://{Endpoint}/v3/375d8d8fad1f43039e23d3b6c0f60a19/instances/9136fd2a9fcd405ea4674276ce36dae8in02/tags
 
-Example Responses
------------------
+Example Response
+----------------
 
-**Status code: 200**
+Status code: 200
 
 Success
 
@@ -103,9 +103,9 @@ Success
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

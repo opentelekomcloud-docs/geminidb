@@ -23,7 +23,7 @@ Similar to a request, a response also has a header, for example, **Content-Type*
 
 .. _nosql_05_0010__en-us_topic_0170155703_fig4865141011511:
 
-.. figure:: /_static/images/en-us_image_0000001355018024.png
+.. figure:: /_static/images/en-us_image_0000002192228076.png
    :alt: **Figure 1** Response header for the API used to obtain a user token
 
    **Figure 1** Response header for the API used to obtain a user token

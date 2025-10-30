@@ -32,7 +32,7 @@ URI
 
 PUT https://{Endpoint}/v3/{project_id}/instances/{instance_id}/resize
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameters
 
    +-------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter   | Mandatory | Type   | Description                                                                                                    |
@@ -45,13 +45,15 @@ PUT https://{Endpoint}/v3/{project_id}/instances/{instance_id}/resize
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameters
+.. table:: **Table 2** Request header parameter
 
-   ============ ========= ====== ===========
-   Parameter    Mandatory Type   Description
-   ============ ========= ====== ===========
-   X-Auth-Token Yes       String User token.
-   ============ ========= ====== ===========
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | Parameter    | Mandatory | Type   | Description                                                         |
+   +==============+===========+========+=====================================================================+
+   | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | X-Auth-Token | Yes       | String | User token.                                                         |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
 
 .. table:: **Table 3** Request body parameters
 
@@ -86,8 +88,8 @@ Response Parameters
    job_id    String Task ID.
    ========= ====== ===========
 
-Example Requests
-----------------
+Example Request
+---------------
 
 -  URI example
 
@@ -95,7 +97,7 @@ Example Requests
 
       PUT https://{Endpoint}/v3/375d8d8fad1f43039e23d3b6c0f60a19/instances/9136fd2a9fcd405ea4674276ce36dae8in06/resize
 
--  Changing instance specifications to 16 vCPUs \| 64 GB
+-  Changing instance specifications to 16 vCPUs and 64 GB
 
    .. code-block::
 
@@ -105,8 +107,8 @@ Example Requests
         }
       }
 
-Example Responses
------------------
+Example Response
+----------------
 
 **Status code: 202**
 
@@ -121,9 +123,9 @@ Accepted
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

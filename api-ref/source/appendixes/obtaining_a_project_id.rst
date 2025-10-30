@@ -64,7 +64,7 @@ Obtaining a Project ID from the Console
    On the **Projects** tab page, view project IDs.
 
 
-   .. figure:: /_static/images/en-us_image_0000001354858484.jpg
+   .. figure:: /_static/images/en-us_image_0000002192387692.jpg
       :alt: **Figure 1** Viewing project IDs
 
       **Figure 1** Viewing project IDs

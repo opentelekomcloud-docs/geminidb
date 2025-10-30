@@ -13,7 +13,7 @@ This API is used to modify parameters of a specified instance.
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra instances.
 
 For configuration item **values**, you can enter system-defined parameters that allow for modification.
 
@@ -22,9 +22,9 @@ This API is an asynchronous API. A successful response does not indicate that th
 URI
 ---
 
-PUT https://{Endpoint}/v3/{project_id}/instances/{instance_id}/configurations
+PUT https://{Endpoint}/v3.1/{project_id}/instances/{instance_id}/configurations
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameters
 
    +-------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter   | Mandatory | Type   | Description                                                                                                    |
@@ -37,15 +37,17 @@ PUT https://{Endpoint}/v3/{project_id}/instances/{instance_id}/configurations
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameters
+.. table:: **Table 2** Request header parameter
 
-   ============ ========= ====== ===========
-   Parameter    Mandatory Type   Description
-   ============ ========= ====== ===========
-   X-Auth-Token Yes       String User token.
-   ============ ========= ====== ===========
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | Parameter    | Mandatory | Type   | Description                                                         |
+   +==============+===========+========+=====================================================================+
+   | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | X-Auth-Token | Yes       | String | User token.                                                         |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
 
-.. table:: **Table 3** Request body parameters
+.. table:: **Table 3** Request body parameter
 
    +-----------+-----------+--------------------+--------------------------------------------------------------------------+
    | Parameter | Mandatory | Type               | Description                                                              |
@@ -56,7 +58,7 @@ Request Parameters
 Response Parameters
 -------------------
 
-**Status code: 200**
+Status code: 202
 
 .. table:: **Table 4** Response body parameters
 
@@ -71,14 +73,14 @@ Response Parameters
    |                       |                       | -  **false**, indicating that the instance does not need to be restarted. |
    +-----------------------+-----------------------+---------------------------------------------------------------------------+
 
-Example Requests
-----------------
+Example Request
+---------------
 
 -  URI example
 
    .. code-block:: text
 
-      PUT https://{Endpoint}/v3/054e292c9880d4992f02c0196d3ea468/instances/392850e624504e1490901d50b585a60din06/configurations
+      PUT https://{Endpoint}/v3.1/054e292c9880d4992f02c0196d3ea468/instances/392850e624504e1490901d50b585a60din06/configurations
 
 -  Modifying Parameters of a Specified Instance
 
@@ -90,10 +92,10 @@ Example Requests
         }
       }
 
-Example Responses
------------------
+Example Response
+----------------
 
-**Status code: 200**
+Status code: 202
 
 Success
 
@@ -107,9 +109,9 @@ Success
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.
