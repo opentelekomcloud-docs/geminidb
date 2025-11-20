@@ -13,14 +13,14 @@ This API is used to query all instance specifications under a specified conditio
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra instances.
 
 URI
 ---
 
 GET https://{Endpoint}/v3.1/{project_id}/flavors
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameter
 
    +------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter  | Mandatory | Type   | Description                                                                                                    |
@@ -30,29 +30,29 @@ GET https://{Endpoint}/v3.1/{project_id}/flavors
 
 .. table:: **Table 2** Query parameters
 
-   +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter       | Mandatory       | Type            | Description                                                                                                                                                                                                              |
-   +=================+=================+=================+==========================================================================================================================================================================================================================+
-   | engine_name     | No              | String          | Database type. The value can be:                                                                                                                                                                                         |
-   |                 |                 |                 |                                                                                                                                                                                                                          |
-   |                 |                 |                 | -  **cassandra**, indicating that the instances are of the GeminiDB Cassandra type.                                                                                                                                      |
-   |                 |                 |                 | -  If this parameter is not transferred, the default value is **cassandra**.                                                                                                                                             |
-   +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | offset          | No              | Integer         | Index offset.                                                                                                                                                                                                            |
-   |                 |                 |                 |                                                                                                                                                                                                                          |
-   |                 |                 |                 | -  If **offset** is set to *N*, the resource query starts from the N+1 piece of data. If **action** is set to **filter**, **offset** is **0** by default, indicating that the query starts from the first piece of data. |
-   |                 |                 |                 | -  The **offset** value must be a number but cannot be a negative number.                                                                                                                                                |
-   +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | limit           | No              | Integer         | Maximum of specifications that can be queried                                                                                                                                                                            |
-   |                 |                 |                 |                                                                                                                                                                                                                          |
-   |                 |                 |                 | -  The value ranges from **1** to **100**.                                                                                                                                                                               |
-   |                 |                 |                 | -  If this parameter is not transferred, the first 100 pieces of specification information is queried by default.                                                                                                        |
-   +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                                                                                                                                      |
+   +=================+=================+=================+==================================================================================================================================================================================+
+   | engine_name     | No              | String          | Database type.                                                                                                                                                                   |
+   |                 |                 |                 |                                                                                                                                                                                  |
+   |                 |                 |                 | -  **cassandra**: GeminiDB Cassandra instance specifications are queried.                                                                                                        |
+   |                 |                 |                 | -  If this parameter is not transferred, the default value is **cassandra**.                                                                                                     |
+   +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | offset          | No              | Integer         | Index offset.                                                                                                                                                                    |
+   |                 |                 |                 |                                                                                                                                                                                  |
+   |                 |                 |                 | -  If **offset** is set to *N*, the query starts from the *N*\ +1 piece of data. The default value is **0**, which indicates that the query starts from the first piece of data. |
+   |                 |                 |                 | -  The value must be a non-negative number.                                                                                                                                      |
+   +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | limit           | No              | Integer         | Maximum of specifications that can be queried                                                                                                                                    |
+   |                 |                 |                 |                                                                                                                                                                                  |
+   |                 |                 |                 | -  The value ranges from **1** to **100**.                                                                                                                                       |
+   |                 |                 |                 | -  If this parameter is not transferred, the first 100 pieces of specification information can be queried by default.                                                            |
+   +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Request Parameters
 ------------------
 
-.. table:: **Table 3** Request header parameters
+.. table:: **Table 3** Request header parameter
 
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description
@@ -63,7 +63,7 @@ Request Parameters
 Response Parameters
 -------------------
 
-**Status code: 200**
+Status code: 200
 
 .. table:: **Table 4** Response body parameters
 
@@ -86,9 +86,9 @@ Response Parameters
    +-----------------------+-----------------------+---------------------------------------------------------------------------------------+
    | engine_version        | String                | API version.                                                                          |
    +-----------------------+-----------------------+---------------------------------------------------------------------------------------+
-   | vcpus                 | String                | Number of vCPUs                                                                       |
+   | vcpus                 | String                | CPU cores                                                                             |
    +-----------------------+-----------------------+---------------------------------------------------------------------------------------+
-   | ram                   | String                | Memory size in megabytes (MB)                                                         |
+   | ram                   | String                | Memory size (MB)                                                                      |
    +-----------------------+-----------------------+---------------------------------------------------------------------------------------+
    | spec_code             | String                | Resource specification code.                                                          |
    |                       |                       |                                                                                       |
@@ -112,8 +112,8 @@ Response Parameters
    |                       |                       | -  **sellout**, indicating that the specifications are sold out.                      |
    +-----------------------+-----------------------+---------------------------------------------------------------------------------------+
 
-Example Requests
-----------------
+Example Request
+---------------
 
 URI example
 
@@ -121,12 +121,12 @@ URI example
 
    GET https://{Endpoint}/v3.1/375d8d8fad1f43039e23d3b6c0f60a19/flavors?engine_name=cassandra&offset=0&limit=10
 
-Example Responses
------------------
+Example Response
+----------------
 
-**Status code: 200**
+Status code: 200
 
-Success
+Successful request
 
 .. code-block::
 
@@ -182,9 +182,9 @@ Success
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

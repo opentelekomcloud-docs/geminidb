@@ -13,7 +13,7 @@ This API is used to create a parameter template and configure the name, descript
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra instances.
 
 The new parameter template cannot have the same name as any existing parameter template.
 
@@ -24,7 +24,7 @@ URI
 
 POST https://{Endpoint}/v3/{project_id}/configurations
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameter
 
    +------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter  | Mandatory | Type   | Description                                                                                                    |
@@ -35,13 +35,15 @@ POST https://{Endpoint}/v3/{project_id}/configurations
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameters
+.. table:: **Table 2** Request header parameter
 
-   ============ ========= ====== ===========
-   Parameter    Mandatory Type   Description
-   ============ ========= ====== ===========
-   X-Auth-Token Yes       String User token.
-   ============ ========= ====== ===========
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | Parameter    | Mandatory | Type   | Description                                                         |
+   +==============+===========+========+=====================================================================+
+   | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | X-Auth-Token | Yes       | String | User token.                                                         |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
 
 .. table:: **Table 3** Request body parameters
 
@@ -61,24 +63,24 @@ Request Parameters
 
 .. table:: **Table 4** ConfigurationDatastoreOption
 
-   +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------+
-   | Parameter       | Mandatory       | Type            | Description                                                                      |
-   +=================+=================+=================+==================================================================================+
-   | type            | Yes             | String          | Database type. The value can be:                                                 |
-   |                 |                 |                 |                                                                                  |
-   |                 |                 |                 | **cassandra**, indicating that the instances are of the GeminiDB Cassandra type. |
-   +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------+
-   | version         | Yes             | String          | Database version. The value can be:                                              |
-   |                 |                 |                 |                                                                                  |
-   |                 |                 |                 | **3.11**, indicating that GeminiDB Cassandra 3.11 is supported.                  |
-   +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------+
+   +-----------------+-----------------+-----------------+-----------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                     |
+   +=================+=================+=================+=================================================================+
+   | type            | Yes             | String          | Database type. The value can be:                                |
+   |                 |                 |                 |                                                                 |
+   |                 |                 |                 | **cassandra**: GeminiDB Cassandra instance                      |
+   +-----------------+-----------------+-----------------+-----------------------------------------------------------------+
+   | version         | Yes             | String          | Database version. The value can be:                             |
+   |                 |                 |                 |                                                                 |
+   |                 |                 |                 | **3.11**, indicating that GeminiDB Cassandra 3.11 is supported. |
+   +-----------------+-----------------+-----------------+-----------------------------------------------------------------+
 
 Response Parameters
 -------------------
 
-**Status code: 200**
+Status code: 200
 
-.. table:: **Table 5** Response body parameters
+.. table:: **Table 5** Response body parameter
 
    +---------------+---------------------------------------------------------------------------------+---------------------------------+
    | Parameter     | Type                                                                            | Description                     |
@@ -112,8 +114,8 @@ Response Parameters
    |                        |                       | **T** is the separator between calendar and hourly notation of time. **Z** indicates the time zone offset. |
    +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
 
-Example Requests
-----------------
+Example Request
+---------------
 
 -  URI example
 
@@ -138,10 +140,10 @@ Example Requests
         }
       }
 
-Example Responses
------------------
+Example Response
+----------------
 
-**Status code: 200**
+Status code: 200
 
 Success
 
@@ -162,9 +164,9 @@ Success
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

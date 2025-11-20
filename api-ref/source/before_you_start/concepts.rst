@@ -28,7 +28,7 @@ Concepts
    A project corresponds to a region. Projects group and isolate resources (including compute, storage, and network resources) across physical regions. Users can be granted permissions in a default project to access all resources in the region associated with the project. If you need more refined access control, create subprojects under a default project and create resources in subprojects. Then you can assign users the permissions required to access only the resources in specific subprojects.
 
 
-   .. figure:: /_static/images/en-us_image_0000001354698252.png
+   .. figure:: /_static/images/en-us_image_0000002227713545.png
       :alt: **Figure 1** Project isolating model
 
       **Figure 1** Project isolating model

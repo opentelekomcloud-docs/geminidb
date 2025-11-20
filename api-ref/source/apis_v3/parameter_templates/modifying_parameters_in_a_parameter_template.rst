@@ -13,7 +13,7 @@ This API is used to modify parameters in a specified parameter template, includi
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra instances.
 
 The modified parameter template name must be different from the name of any existing or default parameter template.
 
@@ -26,7 +26,7 @@ URI
 
 PUT https://{Endpoint}/v3/{project_id}/configurations/{config_id}
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameters
 
    +------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter  | Mandatory | Type   | Description                                                                                                    |
@@ -39,13 +39,15 @@ PUT https://{Endpoint}/v3/{project_id}/configurations/{config_id}
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameters
+.. table:: **Table 2** Request header parameter
 
-   ============ ========= ====== ===========
-   Parameter    Mandatory Type   Description
-   ============ ========= ====== ===========
-   X-Auth-Token Yes       String User token.
-   ============ ========= ====== ===========
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | Parameter    | Mandatory | Type   | Description                                                         |
+   +==============+===========+========+=====================================================================+
+   | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
+   | X-Auth-Token | Yes       | String | User token.                                                         |
+   +--------------+-----------+--------+---------------------------------------------------------------------+
 
 .. table:: **Table 3** Request body parameters
 
@@ -62,12 +64,12 @@ Request Parameters
 Response Parameters
 -------------------
 
-**Status code: 200**
+Status code: 200
 
-No response parameters
+None
 
-Example Requests
-----------------
+Example Request
+---------------
 
 -  URI example
 
@@ -91,17 +93,17 @@ Example Requests
         }
       }
 
-Example Responses
------------------
+Example Response
+----------------
 
 None
 
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.
