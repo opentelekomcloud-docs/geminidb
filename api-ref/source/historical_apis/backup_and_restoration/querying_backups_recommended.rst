@@ -83,7 +83,7 @@ Request Parameters
 Response Parameters
 -------------------
 
-Status code: 200
+Status code: 202
 
 .. table:: **Table 4** Response body parameters
 
