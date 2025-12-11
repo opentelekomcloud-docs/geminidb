@@ -13,14 +13,14 @@ This API is used to query version information of a specified API.
 URI
 ---
 
-GET https://{Endpoint}/{versionId}
+GET https://{Endpoint}/{version}
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameters
 
    ========= ========= ====== ===========
    Parameter Mandatory Type   Description
    ========= ========= ====== ===========
-   versionId Yes       String API version
+   version   Yes       String API version
    ========= ========= ====== ===========
 
 Request Parameters
@@ -90,12 +90,12 @@ URI example
 
    GET https://{Endpoint}/v3
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 **Status code: 200**
 
-Success
+Successful response
 
 .. code-block::
 
@@ -113,9 +113,9 @@ Success
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

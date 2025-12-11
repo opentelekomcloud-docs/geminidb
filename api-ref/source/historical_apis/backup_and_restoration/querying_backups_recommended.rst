@@ -17,7 +17,7 @@ URI
 
 GET https://{Endpoint}/v3.1/{project_id}/backups
 
-.. table:: **Table 1** URI parameter
+.. table:: **Table 1** URI parameters
 
    +------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter  | Mandatory | Type   | Description                                                                                                    |
@@ -83,7 +83,7 @@ Request Parameters
 Response Parameters
 -------------------
 
-Status code: 202
+**Status code: 202**
 
 .. table:: **Table 4** Response body parameters
 
@@ -163,8 +163,8 @@ Status code: 202
    |                       |                       | -  If this parameter is not empty, table names are queried. |
    +-----------------------+-----------------------+-------------------------------------------------------------+
 
-Example Request
----------------
+Example Requests
+----------------
 
 -  URI example
 
@@ -177,12 +177,12 @@ Example Request
 
    None
 
-Example Response
-----------------
+Example Responses
+-----------------
 
-Status code: 200
+**Status code: 200**
 
-Successful request
+Successful response
 
 .. code-block::
 
