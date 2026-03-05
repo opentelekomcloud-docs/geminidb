@@ -17,15 +17,15 @@ Procedure
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. In the navigation pane on the left, click **Parameter Template Management**.
+#. In the navigation pane, choose **Parameter Templates**.
 
-#. On the **Parameter Template Management** page, click the **Custom Templates** tab. Locate the target parameter template and click **Replicate** in the **Operation** column.
+#. On the **Parameter Templates** page, click the **Custom Templates** tab. Locate the target parameter template and click **Replicate** in the **Operation** column.
 
-   Alternatively, click the target DB instance on the **Instance Management** page. On the **Parameters** page, click **Export** to generate a new parameter template for future use.
+   You can also click the target instance on the **Instances** page. On the **Parameters** page, click **Export** to generate a new parameter template for future use.
 
 #. In the displayed dialog box, enter the parameter template name and description and click **OK**.
 
    -  The template name can be up to 64 characters long. It can contain only uppercase letters, lowercase letters, numbers, hyphens (-), underscores (_), and periods (.).
    -  The description contains a maximum of 256 characters and cannot include line breaks or the following special characters: >!<"&'=
 
-   After the parameter template is replicated, a new template is generated in the list on the **Parameter Template Management** page.
+   After the replication, a new template is generated in the list.

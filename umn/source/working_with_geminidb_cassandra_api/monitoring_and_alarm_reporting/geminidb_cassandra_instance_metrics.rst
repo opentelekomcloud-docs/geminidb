@@ -21,7 +21,7 @@ Metrics
 .. table:: **Table 1** Metrics
 
    +----------------------------------------+--------------------------------------------+-------------------------------------------------------------------------------+-------------+----------------------------------------------------+--------------------------------+
-   | Metric                                 | Name                                       | Description                                                                   | Value Range | Monitored Object                                   | Monitoring Interval (Raw Data) |
+   | Metric ID                              | Name                                       | Description                                                                   | Value Range | Monitored Object                                   | Monitoring Interval (Raw Data) |
    +========================================+============================================+===============================================================================+=============+====================================================+================================+
    | nosql005_disk_usage                    | Storage Space Usage                        | Storage space usage of the monitored object                                   | 0-100       | Measured object: ECS                               | 1 minute                       |
    |                                        |                                            |                                                                               |             |                                                    |                                |

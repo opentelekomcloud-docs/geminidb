@@ -15,7 +15,7 @@ Procedure
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. In the navigation pane on the left, click **Parameter Template Management**.
+#. In the navigation pane, choose **Parameter Templates**.
 
 #. On the **Parameter Templates** page, perform the following operations based on the template type:
 
