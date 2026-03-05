@@ -30,4 +30,4 @@ Procedure
 #. In the displayed dialog box, set required parameters.
 #. Click **OK**.
 
-.. |image1| image:: /_static/images/en-us_image_0000001861844977.png
+.. |image1| image:: /_static/images/en-us_image_0000002450993685.png

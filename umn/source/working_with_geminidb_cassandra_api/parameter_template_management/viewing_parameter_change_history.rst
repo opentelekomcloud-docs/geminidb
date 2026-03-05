@@ -5,8 +5,8 @@
 Viewing Parameter Change History
 ================================
 
-**Scenarios**
--------------
+Scenarios
+---------
 
 You can view the change history of a parameter template.
 
@@ -19,7 +19,7 @@ Viewing Change History of a Custom Parameter Template
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. In the navigation pane on the left, choose **Parameter Template Management**. On the **Custom Templates** page, click the parameter template you wish to view.
+#. In the navigation pane, choose **Parameter Templates**. On the **Custom Templates** tab, click the target parameter template.
 
 #. In the navigation pane on the left, choose **Change History**. Then, view the parameter name, original parameter value, new parameter value, modification status, and modification time.
 
@@ -29,5 +29,5 @@ Viewing Change History of DB Instance Parameters
 ------------------------------------------------
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
-#. On the **Instance Management** page, click the target DB instance. The **Basic Information** page is displayed.
+#. On the **Instances** page, click the instance name. The **Basic Information** page is displayed.
 #. In the navigation pane on the left, click **Parameters**. On the **Change History** tab, view the parameter name, original parameter value, new parameter value, modification status, and modification time.

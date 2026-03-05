@@ -14,6 +14,6 @@ Procedure
 ---------
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
-#. In the navigation pane on the left, click **Parameter Template Management**.
-#. On the **Parameter Template Management** page, click the **Custom Templates** tab. Locate the target parameter template and choose **More** > **Reset** in the **Operation** column.
+#. In the navigation pane, choose **Parameter Templates**.
+#. On the **Parameter Templates** page, click the **Custom Templates** tab. Locate the target parameter template and choose **More** > **Reset** in the **Operation** column.
 #. Click **Yes** to reset the parameter template.

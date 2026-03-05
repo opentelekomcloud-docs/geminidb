@@ -19,17 +19,17 @@ Procedure
 
    **Method 1**
 
-   a. On the **Instance Management** page, click the target DB instance.
+   a. On the **Instances** page, click the target instance.
    b. On the **Backups & Restorations** page, locate the target backup and click **Restore**.
 
    **Method 2**
 
-   On the **Backup Management** page, locate the target backup and click **Restore**.
+   On the **Backups** page, locate the target backup and click **Restore**.
 
 #. In the displayed dialog box, confirm the current instance details and restoration method and click **OK**.
 
    -  The default API type and DB engine version are the same as those of the original instance and cannot be changed.
-   -  The system automatically calculates the minimum storage space required for restoring the new instance based on the size of the selected backup file. The storage space must be an integer multiple of 1.
+   -  The system automatically calculates the minimum storage space required for restoring the new instance based on the size of the selected backup file. The storage space must be an integer multiple of 1 GB.
    -  You need to set a new administrator password.
 
    -  To modify other parameters, see the description of creating DB instances of other DB engines in the *Getting Started*.
@@ -40,4 +40,4 @@ Procedure
 
    After the restoration, the system will perform a full backup.
 
-   The new DB instance is independent from the original one.
+   The new DB instance is independent of the original one.

@@ -18,9 +18,9 @@ Modifying Parameters in Custom Parameter Template
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. In the navigation pane on the left, choose **Parameter Template Management**.
+#. In the navigation pane, choose **Parameter Templates**.
 
-#. In the navigation pane on the left, choose **Parameter Template Management**. On the **Custom Templates** tab, click the parameter template you wish to modify.
+#. On the **Custom Templates** tab, click the target parameter template.
 
 #. Change parameter values as required.
 
@@ -42,7 +42,7 @@ Modifying Parameters of a Specified DB Instance
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. In the navigation pane on the left, choose **Instance Management**. On the displayed page, click the target DB instance.
+#. In the navigation pane, choose **Instances**. Click the target instance. The **Basic Information** page is displayed.
 
 #. In the navigation pane on the left, choose **Parameters**. On the displayed page, modify parameters as required.
 
@@ -60,5 +60,5 @@ Modifying Parameters of a Specified DB Instance
 
       Check the value in the **Effective upon Restart** column.
 
-      -  If the value is **Yes** and the DB instance status on the **Instance Management** page is **Pending restart**, you must restart the DB instance for the modifications to take effect.
+      -  If the value is **Yes** and the instance status on the **Instances** page is **Pending restart**, restart the instance to apply the changes.
       -  If the value is **No**, the modifications take effect immediately.

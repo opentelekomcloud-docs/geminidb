@@ -82,7 +82,7 @@ Automatically Scaling Up Storage of a Single Instance
 #. In the **Storage Space** area, click **Auto Scale**.
 
 
-   .. figure:: /_static/images/en-us_image_0000002038307285.png
+   .. figure:: /_static/images/en-us_image_0000002450993601.png
       :alt: **Figure 1** Auto Scale
 
       **Figure 1** Auto Scale
@@ -90,7 +90,7 @@ Automatically Scaling Up Storage of a Single Instance
 #. Toggle on **Auto Scale** and specify the parameters below.
 
 
-   .. figure:: /_static/images/en-us_image_0000002038188189.png
+   .. figure:: /_static/images/en-us_image_0000002451073513.png
       :alt: **Figure 2** Configuring autoscaling
 
       **Figure 2** Configuring autoscaling
@@ -121,7 +121,7 @@ Automatically Scaling Up Storage of Multiple Instances In Batches
 #. Select instances and click **Auto Scale**.
 
 
-   .. figure:: /_static/images/en-us_image_0000002038307289.png
+   .. figure:: /_static/images/en-us_image_0000002417594544.png
       :alt: **Figure 3** Auto Scale
 
       **Figure 3** Auto Scale
@@ -129,7 +129,7 @@ Automatically Scaling Up Storage of Multiple Instances In Batches
 #. Select an instance, toggle on **Auto Scale**, and specify the parameters below.
 
 
-   .. figure:: /_static/images/en-us_image_0000002038188193.png
+   .. figure:: /_static/images/en-us_image_0000002417594536.png
       :alt: **Figure 4** Batch Auto Scale
 
       **Figure 4** Batch Auto Scale
