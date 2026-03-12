@@ -13,7 +13,7 @@ This API is used to query the time window when a backup can be restored.
 Constraints
 -----------
 
-This API supports the following types of instances:
+This API supports the following instances:
 
 -  GeminiDB Cassandra
 
@@ -53,7 +53,7 @@ GET https://{Endpoint}/v3/{project_id}/instances/{instance_id}/backups/restorabl
 Request Parameters
 ------------------
 
-.. table:: **Table 3** Request header parameter
+.. table:: **Table 3** Request header parameters
 
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description
@@ -88,8 +88,8 @@ Response Parameters
    | end_time   | Long | End time point of the restoration time range in the UNIX timestamp format. The end time is the UTC time in milliseconds. |
    +------------+------+--------------------------------------------------------------------------------------------------------------------------+
 
-Example Request
----------------
+Example Requests
+----------------
 
 -  URI example
 
@@ -97,8 +97,8 @@ Example Request
 
       GET https://{Endpoint}/v3/054e292c9880d4992f02c0196d3ea468/instances/a4d8ea2584e047439a667703c0684119in06/backups/restorable-time-periods?start_time=2022-06-01T18:50:20+0800&end_time=2022-06-01T19:50:20+0800&offset=0&limit=1000
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 **Status code: 200**
 

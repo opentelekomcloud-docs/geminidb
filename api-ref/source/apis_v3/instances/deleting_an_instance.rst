@@ -13,7 +13,7 @@ This API is used to delete an instance. Only pay-per-use instances can be delete
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
 
 URI
 ---
@@ -33,7 +33,7 @@ DELETE https://{Endpoint}/v3/{project_id}/instances/{instance_id}
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameter
+.. table:: **Table 2** Request header parameters
 
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description

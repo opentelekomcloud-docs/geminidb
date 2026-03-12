@@ -13,9 +13,10 @@ This API is used to create a manual backup.
 Constraints
 -----------
 
-This API supports the following instance type:
+This API supports the following instances:
 
 -  GeminiDB Cassandra
+-  GeminiDB Influx
 
 URI
 ---
@@ -35,14 +36,14 @@ POST https://{Endpoint}/v3/{project_id}/instances/{instance_id}/backups
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameter
+.. table:: **Table 2** Request header parameters
 
    +--------------+-----------+--------+---------------------------------------------------------------------+
    | Parameter    | Mandatory | Type   | Description                                                         |
    +==============+===========+========+=====================================================================+
    | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
    +--------------+-----------+--------+---------------------------------------------------------------------+
-   | X-Auth-Token | Yes       | String | User token.                                                         |
+   | X-Auth-Token | Yes       | String | User token                                                          |
    +--------------+-----------+--------+---------------------------------------------------------------------+
 
 .. table:: **Table 3** Request body parameters
@@ -73,8 +74,8 @@ Response Parameters
    backup_id String Backup ID.
    ========= ====== ===========
 
-Example Request
----------------
+Example Requests
+----------------
 
 -  URI example
 
@@ -91,8 +92,8 @@ Example Request
         "description" : "manual backup"
       }
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 **Status code: 202**
 

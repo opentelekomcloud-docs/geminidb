@@ -45,7 +45,7 @@ GET https://{Endpoint}/v3.1/{project_id}/instances/{instance_id}/backups/policy
 Request Parameters
 ------------------
 
-.. table:: **Table 3** Request header parameter
+.. table:: **Table 3** Request header parameters
 
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description
@@ -58,7 +58,7 @@ Response Parameters
 
 Status code: 200
 
-.. table:: **Table 4** Response body parameter
+.. table:: **Table 4** Response body parameters
 
    +---------------+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter     | Type   | Description                                                                                                                                                       |
@@ -90,8 +90,8 @@ Status code: 200
    | period                | String                | Backup period. After a backup period is specified, data will be automatically backed up on the selected days every week. |
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------+
 
-Example Request
----------------
+Example Requests
+----------------
 
 URI example
 
@@ -99,12 +99,12 @@ URI example
 
    GET https://{Endpoint}/v3.1/375d8d8fad1f43039e23d3b6c0f60a19/instances/9136fd2a9fcd405ea4674276ce36dae8in02/backups/policy?type=Instance
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 Status code: 200
 
-Successful request
+Success
 
 Response when an automated backup policy is enabled
 

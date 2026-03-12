@@ -13,7 +13,7 @@ This API is used to create a parameter template and configure the name, descript
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
 
 The new parameter template cannot have the same name as any existing parameter template.
 
@@ -24,7 +24,7 @@ URI
 
 POST https://{Endpoint}/v3/{project_id}/configurations
 
-.. table:: **Table 1** URI parameter
+.. table:: **Table 1** URI parameters
 
    +------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter  | Mandatory | Type   | Description                                                                                                    |
@@ -35,14 +35,14 @@ POST https://{Endpoint}/v3/{project_id}/configurations
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameter
+.. table:: **Table 2** Request header parameters
 
    +--------------+-----------+--------+---------------------------------------------------------------------+
    | Parameter    | Mandatory | Type   | Description                                                         |
    +==============+===========+========+=====================================================================+
    | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
    +--------------+-----------+--------+---------------------------------------------------------------------+
-   | X-Auth-Token | Yes       | String | User token.                                                         |
+   | X-Auth-Token | Yes       | String | User token                                                          |
    +--------------+-----------+--------+---------------------------------------------------------------------+
 
 .. table:: **Table 3** Request body parameters
@@ -63,24 +63,30 @@ Request Parameters
 
 .. table:: **Table 4** ConfigurationDatastoreOption
 
-   +-----------------+-----------------+-----------------+-----------------------------------------------------------------+
-   | Parameter       | Mandatory       | Type            | Description                                                     |
-   +=================+=================+=================+=================================================================+
-   | type            | Yes             | String          | Database type. The value can be:                                |
-   |                 |                 |                 |                                                                 |
-   |                 |                 |                 | **cassandra**: GeminiDB Cassandra instance                      |
-   +-----------------+-----------------+-----------------+-----------------------------------------------------------------+
-   | version         | Yes             | String          | Database version. The value can be:                             |
-   |                 |                 |                 |                                                                 |
-   |                 |                 |                 | **3.11**, indicating that GeminiDB Cassandra 3.11 is supported. |
-   +-----------------+-----------------+-----------------+-----------------------------------------------------------------+
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                                                                                                                                                                                           |
+   +=================+=================+=================+=======================================================================================================================================================================================================================================+
+   | type            | Yes             | String          | Database type. The value can be:                                                                                                                                                                                                      |
+   |                 |                 |                 |                                                                                                                                                                                                                                       |
+   |                 |                 |                 | -  **cassandra**: GeminiDB Cassandra instance                                                                                                                                                                                         |
+   |                 |                 |                 | -  **influxdb**: GeminiDB Influx instance                                                                                                                                                                                             |
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | version         | Yes             | String          | Database version. The value can be:                                                                                                                                                                                                   |
+   |                 |                 |                 |                                                                                                                                                                                                                                       |
+   |                 |                 |                 | -  **3.11**: GeminiDB Cassandra instance 3.11                                                                                                                                                                                         |
+   |                 |                 |                 | -  **1.7**: GeminiDB Influx instance 1.7                                                                                                                                                                                              |
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | mode            | No              | String          | Instance type.                                                                                                                                                                                                                        |
+   |                 |                 |                 |                                                                                                                                                                                                                                       |
+   |                 |                 |                 | This parameter is mandatory when you create a parameter template for a GeminiDB Influx instance. The value is **CloudNativeCluster**, indicating a GeminiDB Influx cluster (performance-enhanced) instance with cloud native storage. |
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Response Parameters
 -------------------
 
 Status code: 200
 
-.. table:: **Table 5** Response body parameter
+.. table:: **Table 5** Response body parameters
 
    +---------------+---------------------------------------------------------------------------------+---------------------------------+
    | Parameter     | Type                                                                            | Description                     |
@@ -105,6 +111,10 @@ Status code: 200
    +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
    | description            | String                | Parameter template description                                                                             |
    +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
+   | mode                   | String                | Instance type.                                                                                             |
+   |                        |                       |                                                                                                            |
+   |                        |                       | **CloudNativeCluster**: GeminiDB Influx cluster (performance-enhanced) instance with cloud native storage  |
+   +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
    | created                | String                | Creation time in the yyyy-MM-ddTHH:mm:ssZ format.                                                          |
    |                        |                       |                                                                                                            |
    |                        |                       | **T** is the separator between calendar and hourly notation of time. **Z** indicates the time zone offset. |
@@ -114,8 +124,8 @@ Status code: 200
    |                        |                       | **T** is the separator between calendar and hourly notation of time. **Z** indicates the time zone offset. |
    +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
 
-Example Request
----------------
+Example Requests
+----------------
 
 -  URI example
 
@@ -140,26 +150,60 @@ Example Request
         }
       }
 
-Example Response
-----------------
+-  Creating a parameter template for GeminiDB Influx instances
 
-Status code: 200
+   .. code-block::
+
+      {
+        "name" : "configuration_test2",
+        "description" : "configuration_test2",
+        "datastore" : {
+          "type" : "influxdb",
+          "mode":"CloudNativeCluster",
+          "version" : "1.8"
+        }
+      }
+
+Example Responses
+-----------------
+
+**Status code**: **200**
 
 Success
 
-.. code-block::
+-  Example response for a GeminiDB Cassandra instance:
 
-   {
-     "configuration" : {
-       "id" : "463b4b58d0e84e2b95605dea4552fdpr06",
-       "name" : "configuration_test",
-       "datastore_version_name" : "3.11",
-       "datastore_name" : "cassandra",
-       "description" : "configuration_test",
-       "created" : "2020-03-09T08:27:56+0800",
-       "updated" : "2020-03-09T08:27:56+0800"
-     }
-   }
+   .. code-block::
+
+      {
+          "configuration": {
+              "id": "a2685db51a074b2893150f7d78731758pr06",
+              "name": "configuration_test23",
+              "description": "configuration_test",
+              "datastore_version_name": "3.11",
+              "datastore_name": "cassandra",
+              "mode": null,
+              "created": "2026-02-12T03:29:01+0000",
+              "updated": "2026-02-12T03:29:01+0000"
+          }
+      }
+
+-  Example response for a GeminiDB Influx instance:
+
+   .. code-block::
+
+      {
+          "configuration": {
+              "id": "e1b984b199d64c97a3c9a2e7d098da2apr13",
+              "name": "configuration_test",
+              "description": "configuration_test",
+              "datastore_version_name": "1.8",
+              "datastore_name": "influxdb",
+              "mode": "CloudNativeCluster",
+              "created": "2026-02-12T03:15:33+0000",
+              "updated": "2026-02-12T03:15:33+0000"
+          }
+      }
 
 Status Codes
 ------------

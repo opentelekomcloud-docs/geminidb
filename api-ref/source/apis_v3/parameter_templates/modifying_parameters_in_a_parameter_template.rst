@@ -13,8 +13,6 @@ This API is used to modify parameters in a specified parameter template, includi
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
-
 The modified parameter template name must be different from the name of any existing or default parameter template.
 
 Default parameter templates cannot be modified.
@@ -39,14 +37,14 @@ PUT https://{Endpoint}/v3/{project_id}/configurations/{config_id}
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameter
+.. table:: **Table 2** Request header parameters
 
    +--------------+-----------+--------+---------------------------------------------------------------------+
    | Parameter    | Mandatory | Type   | Description                                                         |
    +==============+===========+========+=====================================================================+
    | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
    +--------------+-----------+--------+---------------------------------------------------------------------+
-   | X-Auth-Token | Yes       | String | User token.                                                         |
+   | X-Auth-Token | Yes       | String | User token                                                          |
    +--------------+-----------+--------+---------------------------------------------------------------------+
 
 .. table:: **Table 3** Request body parameters
@@ -68,8 +66,8 @@ Status code: 200
 
 None
 
-Example Request
----------------
+Example Requests
+----------------
 
 -  URI example
 
@@ -93,8 +91,8 @@ Example Request
         }
       }
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 None
 

@@ -14,6 +14,7 @@ APIs v3
 -  :ref:`Logs <topic_300000006>`
 -  :ref:`Quotas <topic_300000007>`
 -  :ref:`Task Management <topic_300000016>`
+-  :ref:`Enterprise Projects <topic_300000017>`
 
 .. toctree::
    :maxdepth: 1
@@ -28,3 +29,4 @@ APIs v3
    logs/index
    quotas/index
    task_management/index
+   enterprise_projects/index

@@ -13,7 +13,7 @@ This API is used to configuring an automated backup policy.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
+This API can be used on GeminiDB Cassandra and GeminiDB Influx instances.
 
 URI
 ---
@@ -33,17 +33,17 @@ PUT https://{Endpoint}/v3/{project_id}/instances/{instance_id}/backups/policy
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameter
+.. table:: **Table 2** Request header parameters
 
    +--------------+-----------+--------+---------------------------------------------------------------------+
    | Parameter    | Mandatory | Type   | Description                                                         |
    +==============+===========+========+=====================================================================+
    | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
    +--------------+-----------+--------+---------------------------------------------------------------------+
-   | X-Auth-Token | Yes       | String | User token.                                                         |
+   | X-Auth-Token | Yes       | String | User token                                                          |
    +--------------+-----------+--------+---------------------------------------------------------------------+
 
-.. table:: **Table 3** Request body parameter
+.. table:: **Table 3** Request body parameters
 
    +---------------+-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter     | Mandatory | Type   | Description                                                                                                                                            |
@@ -86,8 +86,8 @@ Status code: 204
 
 None
 
-Example Request
----------------
+Example Requests
+----------------
 
 -  URI example
 
@@ -119,8 +119,8 @@ Example Request
         }
       }
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 **Status code: 204**
 

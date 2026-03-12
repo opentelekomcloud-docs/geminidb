@@ -13,7 +13,7 @@ This API is used to query the latest 2,000 slow query logs of an instance. Searc
 Constraints
 -----------
 
--  This API supports GeminiDB Cassandra instances.
+-  This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
 -  This API can be used to query only the latest 2000 slow query logs in a specified time range.
 
 URI
@@ -147,9 +147,9 @@ Success
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.
