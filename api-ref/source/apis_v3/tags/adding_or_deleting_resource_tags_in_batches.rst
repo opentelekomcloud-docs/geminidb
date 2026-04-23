@@ -13,7 +13,7 @@ This API is used to add tags to or delete tags from a specified DB instance in b
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
 
 A maximum of 20 tags can be added to an instance. The tag key must be unique.
 
@@ -21,7 +21,7 @@ If the request body contains duplicated keys, an error message will be reported 
 
 If the key in the request body is the same as an existing key in a specified instance, the value of the **value** parameter that corresponds to the existing key is overwritten.
 
-If the tag to be deleted does not exist, the system deems the deletion operation successful by default but does not check whether the tag key and value meets character set rules.
+If the tag to be deleted does not exist, the operation is considered successful by default. The character set of the tag is not verified during the deletion.
 
 URI
 ---
@@ -41,14 +41,14 @@ POST https://{Endpoint}/v3/{project_id}/instances/{instance_id}/tags/action
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameter
+.. table:: **Table 2** Request header parameters
 
    +--------------+-----------+--------+---------------------------------------------------------------------+
    | Parameter    | Mandatory | Type   | Description                                                         |
    +==============+===========+========+=====================================================================+
    | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
    +--------------+-----------+--------+---------------------------------------------------------------------+
-   | X-Auth-Token | Yes       | String | User token.                                                         |
+   | X-Auth-Token | Yes       | String | User token                                                          |
    +--------------+-----------+--------+---------------------------------------------------------------------+
 
 .. table:: **Table 3** Request body parameters
@@ -94,8 +94,8 @@ Response Parameters
 
 None
 
-Example Request
----------------
+Example Requests
+----------------
 
 -  URI example
 
@@ -132,8 +132,8 @@ Example Request
         } ]
       }
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 Status code: 200
 

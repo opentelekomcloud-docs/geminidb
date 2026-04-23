@@ -13,14 +13,14 @@ This API is used to query all instance specifications under a specified conditio
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
 
 URI
 ---
 
 GET https://{Endpoint}/v3.1/{project_id}/flavors
 
-.. table:: **Table 1** URI parameter
+.. table:: **Table 1** URI parameters
 
    +------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter  | Mandatory | Type   | Description                                                                                                    |
@@ -36,7 +36,13 @@ GET https://{Endpoint}/v3.1/{project_id}/flavors
    | engine_name     | No              | String          | Database type.                                                                                                                                                                   |
    |                 |                 |                 |                                                                                                                                                                                  |
    |                 |                 |                 | -  **cassandra**: GeminiDB Cassandra instance specifications are queried.                                                                                                        |
+   |                 |                 |                 | -  **influxdb**: GeminiDB Influx instance specifications are queried.                                                                                                            |
    |                 |                 |                 | -  If this parameter is not transferred, the default value is **cassandra**.                                                                                                     |
+   +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | mode            | No              | String          | Instance type                                                                                                                                                                    |
+   |                 |                 |                 |                                                                                                                                                                                  |
+   |                 |                 |                 | -  **CloudNativeCluster**: Specifications of instances with cloud native storage are queried.                                                                                    |
+   |                 |                 |                 | -  If this parameter is not transferred, the specifications of all instances with classic storage are queried.                                                                   |
    +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | offset          | No              | Integer         | Index offset.                                                                                                                                                                    |
    |                 |                 |                 |                                                                                                                                                                                  |
@@ -52,7 +58,7 @@ GET https://{Endpoint}/v3.1/{project_id}/flavors
 Request Parameters
 ------------------
 
-.. table:: **Table 3** Request header parameter
+.. table:: **Table 3** Request header parameters
 
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description
@@ -97,7 +103,6 @@ Status code: 200
    |                       |                       | .. note::                                                                             |
    |                       |                       |                                                                                       |
    |                       |                       |    -  **geminidb.cassandra** indicates the instance is a GeminiDB Cassandra instance. |
-   |                       |                       |    -  **8xlarge.4** indicates node specifications.                                    |
    +-----------------------+-----------------------+---------------------------------------------------------------------------------------+
    | availability_zone     | Array of strings      | ID of the AZ that supports the specifications                                         |
    |                       |                       |                                                                                       |
@@ -112,8 +117,8 @@ Status code: 200
    |                       |                       | -  **sellout**, indicating that the specifications are sold out.                      |
    +-----------------------+-----------------------+---------------------------------------------------------------------------------------+
 
-Example Request
----------------
+Example Requests
+----------------
 
 URI example
 
@@ -121,12 +126,12 @@ URI example
 
    GET https://{Endpoint}/v3.1/375d8d8fad1f43039e23d3b6c0f60a19/flavors?engine_name=cassandra&offset=0&limit=10
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 Status code: 200
 
-Successful request
+Success
 
 .. code-block::
 

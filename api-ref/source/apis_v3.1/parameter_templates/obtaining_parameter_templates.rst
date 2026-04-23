@@ -13,14 +13,14 @@ This API is used to obtain parameter templates, including all of the default and
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
 
 URI
 ---
 
 GET https://{Endpoint}/v3.1/{project_id}/configurations
 
-.. table:: **Table 1** URI parameter
+.. table:: **Table 1** URI parameters
 
    +------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter  | Mandatory | Type   | Description                                                                                                    |
@@ -47,15 +47,13 @@ GET https://{Endpoint}/v3.1/{project_id}/configurations
 Request Parameters
 ------------------
 
-.. table:: **Table 3** Request header parameter
+.. table:: **Table 3** Request header parameters
 
-   +--------------+-----------+--------+---------------------------------------------------------------------+
-   | Parameter    | Mandatory | Type   | Description                                                         |
-   +==============+===========+========+=====================================================================+
-   | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
-   +--------------+-----------+--------+---------------------------------------------------------------------+
-   | X-Auth-Token | Yes       | String | User token.                                                         |
-   +--------------+-----------+--------+---------------------------------------------------------------------+
+   ============ ========= ====== ===========
+   Parameter    Mandatory Type   Description
+   ============ ========= ====== ===========
+   X-Auth-Token Yes       String User token.
+   ============ ========= ====== ===========
 
 Response Parameters
 -------------------
@@ -101,7 +99,10 @@ Status code: 200
    +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
    | mode                   | String                | Instance type. The value can be:                                                                           |
    |                        |                       |                                                                                                            |
-   |                        |                       | **Cluster**, indicating that the instance is of the GeminiDB Cassandra cluster type.                       |
+   |                        |                       | -  **Cluster**: classic GeminiDB Cassandra or Influx cluster instance                                      |
+   |                        |                       | -  **CloudNativeCluster**: cloud native GeminiDB Cassandra, Influx, or Redis cluster instance              |
+   |                        |                       | -  **EnhancedCluster**: classic GeminiDB Influx cluster (performance-enhanced) instance                    |
+   |                        |                       | -  **All**: Parameter templates of instance with all storage types are queried.                            |
    +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
    | user_defined           | Boolean               | Whether the parameter template is a custom template. The value can be:                                     |
    |                        |                       |                                                                                                            |
@@ -109,8 +110,8 @@ Status code: 200
    |                        |                       | -  **true**, indicating that the parameter template is a custom template.                                  |
    +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
 
-Example Request
----------------
+Example Requests
+----------------
 
 URI example
 
@@ -118,12 +119,12 @@ URI example
 
    GET https://{Endpoint}/v3.1/375d8d8fad1f43039e23d3b6c0f60a19/configurations?offset=0&limit=10
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 Status code: 200
 
-Successful request
+Success
 
 .. code-block::
 
