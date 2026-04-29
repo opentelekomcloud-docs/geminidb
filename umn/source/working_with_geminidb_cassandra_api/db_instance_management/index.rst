@@ -15,6 +15,7 @@ DB Instance Management
 -  :ref:`Deleting Nodes <nosql_03_0004>`
 -  :ref:`Deleting DB Instances <nosql_03_0005>`
 -  :ref:`Managing Tags <nosql_03_0014>`
+-  :ref:`Recycle Bin <nosql_03_0201>`
 
 .. toctree::
    :maxdepth: 1
@@ -30,3 +31,4 @@ DB Instance Management
    deleting_nodes
    deleting_db_instances
    managing_tags
+   recycle_bin

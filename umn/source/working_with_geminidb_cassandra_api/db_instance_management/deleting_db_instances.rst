@@ -21,7 +21,7 @@ Procedure
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. On the **Instances** page, locate the instance you want to delete and choose **More** > **Delete** in the **Operation** column.
+#. On the **Instances** page, locate the target instance and choose **More** > **Delete** in the **Operation** column.
 
 #. On the displayed page, click **Yes**.
 

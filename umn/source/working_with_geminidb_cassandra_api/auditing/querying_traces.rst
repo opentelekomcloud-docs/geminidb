@@ -37,5 +37,5 @@ Procedure
 #. Click |image2| to the left of the record to be queried to extend its details.
 #. Locate a trace and click **View Trace** in the **Operation** column.
 
-.. |image1| image:: /_static/images/en-us_image_0000001815204808.png
-.. |image2| image:: /_static/images/en-us_image_0000001815045032.png
+.. |image1| image:: /_static/images/en-us_image_0000002450993409.png
+.. |image2| image:: /_static/images/en-us_image_0000002417594340.png
