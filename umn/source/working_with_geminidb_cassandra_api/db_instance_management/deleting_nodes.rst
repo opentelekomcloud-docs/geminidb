@@ -23,5 +23,5 @@ Procedure
 #. In the **Node Information** area on the **Basic Information** page, locate the node you wish to delete and click **Delete** in the **Operation** column.
 #. In the displayed dialog box, click **Yes**.
 
-   -  The status of the instance in the instance list is **Deleting node**.
+   -  The status of the instance in the instance list is **Reducing**.
    -  After the deletion, the instance status becomes **Available**.

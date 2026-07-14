@@ -2,8 +2,8 @@
 
 .. _nosql_increase_storage1:
 
-Configuring Autoscaling
-=======================
+Configuring Storage Autoscaling
+===============================
 
 You can enable autoscaling for GeminiDB Cassandra instances. When storage usage reaches the limit, autoscaling is triggered.
 
