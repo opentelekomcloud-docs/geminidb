@@ -7,8 +7,6 @@ Managing Automated Backups
 
 GeminiDB Cassandra API creates automated backups to ensure data reliability. If a database or table is maliciously or accidentally deleted, backups can help you ensure you do not lose your data.
 
-.. _nosql_03_0007__section7348925133816:
-
 Automated Backup Policy
 -----------------------
 
@@ -63,11 +61,9 @@ Disabling Automated Backup Policy
    When disabling the automated backup policy, you can decide whether to delete the automated backups by selecting **Delete automated backups**.
 
    -  If you select it, all backup files within the retention period will be deleted. No automated backups are displayed in the backup list until you enable the automated backup policy again.
-   -  If you do not select it, all backup files within the retention period will be retained, but you can still manually delete them later if needed. For details, see section :ref:`Deleting an Automated Backup <nosql_03_0007__section106721241354>`.
+   -  If you do not select it, all backup files within the retention period will be retained, but you can still manually delete them later if needed. For details, see section :ref:`Deleting an Automated Backup <nosql_dynamodb_0083__section106721241354>`.
 
    If the automated backup policy is disabled, any automated backups in progress stop immediately.
-
-.. _nosql_03_0007__section106721241354:
 
 Deleting an Automated Backup
 ----------------------------

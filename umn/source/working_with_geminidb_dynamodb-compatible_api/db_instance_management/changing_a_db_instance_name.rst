@@ -1,0 +1,45 @@
+:original_name: nosql_dynamodb_0066.html
+
+.. _nosql_dynamodb_0066:
+
+Changing a DB Instance Name
+===========================
+
+Scenarios
+---------
+
+This section describes how to change the name of a GeminiDB DynamoDB-Compatible instance.
+
+Method 1
+--------
+
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
+#. On the **Instances** page, click |image1| to the right of the instance whose name you wish to change.
+
+   -  To submit the change, click **OK**.
+
+      The new name can be the same as an existing instance name. It must start with a letter and consist of 4 to 64 characters. Only letters, digits, hyphens (-), and underscores (_) are allowed.
+
+   -  To cancel the change, click **Cancel**.
+
+#. View the results on the **Instances** page.
+
+Method 2
+--------
+
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
+#. On the **Instances** page, click the instance whose name you wish to change.
+#. In the **Instance Information** area on the **Basic Information** page, click |image2| in the **DB Instance Name** field to change the instance name.
+
+   -  To submit the change, click |image3|.
+
+      The new name can be the same as an existing instance name. It must start with a letter and consist of 4 to 64 characters. Only letters, digits, hyphens (-), and underscores (_) are allowed.
+
+   -  To cancel the change, click |image4|.
+
+#. View the results on the **Instances** page.
+
+.. |image1| image:: /_static/images/en-us_image_0000002451073417.png
+.. |image2| image:: /_static/images/en-us_image_0000002417434568.png
+.. |image3| image:: /_static/images/en-us_image_0000002450993509.png
+.. |image4| image:: /_static/images/en-us_image_0000002417434556.png
