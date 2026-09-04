@@ -13,7 +13,7 @@ This API is used to query tags of a specified instance.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
 
 A maximum of 20 tags can be added to a DB instance. The tag key must be unique.
 
@@ -35,12 +35,12 @@ GET https://{Endpoint}/v3/{project_id}/instances/{instance_id}/tags
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameter
+.. table:: **Table 2** Request header parameters
 
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description
    ============ ========= ====== ===========
-   X-Auth-Token Yes       String User token.
+   X-Auth-Token Yes       String User token
    ============ ========= ====== ===========
 
 Response Parameters
@@ -48,7 +48,7 @@ Response Parameters
 
 Status code: 200
 
-.. table:: **Table 3** Response body parameter
+.. table:: **Table 3** Response body parameters
 
    +-----------+----------------------------------------------------------------------------------------------------+-----------------------+
    | Parameter | Type                                                                                               | Description           |

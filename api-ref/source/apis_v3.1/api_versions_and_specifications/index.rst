@@ -2,8 +2,8 @@
 
 .. _nosql_12_0006:
 
-Versions and Specifications
-===========================
+API Versions and Specifications
+===============================
 
 -  :ref:`Querying Instance Specifications <nosql_instance_specification>`
 

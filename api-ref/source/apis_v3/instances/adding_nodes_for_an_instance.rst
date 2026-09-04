@@ -13,7 +13,7 @@ This API is used to add nodes for a specified instance.
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
 
 URI
 ---
@@ -33,14 +33,14 @@ POST https://{Endpoint}/v3/{project_id}/instances/{instance_id}/enlarge-node
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameter
+.. table:: **Table 2** Request header parameters
 
    +--------------+-----------+--------+---------------------------------------------------------------------+
    | Parameter    | Mandatory | Type   | Description                                                         |
    +==============+===========+========+=====================================================================+
    | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
    +--------------+-----------+--------+---------------------------------------------------------------------+
-   | X-Auth-Token | Yes       | String | User token.                                                         |
+   | X-Auth-Token | Yes       | String | User token                                                          |
    +--------------+-----------+--------+---------------------------------------------------------------------+
 
 .. table:: **Table 3** Request body parameters
@@ -70,8 +70,8 @@ Response Parameters
    job_id    String Task ID.
    ========= ====== ===========
 
-Example Request
----------------
+Example Requests
+----------------
 
 -  URI example
 
@@ -87,8 +87,8 @@ Example Request
         "num" : 1
       }
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 **Status code: 202**
 

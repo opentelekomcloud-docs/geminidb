@@ -5,7 +5,7 @@
 APIs v3.1
 =========
 
--  :ref:`Versions and Specifications <nosql_12_0006>`
+-  :ref:`API Versions and Specifications <nosql_12_0006>`
 -  :ref:`Backup and Restoration <nosql_12_0007>`
 -  :ref:`Parameter Templates <nosql_12_0008>`
 
@@ -13,6 +13,6 @@ APIs v3.1
    :maxdepth: 1
    :hidden: 
 
-   versions_and_specifications/index
+   api_versions_and_specifications/index
    backup_and_restoration/index
    parameter_templates/index

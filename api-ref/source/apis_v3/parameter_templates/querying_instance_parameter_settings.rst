@@ -13,7 +13,7 @@ This API is used to query instance parameter settings.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
 
 URI
 ---
@@ -33,7 +33,7 @@ GET https://{Endpoint}/v3/{project_id}/instances/{instance_id}/configurations
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameter
+.. table:: **Table 2** Request header parameters
 
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description
@@ -54,6 +54,9 @@ Status code: 200
    | datastore_version_name   | String                                                                                                      | Database version name.                                                                                     |
    +--------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
    | datastore_name           | String                                                                                                      | Database name.                                                                                             |
+   |                          |                                                                                                             |                                                                                                            |
+   |                          |                                                                                                             | -  **cassandra**: GeminiDB Cassandra instance                                                              |
+   |                          |                                                                                                             | -  **influxdb**: GeminiDB Influx instance                                                                  |
    +--------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
    | created                  | String                                                                                                      | Creation time in the yyyy-MM-ddTHH:mm:ssZ format.                                                          |
    |                          |                                                                                                             |                                                                                                            |
@@ -67,7 +70,9 @@ Status code: 200
    +--------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
    | mode                     | String                                                                                                      | Instance type. The value can be:                                                                           |
    |                          |                                                                                                             |                                                                                                            |
-   |                          |                                                                                                             | **Cluster**, indicating that the instance is of the GeminiDB Cassandra cluster type.                       |
+   |                          |                                                                                                             | **Cluster**: GeminiDB Cassandra cluster instance                                                           |
+   |                          |                                                                                                             |                                                                                                            |
+   |                          |                                                                                                             | **CloudNativeCluster**: GeminiDB Influx cluster (performance-enhanced) instance with cloud native storage  |
    +--------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
    | configuration_parameters | Array of :ref:`ConfigurationParameterResult <nosql_06_0007__response_configurationparameterresult>` objects | Parameters defined by users based on a default parameter template.                                         |
    +--------------------------+-------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
@@ -100,8 +105,8 @@ Status code: 200
    | description           | String                | Parameter description.                                                                                                                          |
    +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Example Request
----------------
+Example Requests
+----------------
 
 URI example
 
@@ -109,8 +114,8 @@ URI example
 
    GET https://{Endpoint}/v3/375d8d8fad1f43039e23d3b6c0f60a19/instances/9136fd2a9fcd405ea4674276ce36dae8in02/configurations
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 Status code: 200
 

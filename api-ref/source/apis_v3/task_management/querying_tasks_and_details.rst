@@ -82,7 +82,7 @@ Request Parameters
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description
    ============ ========= ====== ===========
-   X-Auth-Token Yes       String User token.
+   X-Auth-Token Yes       String User token
    ============ ========= ====== ===========
 
 Response Parameters

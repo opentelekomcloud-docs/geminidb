@@ -13,7 +13,7 @@ This API is used to query a specified instance by tag.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
 
 A maximum of 20 tags can be added to a DB instance. The tag key must be unique.
 
@@ -22,7 +22,7 @@ URI
 
 POST https://{Endpoint}/v3/{project_id}/instances/resource-instances/action
 
-.. table:: **Table 1** URI parameter
+.. table:: **Table 1** URI parameters
 
    +------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter  | Mandatory | Type   | Description                                                                                                    |
@@ -33,14 +33,14 @@ POST https://{Endpoint}/v3/{project_id}/instances/resource-instances/action
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameter
+.. table:: **Table 2** Request header parameters
 
    +--------------+-----------+--------+---------------------------------------------------------------------+
    | Parameter    | Mandatory | Type   | Description                                                         |
    +==============+===========+========+=====================================================================+
    | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
    +--------------+-----------+--------+---------------------------------------------------------------------+
-   | X-Auth-Token | Yes       | String | User token.                                                         |
+   | X-Auth-Token | Yes       | String | User token                                                          |
    +--------------+-----------+--------+---------------------------------------------------------------------+
 
 .. table:: **Table 3** Request body parameters
@@ -146,8 +146,8 @@ Status code: 200
    |                       |                       | It is case-sensitive and can contain digits, letters, underscores (_), and hyphens (-).             |
    +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------+
 
-Example Request
----------------
+Example Requests
+----------------
 
 -  URI example
 
@@ -197,8 +197,8 @@ Example Request
         } ]
       }
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 Status code: 200
 

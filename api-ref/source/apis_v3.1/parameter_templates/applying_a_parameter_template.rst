@@ -13,7 +13,7 @@ This API is used to apply a parameter template to one or more instances.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
 
 This API is an asynchronous API. A successful response does not indicate that the parameter template is successfully applied.
 
@@ -35,17 +35,17 @@ PUT https://{Endpoint}/v3.1/{project_id}/configurations/{config_id}/apply
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameter
+.. table:: **Table 2** Request header parameters
 
    +--------------+-----------+--------+---------------------------------------------------------------------+
    | Parameter    | Mandatory | Type   | Description                                                         |
    +==============+===========+========+=====================================================================+
    | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
    +--------------+-----------+--------+---------------------------------------------------------------------+
-   | X-Auth-Token | Yes       | String | User token.                                                         |
+   | X-Auth-Token | Yes       | String | User token                                                          |
    +--------------+-----------+--------+---------------------------------------------------------------------+
 
-.. table:: **Table 3** Request body parameter
+.. table:: **Table 3** Request body parameters
 
    ============ ========= ================ =============
    Parameter    Mandatory Type             Description
@@ -71,8 +71,8 @@ Status code: 202
    |                       |                       | -  **false**: The task failed to be submitted.                                                    |
    +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------+
 
-Example Request
----------------
+Example Requests
+----------------
 
 -  URI example
 
@@ -88,8 +88,8 @@ Example Request
         "instance_ids" : [ "73ea2bf70c73497f89ee0ad4ee008aa2in06" ]
       }
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 Status code: 202
 

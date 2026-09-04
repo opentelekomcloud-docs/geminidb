@@ -13,7 +13,7 @@ This API is used to query version information of a specified type of instances.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
 
 URI
 ---
@@ -30,12 +30,13 @@ GET https://{Endpoint}/v3/{project_id}/datastores/{datastore_name}/versions
    | datastore_name  | Yes             | String          | Database type. The value can be:                                                                               |
    |                 |                 |                 |                                                                                                                |
    |                 |                 |                 | -  **cassandra**, indicating that the instances are of the GeminiDB Cassandra type.                            |
+   |                 |                 |                 | -  **influxdb**, indicating that the instances are of the GeminiDB Influx type.                                |
    +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------+
 
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameter
+.. table:: **Table 2** Request header parameters
 
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description
@@ -48,7 +49,7 @@ Response Parameters
 
 Status code: 200
 
-.. table:: **Table 3** Response body parameter
+.. table:: **Table 3** Response body parameters
 
    +-----------------------+-----------------------+-----------------------------------------------+
    | Parameter             | Type                  | Description                                   |
@@ -56,10 +57,11 @@ Status code: 200
    | versions              | Array of strings      | Database version. The supported versions are: |
    |                       |                       |                                               |
    |                       |                       | -  GeminiDB Cassandra instance 3.11           |
+   |                       |                       | -  GeminiDB Influx instance 1.7               |
    +-----------------------+-----------------------+-----------------------------------------------+
 
-Example Request
----------------
+Example Requests
+----------------
 
 URI example
 
@@ -67,8 +69,8 @@ URI example
 
    GET https://{Endpoint}/v3/375d8d8fad1f43039e23d3b6c0f60a19/datastores/cassandra/versions
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 Status code: 200
 

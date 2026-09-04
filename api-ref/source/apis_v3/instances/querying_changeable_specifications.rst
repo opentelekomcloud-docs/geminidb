@@ -13,7 +13,7 @@ This API is used to query instance specifications that can be changed.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
 
 URI
 ---
@@ -80,15 +80,23 @@ Response Parameters
 
 .. table:: **Table 5** ComputeFlavor
 
-   ============= ================== ===================
-   Parameter     Type               Description
-   ============= ================== ===================
-   vcpus         String             Number of vCPUs.
-   ram           String             Memory size in GB.
-   spec_code     String             Specification code.
-   az_status     Map<String,String> AZ status.
-   region_status String             Region status.
-   ============= ================== ===================
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------+
+   | Parameter             | Type                  | Description                                                                               |
+   +=======================+=======================+===========================================================================================+
+   | vcpus                 | String                | Number of vCPUs.                                                                          |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------+
+   | ram                   | String                | Memory size in GB.                                                                        |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------+
+   | spec_code             | String                | Specification code.                                                                       |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------+
+   | az_status             | Map<String,String>    | AZ status.                                                                                |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------+
+   | region_status         | String                | Region status.                                                                            |
+   |                       |                       |                                                                                           |
+   |                       |                       | .. note::                                                                                 |
+   |                       |                       |                                                                                           |
+   |                       |                       |    This parameter has been deprecated and does not take effect. Ignore and do not use it. |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------+
 
 .. _nosql_05_0156__table12981191752319:
 
@@ -102,8 +110,8 @@ Response Parameters
    | total_count | Integer                                                                  | Total number of records.                                                            |
    +-------------+--------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-Example Request
----------------
+Example Requests
+----------------
 
 -  URI example
 
@@ -115,8 +123,8 @@ Example Request
 
    None
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 Status code: 200
 

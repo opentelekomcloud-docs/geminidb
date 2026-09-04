@@ -13,7 +13,7 @@ This API is used to change the security group associated with an instance.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
+This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
 
 Abnormal instances do not support this operation.
 
@@ -37,17 +37,17 @@ PUT https://{Endpoint}/v3/{project_id}/instances/{instance_id}/security-group
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameter
+.. table:: **Table 2** Request header parameters
 
    +--------------+-----------+--------+---------------------------------------------------------------------+
    | Parameter    | Mandatory | Type   | Description                                                         |
    +==============+===========+========+=====================================================================+
    | Content-Type | Yes       | String | MIME type of the request body. **application/json** is recommended. |
    +--------------+-----------+--------+---------------------------------------------------------------------+
-   | X-Auth-Token | Yes       | String | User token.                                                         |
+   | X-Auth-Token | Yes       | String | User token                                                          |
    +--------------+-----------+--------+---------------------------------------------------------------------+
 
-.. table:: **Table 3** Request body parameter
+.. table:: **Table 3** Request body parameters
 
    ================= ========= ====== =============================
    Parameter         Mandatory Type   Description
@@ -60,7 +60,7 @@ Response Parameters
 
 **Status code: 202**
 
-.. table:: **Table 4** Response body parameter
+.. table:: **Table 4** Response body parameters
 
    ========= ====== ===========
    Parameter Type   Description
@@ -68,8 +68,8 @@ Response Parameters
    job_id    String Task ID.
    ========= ====== ===========
 
-Example Request
----------------
+Example Requests
+----------------
 
 -  URI example
 
@@ -85,8 +85,8 @@ Example Request
         "security_group_id" : "73bed21a-708b-4985-b697-a96d0e0d2b39"
       }
 
-Example Response
-----------------
+Example Responses
+-----------------
 
 **Status code: 202**
 
