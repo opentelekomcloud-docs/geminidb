@@ -16,7 +16,7 @@ Change History
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 2024-08-30                        | This issue is the seventh official release, which incorporates the following change:                                                                     |
 |                                   |                                                                                                                                                          |
-|                                   | Added :ref:`Configuring Autoscaling <nosql_increase_storage1>`.                                                                                          |
+|                                   | Added :ref:`Configuring Storage Autoscaling <nosql_increase_storage1>`.                                                                                  |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 2024-04-30                        | This issue is the sixth official release, which incorporates the following change:                                                                       |
 |                                   |                                                                                                                                                          |
@@ -28,7 +28,7 @@ Change History
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 2020-02-10                        | This issue is the fourth official release, which incorporates the following change:                                                                      |
 |                                   |                                                                                                                                                          |
-|                                   | Instance specifications 24 vCPUs \| 192 GB, and 48 vCPUs \| 384 GB in :ref:`Table 1 <nosql_01_0006__table33151750124715>`                                |
+|                                   | Instance specifications 24 vCPUs \| 192 GB and 48 vCPUs \| 384 GB in :ref:`Table 1 <nosql_01_0006__table33151750124715>`                                 |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 2020-11-30                        | This issue is the third official release, which incorporates the following changes:                                                                      |
 |                                   |                                                                                                                                                          |

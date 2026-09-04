@@ -2,8 +2,8 @@
 
 .. _nosql_increase_storage:
 
-Scaling Up Storage Space
-========================
+Manually Scaling Up Storage Space
+=================================
 
 Scenarios
 ---------
@@ -11,11 +11,6 @@ Scenarios
 This section describes how to scale up the storage space of a DB instance to suit your service requirements.
 
 During the scale-up process, the DB instance will not restart, and your services will not be interrupted.
-
-Usage Notes
------------
-
-Storage space can only be scaled up.
 
 Procedure
 ---------
