@@ -8,7 +8,7 @@ Typical Application Scenarios
 IoT
 ---
 
-GeminiDB is compatible with Cassandra APIs. It is designed for write-intensive scenarios, specifically applied in manufacturing, logistics, health care, real estate, energy production, and agriculture. It can process data sent by different types of sensors for further analysis.
+GeminiDB is compatible with Cassandra. It is designed for write-intensive scenarios, specifically in manufacturing, logistics, health care, real estate, energy production, and agriculture sectors. It can process data from different types of sensors for further analysis.
 
 **Highlights**
 
@@ -28,8 +28,39 @@ E-commerce and entertainment websites that include product catalogs, recommendat
 Finance
 -------
 
-With Spark′s big data analysis capabilities, GeminiDB helps companies in the finance sector build risk control systems and mitigate fraud.
+By leveraging big data analysis tools such as Spark, GeminiDB helps companies in the finance sector build risk control systems and mitigate fraud.
 
 **Highlights**
 
 **Big Data Analysis**: Spark and other big data processing technologies enable real-time fraud detection and prevention.
+
+Securities and Cryptocurrency Transactions
+------------------------------------------
+
+GeminiDB Influx API stores user bank statements and builds an anti-fraud system for the financial industry.
+
+**Highlights**
+
+-  **Efficient query**: GeminiDB Influx instances are deployed nearby, so they can quickly address queries.
+
+-  **Real-time analysis**: Series data can be synchronized to the cloud and can be analyzed in real time.
+
+Real-Time Monitoring of Hardware and Software
+---------------------------------------------
+
+GeminiDB Influx API stores user behavior data, accelerating user profiling and precision marketing.
+
+**Highlights**
+
+-  GeminiDB Influx API handles trillions of data points per day and supports multi-node and multi-thread parallel queries.
+
+-  **Real-time analysis**: Series data can be synchronized to the cloud and can be analyzed in real time.
+
+Environmental Protection Industry
+---------------------------------
+
+GeminiDB Influx API supports writes of massive amounts of time series data, stable and reliable for environmental protection data collection.
+
+**Highlights**
+
+**Efficient write and query**: Vectorized query engines and efficient time series data query operators such as aggregation and convolution can process enormous concurrent writes and queries.

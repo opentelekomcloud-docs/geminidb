@@ -39,7 +39,7 @@ Method 2
 
 #. View the results on the **Instances** page.
 
-.. |image1| image:: /_static/images/en-us_image_0000001861925037.png
-.. |image2| image:: /_static/images/en-us_image_0000001815205188.png
-.. |image3| image:: /_static/images/en-us_image_0000001815045404.png
-.. |image4| image:: /_static/images/en-us_image_0000001815045400.png
+.. |image1| image:: /_static/images/en-us_image_0000002451073417.png
+.. |image2| image:: /_static/images/en-us_image_0000002417434568.png
+.. |image3| image:: /_static/images/en-us_image_0000002450993509.png
+.. |image4| image:: /_static/images/en-us_image_0000002417434556.png

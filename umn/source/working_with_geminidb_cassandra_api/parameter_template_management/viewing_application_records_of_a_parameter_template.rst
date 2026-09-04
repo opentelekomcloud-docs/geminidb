@@ -15,8 +15,11 @@ Procedure
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. In the navigation pane on the left, click **Parameter Template Management**.
+#. In the navigation pane, choose **Parameter Templates**.
 
-#. On the **Parameter Template Management** page, locate the target parameter template and choose **More** > **View Application Record** in the **Operation** column.
+#. On the **Parameter Templates** page, perform the following operations based on the template type:
+
+   -  On the **Default Templates** page, locate the target parameter template and click **View Application Records** in the **Operation** column.
+   -  On the **Custom Templates** page, locate the target template and choose **More** > **Apply** in the **Operation** column.
 
    You can view the name or ID of the DB instance that the parameter template applies to, as well as the application status, application time, and the causes of any failures that have occurred.

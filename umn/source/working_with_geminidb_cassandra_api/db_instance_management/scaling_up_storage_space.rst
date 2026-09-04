@@ -22,7 +22,7 @@ Procedure
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. On the **Instances** page, click the target instance name.
+#. On the **Instances** page, click the target instance.
 
 #. In the **Storage Space** area on the **Basic Information** page, click **Scale**.
 

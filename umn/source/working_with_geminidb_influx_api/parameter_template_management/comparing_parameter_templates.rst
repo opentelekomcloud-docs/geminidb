@@ -1,0 +1,35 @@
+:original_name: nosql_07_0005.html
+
+.. _nosql_07_0005:
+
+Comparing Parameter Templates
+=============================
+
+Scenarios
+---------
+
+This section describes how to compare two parameter templates of the same node type and DB engine version.
+
+
+Comparing Parameter Templates
+-----------------------------
+
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
+#. In the navigation pane on the left, choose **Parameter Templates**.
+#. In the parameter template list, locate the parameter template that you created and click **Compare** in the **Operation** column.
+#. In the displayed dialog box, select a parameter template that uses the same DB engine as the target template and click **OK**.
+
+   -  If their settings are different, the parameter names and values of both parameter templates are displayed.
+   -  If their settings are the same, no data is displayed.
+
+Comparing Parameter Templates of an Instance
+--------------------------------------------
+
+#. :ref:`Log in to the GeminiDB console. <nosql_login>`
+#. In the navigation pane, choose **Instances**.
+#. On the **Instances** page, click the target instance. The **Basic Information** page is displayed.
+#. In the navigation pane on the left, choose **Parameters**. On the **Parameters** tab, click **Compare** above the parameter list.
+#. In the displayed dialog box, select a parameter template to be compared and click **OK**.
+
+   -  If their settings are different, the parameter names and values of both parameter templates are displayed.
+   -  If their settings are the same, no data is displayed.

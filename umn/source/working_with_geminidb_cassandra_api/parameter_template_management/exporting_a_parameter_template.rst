@@ -15,7 +15,7 @@ Procedure
 ---------
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
-#. In the navigation pane on the left, choose **Instance Management**. On the displayed page, click the target DB instance.
+#. In the navigation pane, choose **Instances**. Click the target instance. The **Basic Information** page is displayed.
 #. In the navigation pane on the left, choose **Parameters**. On the **Parameters** tab, above the parameter list, click **Export**.
 
    -  **Parameter Template**: You can export the parameters of the DB instance to a template for future use.
@@ -27,7 +27,7 @@ Procedure
          -  The template name can be up to 64 characters long. It can contain only uppercase letters, lowercase letters, numbers, hyphens (-), underscores (_), and periods (.).
          -  The template description consists of a maximum of 256 characters and cannot include line breaks or the following special characters: >!<"&'=
 
-      After the parameter template is exported, a new template is generated in the list on the **Parameter Template Management** page.
+      After the parameters are exported, a template is generated in the list on the **Parameter Templates** page.
 
    -  **File**: You can export the parameter template information (parameter names, values, and descriptions) of a DB instance to a CSV file for viewing and analysis.
 

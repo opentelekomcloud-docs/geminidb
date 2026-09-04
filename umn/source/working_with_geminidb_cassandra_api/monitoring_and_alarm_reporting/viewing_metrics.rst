@@ -28,7 +28,7 @@ Procedure
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. On the **Instance Management** page, click the target DB instance.
+#. On the **Instances** page, click the target instance. The **Basic Information** page is displayed.
 
 #. In the **Node Information** area on the **Basic Information** page, click **View Metric** in the **Operation** column.
 
@@ -38,4 +38,4 @@ Procedure
 
    To view the monitoring curve in a longer time range, click |image1| to enlarge the graph.
 
-.. |image1| image:: /_static/images/en-us_image_0000001815205036.png
+.. |image1| image:: /_static/images/en-us_image_0000002417594356.png

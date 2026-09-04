@@ -64,7 +64,7 @@ The common parameters are as follows: **NUMPROCESSES**, **RATEFILE**, **PAGESIZE
 
 The newly added parameters are as follows: **RESULTFILE**, **DATAFORMATS**, and **WHERECONDITION**.
 
-For details about other COPY TO parameters, see the `Cassandra official documentation <https://cassandra.apache.org/doc/latest/tools/cqlsh.html#copy-to>`__.
+For details about other COPY TO parameters, see `Cassandra Documentation <https://cassandra.apache.org/doc/latest/cassandra/managing/tools/cqlsh.html>`__.
 
 -  **file name**: specifies the directory or file the data is copied to. The data is exported to a file by default.
 
@@ -118,7 +118,7 @@ The common parameters are as follows: **NUMPROCESSES**, **MAXROWS**, **INGESTRAT
 
 The newly added parameter is **DATAFORMATS**.
 
-For details about other COPY FROM parameters, see the `Cassandra official documentation <http://cassandra.apache.org/doc/latest/tools/cqlsh.html#copy-from>`__.
+For details about other COPY FROM parameters, see the `Cassandra Documentation <https://cassandra.apache.org/doc/latest/cassandra/managing/tools/cqlsh.html>`__.
 
 -  **file name** is the path the file will be imported to. The value can be a directory, a file, or a list of file names separated by commas (,). If the value is set to a specified directory, all files in the directory are imported.
 -  **NUMPROCESSES** is the number of imported threads.

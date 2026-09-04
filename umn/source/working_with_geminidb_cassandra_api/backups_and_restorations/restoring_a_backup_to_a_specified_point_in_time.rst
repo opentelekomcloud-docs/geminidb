@@ -33,7 +33,7 @@ Procedure
 #. On the **Backups & Restorations** page, click **Restore to Point In Time**.
 
 
-   .. figure:: /_static/images/en-us_image_0000002200454268.png
+   .. figure:: /_static/images/en-us_image_0000002451073537.png
       :alt: **Figure 1** Restoring data to a specified point in time
 
       **Figure 1** Restoring data to a specified point in time
@@ -41,7 +41,7 @@ Procedure
 #. Select the restoration date and the time point to which the data is restored and then click **OK**.
 
 
-   .. figure:: /_static/images/en-us_image_0000002200454892.png
+   .. figure:: /_static/images/en-us_image_0000002417434680.png
       :alt: **Figure 2** Restore to Point in Time
 
       **Figure 2** Restore to Point in Time

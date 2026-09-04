@@ -19,6 +19,6 @@ Procedure
 ---------
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
-#. In the navigation pane on the left, click **Parameter Template Management**.
+#. In the navigation pane, choose **Parameter Templates**.
 #. On the **Parameter Templates** page, click **Custom Templates**. Locate the parameter template you want to delete and choose **More** > **Delete** in the **Operation** column.
 #. Click **Yes** to delete the parameter template.

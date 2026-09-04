@@ -9,10 +9,11 @@ This section describes compatible APIs and versions supported by GeminiDB.
 
 .. table:: **Table 1** Compatible APIs and versions
 
-   ============== ================ ============
-   Compatible API DB Instance Type Version
-   ============== ================ ============
-   Cassandra      Cluster          3.11 and 4.0
-   ============== ================ ============
+   ============== ============================== ============
+   Compatible API DB Instance Type               Version
+   ============== ============================== ============
+   Cassandra      Cluster                        3.11 and 4.0
+   InfluxDB       Cluster (performance-enhanced) 1.7
+   ============== ============================== ============
 
 GeminiDB is not completely compatible with Cassandra 3.11 and 4.0, so you need to test the compatibility before using GeminiDB Cassandra API.
