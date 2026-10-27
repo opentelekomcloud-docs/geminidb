@@ -16,13 +16,15 @@ Automated backups are generated according to a backup policy and saved as packag
 
 When you create a DB instance, an automated backup policy is enabled by default.
 
--  **Retention Period**: Automated backup files are saved for seven days by default. The backup retention period can range from 1 to 35 days.
+-  **Retention Period**: Automated backup files are saved for seven days by default. The backup retention period can range from 1 to 35 days. Automated full backups are automatically deleted when their retention period expires.
+
+   -  Extending the retention period enhances data durability.
+   -  If you shorten the retention period, the new backup policy will apply to existing backups. Any automated backups exceeding the new retention period will be deleted immediately. Manual backups will not be deleted automatically.
 
    .. note::
 
       -  If the retention period is less than seven days, the system automatically backs up data every day.
       -  The system checks existing automated backup files and deletes the files that exceed the backup retention period you set.
-      -  **Time Window**: An hour within 24 hours, such as 01:00-02:00 or 12:00-13:00. The backup time is in GMT format. If the DST or standard time is switched, the backup time segment changes with the time zone.
 
 -  **Backup Cycle**: By default, each day of the week is selected.
 
@@ -91,4 +93,4 @@ If the automated backup policy is enabled, the system will delete automated back
    #. On the **Backups** page, locate the target backup and click **Delete**.
    #. In the **Delete Backup** dialog box, confirm the backup information and click **Yes**.
 
-.. |image1| image:: /_static/images/en-us_image_0000002417434784.png
+.. |image1| image:: /_static/images/en-us_image_0000002417594652.png

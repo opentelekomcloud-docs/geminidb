@@ -36,7 +36,7 @@ Example Code
                    .readTimeout(10, TimeUnit.SECONDS)
                    .retryOnConnectionFailure(true);
 
-           final String serverURL = "http://xx.xx.xx.xx:xx", username = "xx", password = "xx";
+           final String serverURL = "https://xx.xx.xx.xx:xx", username = "xx", password = "xx";
            InfluxDB influxdb = InfluxDBFactory.connect(serverURL, username, password, client);
 
            // Create a database...
