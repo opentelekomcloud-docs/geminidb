@@ -17,18 +17,17 @@ Usage Notes
 -  The ECS must be in a security group that can access the target instance.
 
    -  If the target instance is associated with the default security group, you do not need to configure security group rules for the instance and ECS.
-   -  If the target instance is associated with a non-default security group, check whether the non-default security group rules allow the ECS to access the instance. For details, see section :ref:`Configuring Security Group Rules <nosql_02_0052>`.
+   -  If the target instance is associated with a non-default security group, check whether the non-default security group rules allow the ECS to access the instance. For details, see :ref:`Configuring Security Group Rules <nosql_02_0052>`.
 
 -  The default port of the GeminiDB Influx instance is 8635 and cannot be changed.
 
 Prerequisites
 -------------
 
-.. important::
-
-   The instance and ECS must be in the same VPC and subnet.
-
 -  Download the InfluxDB client from the `official website <https://dl.influxdata.com/influxdb/releases/influxdb-1.7.9-static_linux_amd64.tar.gz>`__.
+-  To connect to an instance over SSL, enable SSL first. For details, see :ref:`Enabling SSL <nosql_05_0151__en-us_topic_0000001165885055_section13582111184815>`.
+
+-  To connect to an instance using a non-SSL connection, disable SSL first. For details, see :ref:`Disabling SSL <nosql_05_0151__en-us_topic_0000001165885055_section151208517481>`.
 
 SSL Connection
 --------------
@@ -37,7 +36,7 @@ SSL Connection
 
 #. Upload the InfluxDB client installation package to the ECS.
 
-#. Decompress the client package.
+#. Decompress the InfluxDB client package.
 
    .. code-block::
 
@@ -55,13 +54,13 @@ SSL Connection
 
       .. code-block::
 
-         ./influx -ssl -host <DB_HOST> -port <DB_PORT>
+         ./influx -ssl -unsafeSsl -host <DB_HOST> -port <DB_PORT>
 
       Example:
 
       .. code-block::
 
-         ./influx -ssl -host 192.168.1.201 -port 8635
+         ./influx -ssl -unsafeSsl -host 192.168.1.201 -port 8635
 
    c. Run the **auth** command to authenticate the user.
 
@@ -103,7 +102,7 @@ Non-SSL Connection
 
 #. Upload the InfluxDB client installation package to the ECS.
 
-#. Decompress the client package.
+#. Decompress the InfluxDB client package.
 
    .. code-block::
 
