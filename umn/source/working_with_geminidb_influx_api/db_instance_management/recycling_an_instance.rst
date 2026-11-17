@@ -7,7 +7,7 @@ Recycling an Instance
 
 After a GeminiDB Influx instance is deleted, its backups are automatically moved to the recycle bin. To restore data, you can :ref:`rebuild the instance <nosql_03_0216__en-us_topic_0272078401_section927612820223>` from the recycle bin.
 
-Usage Notes
+Precautions
 -----------
 
 -  If an instance is abnormal, its backups will not be moved to the recycle bin after the instance is deleted.
@@ -15,7 +15,7 @@ Usage Notes
 -  Operations after an instance is deleted
 
    -  If the instance has automated full backups, the system keeps the most recent automated full backup of the previous day. If there is no automated full backup generated on that day, it retains the latest available one and moves it to the recycle bin.
-   -  If there are less than 100 backups in the recycle bin, the system will create a full backup and move it to the recycle bin.
+   -  If there are fewer than 100 backups in the recycle bin, the system will create a full backup and move it to the recycle bin.
    -  You can select one of the backups to rebuild the instance.
 
 Modifying the Recycling Policy

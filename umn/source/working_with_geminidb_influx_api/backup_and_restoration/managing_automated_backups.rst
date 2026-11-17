@@ -41,7 +41,7 @@ Modifying an Automated Backup Policy
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. On the **Instances** page, click the target instance. The **Basic Information page** is displayed.
+#. On the **Instances** page, click the target instance. The **Basic Information** page is displayed.
 
 #. On the **Backups & Restorations** page, click **Modify Backup Policy**. In the displayed dialog box, set the backup policy. Then, click **Yes** to save the configuration.
 
@@ -54,7 +54,7 @@ Disabling an Automated Backup Policy
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. On the **Instances** page, click the target instance. The **Basic Information page** is displayed.
+#. On the **Instances** page, click the target instance. The **Basic Information** page is displayed.
 
 #. On the **Backups & Restorations** page, click **Modify Backup Policy**.
 
@@ -82,7 +82,7 @@ After the automated backup policy is enabled, the system checks and automaticall
 
 -  **Method 1**
 
-   #. On the **Instances** page, click the target instance. The **Basic Information page** is displayed.
+   #. On the **Instances** page, click the target instance. The **Basic Information** page is displayed.
    #. On the **Backups & Restorations** page, locate the backup you wish to delete and click **Delete**.
    #. In the **Delete Backup** dialog box, confirm the backup information and click **Yes**.
 

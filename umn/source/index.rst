@@ -9,6 +9,8 @@ GeminiDB - User Guide
    logging_in_to_the_geminidb_console
    getting_started_with_geminidb_cassandra/index
    getting_started_with_geminidb_influx/index
+   getting_started_with_geminidb_dynamodb-compatible_api/index
    working_with_geminidb_cassandra_api/index
    working_with_geminidb_influx_api/index
+   working_with_geminidb_dynamodb-compatible_api/index
    change_history

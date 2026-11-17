@@ -25,7 +25,7 @@ Creating a Manual Backup
 
    **Method 2**
 
-   a. On the **Instances** page, click the target instance. The **Basic Information page** is displayed.
+   a. On the **Instances** page, click the target instance. The **Basic Information** page is displayed.
    b. On the **Backups & Restorations** page, click **Create Backup**.
 
    **Method 3**
