@@ -14,6 +14,7 @@ DB Instance Management
 -  :ref:`Deleting an Instance <nosql_09_0012>`
 -  :ref:`Managing Tags <nosql_09_0044>`
 -  :ref:`Recycling an Instance <nosql_03_0216>`
+-  :ref:`Configuring SSL <nosql_05_0151>`
 
 .. toctree::
    :maxdepth: 1
@@ -28,3 +29,4 @@ DB Instance Management
    deleting_an_instance
    managing_tags
    recycling_an_instance
+   configuring_ssl

@@ -20,7 +20,7 @@ When you create a DB instance, an automated backup policy is enabled by default.
 
    .. note::
 
-      -  If the retention period is less than seven days, the system automatically backs up data every day.
+      -  If the retention period is shorter than seven days, the system automatically backs up data daily.
       -  The system checks existing automated backup files and deletes the files that exceed the backup retention period you set.
       -  **Time Window**: An hour within 24 hours, such as 01:00-02:00 or 12:00-13:00. The backup time is in GMT format. If the DST or standard time is switched, the backup time segment changes with the time zone.
 

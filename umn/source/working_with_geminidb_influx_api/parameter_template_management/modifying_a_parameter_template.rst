@@ -7,7 +7,7 @@ Modifying a Parameter Template
 
 You can modify parameters in a custom parameter template to bring out the best performance of the service.
 
-Note that parameter values in default parameter templates cannot be changed.
+Parameter values in default parameter templates cannot be changed.
 
 .. note::
 
