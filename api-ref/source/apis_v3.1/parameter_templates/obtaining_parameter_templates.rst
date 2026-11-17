@@ -13,7 +13,11 @@ This API is used to obtain parameter templates, including all of the default and
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
+This API supports the following instance types:
+
+-  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB
 
 URI
 ---
@@ -76,39 +80,40 @@ Status code: 200
 
 .. table:: **Table 5** ListConfigurationsResult
 
-   +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
-   | Parameter              | Type                  | Description                                                                                                |
-   +========================+=======================+============================================================================================================+
-   | id                     | String                | Parameter template ID.                                                                                     |
-   +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
-   | name                   | String                | Parameter template name.                                                                                   |
-   +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
-   | description            | String                | Parameter template description.                                                                            |
-   +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
-   | datastore_version_name | String                | Database version name.                                                                                     |
-   +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
-   | datastore_name         | String                | Database name.                                                                                             |
-   +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
-   | created                | String                | Creation time in the yyyy-MM-ddTHH:mm:ssZ format.                                                          |
-   |                        |                       |                                                                                                            |
-   |                        |                       | **T** is the separator between calendar and hourly notation of time. **Z** indicates the time zone offset. |
-   +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
-   | updated                | String                | Update time in the yyyy-MM-ddTHH:mm:ssZ format.                                                            |
-   |                        |                       |                                                                                                            |
-   |                        |                       | **T** is the separator between calendar and hourly notation of time. **Z** indicates the time zone offset. |
-   +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
-   | mode                   | String                | Instance type. The value can be:                                                                           |
-   |                        |                       |                                                                                                            |
-   |                        |                       | -  **Cluster**: classic GeminiDB Cassandra or Influx cluster instance                                      |
-   |                        |                       | -  **CloudNativeCluster**: cloud native GeminiDB Cassandra, Influx, or Redis cluster instance              |
-   |                        |                       | -  **EnhancedCluster**: classic GeminiDB Influx cluster (performance-enhanced) instance                    |
-   |                        |                       | -  **All**: Parameter templates of instance with all storage types are queried.                            |
-   +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
-   | user_defined           | Boolean               | Whether the parameter template is a custom template. The value can be:                                     |
-   |                        |                       |                                                                                                            |
-   |                        |                       | -  **false**, indicating that the parameter template is a default parameter template.                      |
-   |                        |                       | -  **true**, indicating that the parameter template is a custom template.                                  |
-   +------------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
+   +------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------+
+   | Parameter              | Type                  | Description                                                                                                  |
+   +========================+=======================+==============================================================================================================+
+   | id                     | String                | Parameter template ID.                                                                                       |
+   +------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------+
+   | name                   | String                | Parameter template name.                                                                                     |
+   +------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------+
+   | description            | String                | Parameter template description.                                                                              |
+   +------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------+
+   | datastore_version_name | String                | Database version name.                                                                                       |
+   +------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------+
+   | datastore_name         | String                | Database name.                                                                                               |
+   +------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------+
+   | created                | String                | Creation time in the yyyy-MM-ddTHH:mm:ssZ format.                                                            |
+   |                        |                       |                                                                                                              |
+   |                        |                       | **T** is the separator between calendar and hourly notation of time. **Z** indicates the time zone offset.   |
+   +------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------+
+   | updated                | String                | Update time in the yyyy-MM-ddTHH:mm:ssZ format.                                                              |
+   |                        |                       |                                                                                                              |
+   |                        |                       | **T** is the separator between calendar and hourly notation of time. **Z** indicates the time zone offset.   |
+   +------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------+
+   | mode                   | String                | Instance type. The value can be:                                                                             |
+   |                        |                       |                                                                                                              |
+   |                        |                       | -  **Cluster**: GeminiDB Cassandra cluster instance                                                          |
+   |                        |                       |                                                                                                              |
+   |                        |                       | -  **CloudNativeCluster**: GeminiDB Influx cluster (performance-enhanced) instance with cloud native storage |
+   |                        |                       |                                                                                                              |
+   |                        |                       | -  **CloudNativeCluster**: GeminiDB DynamoDB-Compatible cluster instance with cloud native storage           |
+   +------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------+
+   | user_defined           | Boolean               | Whether the parameter template is a custom template. The value can be:                                       |
+   |                        |                       |                                                                                                              |
+   |                        |                       | -  **false**, indicating that the parameter template is a default parameter template.                        |
+   |                        |                       | -  **true**, indicating that the parameter template is a custom template.                                    |
+   +------------------------+-----------------------+--------------------------------------------------------------------------------------------------------------+
 
 Example Requests
 ----------------

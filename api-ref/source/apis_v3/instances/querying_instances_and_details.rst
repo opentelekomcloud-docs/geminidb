@@ -13,7 +13,11 @@ This API is used to query instances and details based on specified conditions.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
+This API supports the following instance types:
+
+-  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB-Compatible
 
 URI
 ---
@@ -43,9 +47,14 @@ GET https://{Endpoint}/v3/{project_id}/instances
    +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | datastore_type  | No              | String          | Database type. The value can be:                                                                                                                                                                        |
    |                 |                 |                 |                                                                                                                                                                                                         |
-   |                 |                 |                 | **cassandra**, indicating that GeminiDB Cassandra instances are queried.                                                                                                                                |
+   |                 |                 |                 | **cassandra**: GeminiDB Cassandra instance or GeminiDB DynamoDB-Compatible instance                                                                                                                     |
    |                 |                 |                 |                                                                                                                                                                                                         |
-   |                 |                 |                 | If you set this parameter to **influxdb**,GeminiDB Influx instances are queried.                                                                                                                        |
+   |                 |                 |                 | .. note::                                                                                                                                                                                               |
+   |                 |                 |                 |                                                                                                                                                                                                         |
+   |                 |                 |                 |    -  If the **mode** parameter is set to **Cluster**, GeminiDB Cassandra cluster instances are queried.                                                                                                |
+   |                 |                 |                 |    -  If the **mode** parameter is set to **CloudNativeCluster**, GeminiDB DynamoDB-Compatible cluster instances are queried.                                                                           |
+   |                 |                 |                 |                                                                                                                                                                                                         |
+   |                 |                 |                 | **influxdb**: GeminiDB Influx instance                                                                                                                                                                  |
    |                 |                 |                 |                                                                                                                                                                                                         |
    |                 |                 |                 | If this parameter is not transferred, all database instances are queried.                                                                                                                               |
    +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -53,7 +62,7 @@ GET https://{Endpoint}/v3/{project_id}/instances
    |                 |                 |                 |                                                                                                                                                                                                         |
    |                 |                 |                 | -  **Cluster**: GeminiDB Cassandra cluster instance                                                                                                                                                     |
    |                 |                 |                 |                                                                                                                                                                                                         |
-   |                 |                 |                 | -  **CloudNativeCluster**: GeminiDB Influx cluster (performance-enhanced) instance                                                                                                                      |
+   |                 |                 |                 | -  **CloudNativeCluster**: GeminiDB Influx cluster (performance-enhanced) instance or GeminiDB DynamoDB-Compatible cluster instance                                                                     |
    |                 |                 |                 |                                                                                                                                                                                                         |
    |                 |                 |                 | The system ignores this parameter if parameter **datastore_type** is not transferred.                                                                                                                   |
    +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -157,6 +166,8 @@ Status code: 200
    +-----------------------+-------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
    | maintenance_window    | String                                                                                                      | Maintenance time window.                                                                                                         |
    +-----------------------+-------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | backup_space_usage    | Object                                                                                                      | Backup space usage. For details, see :ref:`Table 11 <nosql_05_0016__table23721744102510>`.                                       |
+   +-----------------------+-------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
    | groups                | Array of :ref:`ListInstancesGroupResult <nosql_05_0016__response_listinstancesgroupresult>` objects         | Group information.                                                                                                               |
    +-----------------------+-------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
    | enterprise_project_id | String                                                                                                      | Enterprise project ID.                                                                                                           |
@@ -176,15 +187,17 @@ Status code: 200
 
 .. table:: **Table 6** ListInstancesDatastoreResult
 
-   +---------------+--------+-------------------------------------------------------------------------------------------+
-   | Parameter     | Type   | Description                                                                               |
-   +===============+========+===========================================================================================+
-   | type          | String | DB API.                                                                                   |
-   +---------------+--------+-------------------------------------------------------------------------------------------+
-   | version       | String | DB version number.                                                                        |
-   +---------------+--------+-------------------------------------------------------------------------------------------+
-   | whole_version | String | Complete database version number. This parameter is available only to GeminiDB Cassandra. |
-   +---------------+--------+-------------------------------------------------------------------------------------------+
+   +-----------------+---------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Type    | Description                                                                                                                          |
+   +=================+=========+======================================================================================================================================+
+   | type            | String  | DB API.                                                                                                                              |
+   +-----------------+---------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | version         | String  | DB version number.                                                                                                                   |
+   +-----------------+---------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | patch_available | Boolean | Whether there is an available patch for upgrade. If **true** is returned, you can install a patch to upgrade the instance.           |
+   +-----------------+---------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | whole_version   | String  | Complete database version number. This parameter is available only to GeminiDB Cassandra and GeminiDB DynamoDB-Compatible instances. |
+   +-----------------+---------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _nosql_05_0016__response_listinstancesbackupstrategyresult:
 
@@ -233,6 +246,7 @@ Status code: 200
    ========= ====== ==========================
    size      String Storage space in GB.
    used      String Used storage space, in GB.
+   gift_size String Free storage space in GB.
    ========= ====== ==========================
 
 .. _nosql_05_0016__response_listinstancesnoderesult:
@@ -274,8 +288,18 @@ Status code: 200
    |                       |                       | -  **false**, indicating that instance nodes cannot be deleted.                                                                                                        |
    +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Example Requests
-----------------
+.. _nosql_05_0016__table23721744102510:
+
+.. table:: **Table 11** ListInstancesBackupObsInfoResult
+
+   ============ ==== ============================
+   Parameter    Type Description
+   ============ ==== ============================
+   backup_usage Long Used backup space, in bytes.
+   ============ ==== ============================
+
+Example Request
+---------------
 
 -  URI example
 
@@ -326,14 +350,18 @@ Success
          "start_time" : "16:00-17:00",
          "keep_days" : 7
        },
-       "pay_mode" : 0,
+       "pay_mode" : "0",
        "maintenance_window" : "02:00-06:00",
+       "backup_space_usage": {
+           "backup_usage": 61724032
+        },
        "groups" : [ {
          "id" : "0b0ff12541794e1084f6827e424be2d6gr06",
          "status" : "creating",
          "volume" : {
-           "size" : 100,
-           "used" : 0.003
+           "size" : "100",
+           "used" : "0.003",
+           "gift_size": "0"
          },
          "nodes" : [ {
            "id" : "233eaac9c6f245c0bb9c2d21eea12d1bno06",
@@ -387,14 +415,15 @@ Success
          "start_time" : "16:00-17:00",
          "keep_days" : 7
        },
-       "pay_mode" : 0,
+       "pay_mode" : "0",
        "maintenance_window" : "02:00-06:00",
        "groups" : [ {
          "id" : "0b0ff12541794e1084f6827e424be2d1gr07",
          "status" : "creating",
          "volume" : {
-           "size" : 100,
-           "used" : 0.003
+           "size" : "100",
+           "used" : "0.003",
+           "gift_size": "0"
          },
          "nodes" : [ {
            "id" : "233eaac9c6f245c0bb9c2d21eea12d1bno06",

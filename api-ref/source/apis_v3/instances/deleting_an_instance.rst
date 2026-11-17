@@ -13,7 +13,11 @@ This API is used to delete an instance. Only pay-per-use instances can be delete
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
+This API supports the following instance types:
+
+-  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB-Compatible
 
 URI
 ---

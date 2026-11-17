@@ -13,7 +13,13 @@ This API is used to delete nodes from a specified instance.
 Constraints
 -----------
 
-This API supports GeminiDB Cassandra instances.
+-  This API supports the following instance types:
+
+   -  GeminiDB Cassandra
+   -  GeminiDB DynamoDB-Compatible
+
+-  A GeminiDB Cassandra instance must have at least three nodes. Extra nodes can be deleted, but the first three are fixed.
+-  A GeminiDB DynamoDB-Compatible instance must have at least two nodes. Extra nodes can be deleted, but the first two are fixed.
 
 URI
 ---
@@ -50,7 +56,8 @@ Request Parameters
    +=================+=================+==================+==============================================================================================================================================================================================+
    | num             | No              | Integer          | Number of nodes to be deleted randomly.                                                                                                                                                      |
    |                 |                 |                  |                                                                                                                                                                                              |
-   |                 |                 |                  | For GeminiDB Cassandra instances, the value ranges from **1** to **10**.                                                                                                                     |
+   |                 |                 |                  | -  For GeminiDB Cassandra instances, the value ranges from **1** to **10**.                                                                                                                  |
+   |                 |                 |                  | -  For GeminiDB DynamoDB-Compatible instances, the value ranges from **1** to **10**.                                                                                                        |
    |                 |                 |                  |                                                                                                                                                                                              |
    |                 |                 |                  | .. note::                                                                                                                                                                                    |
    |                 |                 |                  |                                                                                                                                                                                              |
@@ -62,7 +69,7 @@ Request Parameters
    |                 |                 |                  |                                                                                                                                                                                              |
    |                 |                 |                  |    -  Either **num** or **node_list** must be set.                                                                                                                                           |
    |                 |                 |                  |                                                                                                                                                                                              |
-   |                 |                 |                  |       -  If **node_list** is transferred, its value can contain 1 to 10 characters for GeminiDB Cassandra.                                                                                   |
+   |                 |                 |                  |       -  If **node_list** is transferred, its value can contain 1 to 10 characters for GeminiDB Cassandra and DynamoDB-Compatible instances.                                                 |
    |                 |                 |                  |       -  If **num** and **node_list** are both transferred, the value of **node_list** takes effect.                                                                                         |
    |                 |                 |                  |                                                                                                                                                                                              |
    |                 |                 |                  |    -  If **node_list** is empty, instance nodes are deleted randomly. If **node_list** is not empty, only the node with a specified ID is is deleted.                                        |

@@ -33,10 +33,34 @@ GET https://{Endpoint}/v3/{project_id}/datastores/{datastore_name}/versions
    |                 |                 |                 | -  **influxdb**, indicating that the instances are of the GeminiDB Influx type.                                |
    +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------+
 
+.. table:: **Table 2** Query parameters
+
+   +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                                                                  |
+   +=================+=================+=================+==============================================================================================================+
+   | mode            | No              | String          | **Definition**                                                                                               |
+   |                 |                 |                 |                                                                                                              |
+   |                 |                 |                 | Instance type.                                                                                               |
+   |                 |                 |                 |                                                                                                              |
+   |                 |                 |                 | **Constraints**                                                                                              |
+   |                 |                 |                 |                                                                                                              |
+   |                 |                 |                 | N/A                                                                                                          |
+   |                 |                 |                 |                                                                                                              |
+   |                 |                 |                 | **Range**                                                                                                    |
+   |                 |                 |                 |                                                                                                              |
+   |                 |                 |                 | -  **Cluster**: GeminiDB Cassandra cluster instance with classic storage                                     |
+   |                 |                 |                 |                                                                                                              |
+   |                 |                 |                 | -  **CloudNativeCluster**: GeminiDB Influx cluster (performance-enhanced) instance with cloud native storage |
+   |                 |                 |                 |                                                                                                              |
+   |                 |                 |                 | **Default Value**                                                                                            |
+   |                 |                 |                 |                                                                                                              |
+   |                 |                 |                 | N/A                                                                                                          |
+   +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------+
+
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameters
+.. table:: **Table 3** Request header parameters
 
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description
@@ -49,7 +73,7 @@ Response Parameters
 
 Status code: 200
 
-.. table:: **Table 3** Response body parameters
+.. table:: **Table 4** Response body parameters
 
    +-----------------------+-----------------------+-----------------------------------------------+
    | Parameter             | Type                  | Description                                   |

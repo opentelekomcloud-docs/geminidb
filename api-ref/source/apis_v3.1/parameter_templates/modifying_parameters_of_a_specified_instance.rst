@@ -13,7 +13,11 @@ This API is used to modify parameters of a specified instance.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
+This API supports the following instance types:
+
+-  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB
 
 For configuration item **values**, you can enter system-defined parameters that allow for modification.
 

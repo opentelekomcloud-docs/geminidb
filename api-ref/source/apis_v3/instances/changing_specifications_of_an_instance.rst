@@ -17,7 +17,11 @@ This API is used to change specifications of an instance.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
+This API supports the following instance types:
+
+-  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB-Compatible
 
 This API can be used to scale up or down specifications of an instance.
 

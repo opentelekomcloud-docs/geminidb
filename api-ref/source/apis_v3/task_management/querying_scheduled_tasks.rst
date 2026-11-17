@@ -13,10 +13,11 @@ This function is used to query scheduled tasks based on specified conditions.
 Constraints
 -----------
 
-This API supports the following types of instances:
+This API supports the following instance types:
 
--  GeminiDB Influx
 -  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB-Compatible
 
 URI
 ---

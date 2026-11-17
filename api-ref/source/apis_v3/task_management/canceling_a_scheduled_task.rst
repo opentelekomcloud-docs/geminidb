@@ -13,10 +13,11 @@ This function is used to cancel a scheduled task based on the task ID.
 Constraints
 -----------
 
-This API supports the following types of instances:
+This API supports the following instance types:
 
--  GeminiDB Influx
 -  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB-Compatible
 
 URI
 ---

@@ -17,6 +17,7 @@ This API supports the following instance types:
 
 -  GeminiDB Cassandra
 -  GeminiDB Influx
+-  GeminiDB DynamoDB
 
 This API can be used to query only the past seven days of parameter changes.
 

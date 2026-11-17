@@ -13,10 +13,11 @@ This API is used to replicate a parameter template.
 Constraints
 -----------
 
-This API supports the following types of instances:
+This API supports the following instance types:
 
 -  GeminiDB Cassandra
 -  GeminiDB Influx
+-  GeminiDB DynamoDB
 
 The parameter template generated after replication cannot have the same name as the default parameter template or an existing template.
 

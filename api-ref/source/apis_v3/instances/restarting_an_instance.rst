@@ -13,10 +13,11 @@ This API is used to restart an instance.
 Constraints
 -----------
 
--  This API supports the following types of instances:
+-  This API supports the following instance types:
 
    -  GeminiDB Cassandra
    -  GeminiDB Influx
+   -  GeminiDB DynamoDB-Compatible
 
 -  If the instance status is not normal, the instance cannot be restarted.
 

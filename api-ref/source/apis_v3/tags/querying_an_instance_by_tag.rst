@@ -13,7 +13,11 @@ This API is used to query a specified instance by tag.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
+This API supports the following instance types:
+
+-  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB-Compatible
 
 A maximum of 20 tags can be added to a DB instance. The tag key must be unique.
 

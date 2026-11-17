@@ -13,7 +13,11 @@ This API is used to configuring an automated backup policy.
 Constraints
 -----------
 
-This API can be used on GeminiDB Cassandra and GeminiDB Influx instances.
+This API supports the following instance types:
+
+-  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB-Compatible
 
 URI
 ---
@@ -45,11 +49,16 @@ Request Parameters
 
 .. table:: **Table 3** Request body parameters
 
-   +---------------+-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter     | Mandatory | Type   | Description                                                                                                                                            |
-   +===============+===========+========+========================================================================================================================================================+
-   | backup_policy | Yes       | object | Backup policy objects, including backup retention period (days) and start time For details, see :ref:`Table 4 <nosql_api_0031__request_backuppolicy>`. |
-   +---------------+-----------+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------+-----------------+------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type             | Description                                                                                                                                                                          |
+   +=================+=================+==================+======================================================================================================================================================================================+
+   | backup_policy   | Yes             | object           | Backup policy objects, including backup retention period (days) and start time For details, see :ref:`Table 4 <nosql_api_0031__request_backuppolicy>`.                               |
+   +-----------------+-----------------+------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | database_tables | No              | Array of objects | Database and table information in the backup policy. This parameter is available only to GeminiDB Cassandra API. For details, see :ref:`Table 5 <nosql_api_0031__table53208596452>`. |
+   |                 |                 |                  |                                                                                                                                                                                      |
+   |                 |                 |                  | -  If this parameter is empty, an automated backup policy for an instance is set.                                                                                                    |
+   |                 |                 |                  | -  If this parameter is not empty, an automated backup policy for a database or table is set.                                                                                        |
+   +-----------------+-----------------+------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _nosql_api_0031__request_backuppolicy:
 
@@ -78,6 +87,21 @@ Request Parameters
    |                 |                 |                 | -  If you set **keep_days** to **1** to **6**, set this parameter to **1, 2, 3, 4, 5, 6, 7.**                                                                                                                                                                          |
    |                 |                 |                 | -  If you set **keep_days** to **7** to **35**, select at least one day of the week for the backup cycle. Example value: **1,2,3,4**                                                                                                                                   |
    +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. _nosql_api_0031__table53208596452:
+
+.. table:: **Table 5** PutDatabaseTablePolicy
+
+   +-----------------+-----------------+------------------+------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type             | Description                                                                        |
+   +=================+=================+==================+====================================================================================+
+   | database_name   | Yes             | String           | Database name                                                                      |
+   +-----------------+-----------------+------------------+------------------------------------------------------------------------------------+
+   | table_names     | No              | Array of strings | Table names                                                                        |
+   |                 |                 |                  |                                                                                    |
+   |                 |                 |                  | -  If this parameter is empty, a backup policy for an instance is set.             |
+   |                 |                 |                  | -  If this parameter is not empty, a backup policy for a database or table is set. |
+   +-----------------+-----------------+------------------+------------------------------------------------------------------------------------+
 
 Response Parameters
 -------------------

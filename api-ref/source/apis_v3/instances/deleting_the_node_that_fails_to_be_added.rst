@@ -13,9 +13,10 @@ This API is used to delete the node that fails to be added to an instance.
 Constraints
 -----------
 
-This API supports the following types of instances:
+This API supports the following instance types:
 
 -  GeminiDB Cassandra
+-  GeminiDB DynamoDB-Compatible
 
 URI
 ---

@@ -13,7 +13,11 @@ This API is used to apply a parameter template to one or more instances.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
+This API supports the following instance types:
+
+-  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB
 
 This API is an asynchronous API. A successful response does not indicate that the parameter template is successfully applied.
 

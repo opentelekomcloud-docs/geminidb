@@ -13,7 +13,7 @@ This API is used to query the latest 2,000 slow query logs of an instance. Searc
 Constraints
 -----------
 
--  This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
+-  This API can be used for GeminiDB Cassandra instances.
 -  This API can be used to query only the latest 2000 slow query logs in a specified time range.
 
 URI
@@ -21,7 +21,7 @@ URI
 
 GET https://{Endpoint}/v3/{project_id}/instances/{instance_id}/slowlog
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameters
 
    +-------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter   | Mandatory | Type   | Description                                                                                                    |
@@ -68,7 +68,7 @@ GET https://{Endpoint}/v3/{project_id}/instances/{instance_id}/slowlog
 Request Parameters
 ------------------
 
-.. table:: **Table 3** Request header parameters
+.. table:: **Table 3** Request header parameter
 
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description

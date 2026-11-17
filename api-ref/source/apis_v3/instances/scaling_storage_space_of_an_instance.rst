@@ -13,11 +13,7 @@ This API is used to scale storage space of an instance.
 Constraints
 -----------
 
-This API supports the following instances:
-
--  GeminiDB Cassandra
-
-This API supports both yearly/monthly and pay-per-use instances.
+This API supports GeminiDB Cassandra instances.
 
 URI
 ---

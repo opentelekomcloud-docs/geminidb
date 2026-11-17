@@ -15,7 +15,11 @@ Function
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
+This API supports the following instance types:
+
+-  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB-Compatible
 
 URI
 ---
@@ -60,7 +64,7 @@ Request Parameters
    +-----------------------+-----------------+----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | availability_zone     | Yes             | String                                                               | AZ ID.                                                                                                                                                                                                                                                                                                                           |
    |                       |                 |                                                                      |                                                                                                                                                                                                                                                                                                                                  |
-   |                       |                 |                                                                      | For details about the value, see **az_status** returned in :ref:`Querying Instance Specifications <nosql_instance_specification>`. If an instance can be created across three AZs, separate multiple AZ IDs by commas (,).                                                                                                       |
+   |                       |                 |                                                                      | For details about the value, see the value of **az_status** returned in :ref:`Querying Instance Specifications <nosql_instance_specification>`.                                                                                                                                                                                  |
    +-----------------------+-----------------+----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | vpc_id                | Yes             | String                                                               | VPC ID. You can obtain the value with either of the following methods:                                                                                                                                                                                                                                                           |
    |                       |                 |                                                                      |                                                                                                                                                                                                                                                                                                                                  |
@@ -88,6 +92,8 @@ Request Parameters
    |                       |                 |                                                                      | -  **Cluster**, indicating that GeminiDB Cassandra supports the cluster type.                                                                                                                                                                                                                                                    |
    |                       |                 |                                                                      |                                                                                                                                                                                                                                                                                                                                  |
    |                       |                 |                                                                      | -  **CloudNativeCluster**: GeminiDB Influx cluster (performance-enhanced) instance with cloud native storage                                                                                                                                                                                                                     |
+   |                       |                 |                                                                      |                                                                                                                                                                                                                                                                                                                                  |
+   |                       |                 |                                                                      | -  **CloudNativeCluster**: GeminiDB DynamoDB-Compatible cluster instance with cloud native storage                                                                                                                                                                                                                               |
    +-----------------------+-----------------+----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | flavor                | Yes             | Array of :ref:`Flavor <nosql_05_0014__request_flavor>` objects       | Instance specifications.                                                                                                                                                                                                                                                                                                         |
    |                       |                 |                                                                      |                                                                                                                                                                                                                                                                                                                                  |
@@ -112,32 +118,35 @@ Request Parameters
    +-----------------------+-----------------+----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | restore_info          | No              | :ref:`RestoreInfo <nosql_05_0014__table17573172501019>` object       | Backup information. You can restore data from a specific backup or instance to a specific point in time during the backup retention period.                                                                                                                                                                                      |
    |                       |                 |                                                                      |                                                                                                                                                                                                                                                                                                                                  |
-   |                       |                 |                                                                      | You can restore data only of GeminiDB Cassandra and GeminiDB Influx cluster instances to a specified point in time.                                                                                                                                                                                                              |
+   |                       |                 |                                                                      | You can restore data only of GeminiDB Cassandra, GeminiDB DynamoDB-Compatible, and GeminiDB Influx cluster instances to a specified point in time.                                                                                                                                                                               |
    +-----------------------+-----------------+----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _nosql_05_0014__request_datastore:
 
 .. table:: **Table 4** Datastore
 
-   +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------+
-   | Parameter       | Mandatory       | Type            | Description                                                                                          |
-   +=================+=================+=================+======================================================================================================+
-   | type            | Yes             | String          | Database type.                                                                                       |
-   |                 |                 |                 |                                                                                                      |
-   |                 |                 |                 | -  GeminiDB Cassandra and GeminiDB Influx instances are supported.                                   |
-   |                 |                 |                 | -  If you set this parameter to **cassandra**, GeminiDB Cassandra instances will be created.         |
-   |                 |                 |                 | -  If you set this parameter to **influxdb**, GeminiDB Influx instances will be created.             |
-   +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------+
-   | version         | Yes             | String          | Database version.                                                                                    |
-   |                 |                 |                 |                                                                                                      |
-   |                 |                 |                 | -  **3.11**, indicating that GeminiDB Cassandra 3.11 is supported.                                   |
-   |                 |                 |                 | -  **1.7**, indicating that GeminiDB Influx 1.7 is supported.                                        |
-   +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------+
-   | storage_engine  | Yes             | String          | Storage engine.                                                                                      |
-   |                 |                 |                 |                                                                                                      |
-   |                 |                 |                 | -  **rocksDB**, indicating that the GeminiDB Cassandra instance supports the RocksDB storage engine. |
-   |                 |                 |                 | -  **rocksDB**, indicating that the GeminiDB Influx instance supports the RocksDB storage engine.    |
-   +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------+
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                                                                   |
+   +=================+=================+=================+===============================================================================================================+
+   | type            | Yes             | String          | Database type.                                                                                                |
+   |                 |                 |                 |                                                                                                               |
+   |                 |                 |                 | -  GeminiDB Cassandra, GeminiDB Influx, and GeminiDB DynamoDB-Compatible instances are supported.             |
+   |                 |                 |                 | -  If you set this parameter to **cassandra**, GeminiDB Cassandra instances will be created.                  |
+   |                 |                 |                 | -  If you set this parameter to **influxdb**, GeminiDB Influx instances will be created.                      |
+   |                 |                 |                 | -  If you set this parameter to **dynamodb**, GeminiDB DynamoDB-Compatible instances will be created.         |
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------+
+   | version         | Yes             | String          | Database version.                                                                                             |
+   |                 |                 |                 |                                                                                                               |
+   |                 |                 |                 | -  For a GeminiDB Cassandra instance, the value is **3.11**.                                                  |
+   |                 |                 |                 | -  For a GeminiDB Influx instance, the value is **1.7**.                                                      |
+   |                 |                 |                 | -  For a GeminiDB DynamoDB-Compatible instance, the value is **3.11**.                                        |
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------+
+   | storage_engine  | Yes             | String          | Storage engine.                                                                                               |
+   |                 |                 |                 |                                                                                                               |
+   |                 |                 |                 | -  **rocksDB**, indicating that the GeminiDB Cassandra instance supports the RocksDB storage engine.          |
+   |                 |                 |                 | -  **rocksDB**, indicating that the GeminiDB Influx instance supports the RocksDB storage engine.             |
+   |                 |                 |                 | -  **rocksDB**, indicating that the GeminiDB DynamoDB-Compatible instance supports the RocksDB storage engine |
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------+
 
 .. _nosql_05_0014__request_flavor:
 
@@ -150,6 +159,7 @@ Request Parameters
    |                 |                 |                 |                                                                                                                                            |
    |                 |                 |                 | -  Each GeminiDB Cassandra instance can run on 3 to 200 nodes.                                                                             |
    |                 |                 |                 | -  Each GeminiDB Influx cluster instance can run on 2 to 9 nodes.                                                                          |
+   |                 |                 |                 | -  Each GeminiDB DynamoDB-Compatible instance can run on 2 to 12 nodes.                                                                    |
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | size            | Yes             | Integer         | Storage space. It must be an integer, in GB.                                                                                               |
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -251,25 +261,28 @@ Status code: 202
 
 .. table:: **Table 9** Datastore
 
-   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------+
-   | Parameter             | Type                  | Description                                                                                          |
-   +=======================+=======================+======================================================================================================+
-   | type                  | String                | Database type.                                                                                       |
-   |                       |                       |                                                                                                      |
-   |                       |                       | -  GeminiDB Cassandra and GeminiDB Influx instances are supported.                                   |
-   |                       |                       | -  If you set this parameter to **cassandra**, GeminiDB Cassandra instances will be created.         |
-   |                       |                       | -  If you set this parameter to **influxdb**, GeminiDB Influx instances will be created.             |
-   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------+
-   | version               | String                | Database version.                                                                                    |
-   |                       |                       |                                                                                                      |
-   |                       |                       | -  **3.11**, indicating that GeminiDB Cassandra 3.11 is supported.                                   |
-   |                       |                       | -  **1.7**, indicating that GeminiDB Influx 1.7 is supported.                                        |
-   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------+
-   | storage_engine        | String                | Storage engine.                                                                                      |
-   |                       |                       |                                                                                                      |
-   |                       |                       | -  **rocksDB**, indicating that the GeminiDB Cassandra instance supports the RocksDB storage engine. |
-   |                       |                       | -  **rocksDB**, indicating that the GeminiDB Influx instance supports the RocksDB storage engine.    |
-   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------+
+   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
+   | Parameter             | Type                  | Description                                                                                                   |
+   +=======================+=======================+===============================================================================================================+
+   | type                  | String                | Database type.                                                                                                |
+   |                       |                       |                                                                                                               |
+   |                       |                       | -  GeminiDB Cassandra, GeminiDB Influx, and GeminiDB DynamoDB-Compatible instances are supported.             |
+   |                       |                       | -  If you set this parameter to **cassandra**, GeminiDB Cassandra instances will be created.                  |
+   |                       |                       | -  If you set this parameter to **influxdb**, GeminiDB Influx instances will be created.                      |
+   |                       |                       | -  If you set this parameter to **dynamodb**, GeminiDB DynamoDB-Compatible instances will be created.         |
+   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
+   | version               | String                | Database version.                                                                                             |
+   |                       |                       |                                                                                                               |
+   |                       |                       | -  For a GeminiDB Cassandra instance, the value is **3.11**.                                                  |
+   |                       |                       | -  For a GeminiDB Influx instance, the value is **1.7**.                                                      |
+   |                       |                       | -  For a GeminiDB DynamoDB-Compatible instance, the value is **3.11**.                                        |
+   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
+   | storage_engine        | String                | Storage engine.                                                                                               |
+   |                       |                       |                                                                                                               |
+   |                       |                       | -  **rocksDB**, indicating that the GeminiDB Cassandra instance supports the RocksDB storage engine.          |
+   |                       |                       | -  **rocksDB**, indicating that the GeminiDB Influx instance supports the RocksDB storage engine.             |
+   |                       |                       | -  **rocksDB**, indicating that the GeminiDB DynamoDB-Compatible instance supports the RocksDB storage engine |
+   +-----------------------+-----------------------+---------------------------------------------------------------------------------------------------------------+
 
 .. _nosql_05_0014__response_flavor:
 
@@ -282,6 +295,7 @@ Status code: 202
    |                       |                       |                                                                                                                                            |
    |                       |                       | -  Each GeminiDB Cassandra instance can run on 3 to 200 nodes.                                                                             |
    |                       |                       | -  Each GeminiDB Influx instance can run on 2 to 9 nodes.                                                                                  |
+   |                       |                       | -  Each GeminiDB DynamoDB-Compatible instance can run on 2 to 12 nodes.                                                                    |
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | size                  | String                | Storage space. It must be an integer, in GB.                                                                                               |
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -310,7 +324,7 @@ Status code: 202
    |                       |                       | -  If this parameter is not transferred, the default backup time window is from 00:00 to 01:00.                                            |
    |                       |                       | -  Example value: **23:00-00:00**                                                                                                          |
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | keep_days             | String                | Backup retention days.                                                                                                                     |
+   | keep_days             | Integer               | Backup retention days.                                                                                                                     |
    |                       |                       |                                                                                                                                            |
    |                       |                       | The value ranges from **0** to **35**.                                                                                                     |
    |                       |                       |                                                                                                                                            |

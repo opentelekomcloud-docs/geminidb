@@ -13,10 +13,11 @@ This API is used to query IP addresses required for creating an instance or addi
 Constraints
 -----------
 
-This API supports the following instances:
+This API supports the following instance types:
 
 -  GeminiDB Cassandra
 -  GeminiDB Influx
+-  GeminiDB DynamoDB-Compatible
 
 URI
 ---
@@ -40,13 +41,19 @@ GET https://{Endpoint}/v3/{project_id}/ip-num-requirement
    +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | engine_name     | No              | String          | DB engine type                                                                                                                                                                                                                                      |
    |                 |                 |                 |                                                                                                                                                                                                                                                     |
-   |                 |                 |                 | -  **cassandra**: GeminiDB Cassandra DB type                                                                                                                                                                                                        |
+   |                 |                 |                 | -  **cassandra**: GeminiDB Cassandra DB type or GeminiDB DynamoDB-Compatible DB type                                                                                                                                                                |
+   |                 |                 |                 |                                                                                                                                                                                                                                                     |
+   |                 |                 |                 |    .. note::                                                                                                                                                                                                                                        |
+   |                 |                 |                 |                                                                                                                                                                                                                                                     |
+   |                 |                 |                 |       -  If **instance_mode** is set to **Cluster**, the DB engine type is GeminiDB Cassandra.                                                                                                                                                      |
+   |                 |                 |                 |       -  If **instance_mode** is set to **CloudNativeCluster**, the DB engine type is GeminiDB DynamoDB-Compatible.                                                                                                                                 |
+   |                 |                 |                 |                                                                                                                                                                                                                                                     |
    |                 |                 |                 | -  **influxdb**: GeminiDB Influx DB type                                                                                                                                                                                                            |
    +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | instance_mode   | No              | String          | Instance type. The value is case-sensitive. If no instance ID is transferred, this parameter is mandatory. The value can be:                                                                                                                        |
    |                 |                 |                 |                                                                                                                                                                                                                                                     |
    |                 |                 |                 | -  **Cluster**: GeminiDB Cassandra cluster instance                                                                                                                                                                                                 |
-   |                 |                 |                 | -  **CloudNativeCluster**: GeminiDB Influx cluster (performance-enhanced) instance with cloud native storage                                                                                                                                        |
+   |                 |                 |                 | -  **CloudNativeCluster**: GeminiDB Influx cluster (performance-enhanced) instance with cloud native storage or GeminiDB DynamoDB-Compatible cluster instance with cloud native storage                                                             |
    +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | instance_id     | No              | String          | Instance ID, which can be obtained by calling the API described in :ref:`Querying Instances and Details <nosql_05_0016>`. If there are no instances available, call the API described in :ref:`Creating an Instance <nosql_05_0014>` to create one. |
    +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

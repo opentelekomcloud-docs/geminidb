@@ -13,7 +13,11 @@ This API is used to change the security group associated with an instance.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
+This API supports the following instance types:
+
+-  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB-Compatible
 
 Abnormal instances do not support this operation.
 
