@@ -27,7 +27,7 @@ Example Code
 
    func main(){
        c, err := client.NewHTTPClient(client.HTTPConfig{
-           Addr: "http://ip:port",
+           Addr: "https://ip:port",
            Username: "******",
            Password: "******",
        })
