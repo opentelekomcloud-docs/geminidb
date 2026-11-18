@@ -14,9 +14,9 @@ Usage Notes
 -  The recycle bin is enabled by default and cannot be disabled. The default retention period of backups in the recycle bin is seven days. This function is free of charge.
 -  Operations after an instance is deleted
 
-   -  If there are fewer than 100 backups (including automated full backups) in the recycle bin, the system retains the automated full backup from one day prior if available; otherwise, the latest one is retained. The system will also generate a new full backup. You can select one of the backups to rebuild the instance.
-
-   -  If there are 100 or more backups (including automated full backups) in the recycle bin, the system retains the automated full backup from one day prior if available; otherwise, the latest one is retained. You can select this backup to rebuild the instance.
+   -  If the instance has automated full backups, the system keeps the most recent automated full backup of the previous day. If there is no automated full backup generated on that day, it retains the latest available one and moves it to the recycle bin.
+   -  If there are fewer than 100 backups in the recycle bin, the system will create a full backup and move it to the recycle bin.
+   -  You can select one of the backups to rebuild the instance.
 
 Modifying the Recycling Policy
 ------------------------------

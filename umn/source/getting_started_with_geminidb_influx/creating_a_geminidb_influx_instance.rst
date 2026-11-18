@@ -111,21 +111,21 @@ Procedure
 
    .. table:: **Table 5** Tags
 
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter                         | Description                                                                                                                                       |
-      +===================================+===================================================================================================================================================+
-      | Tags                              | The setting is optional. Adding tags helps you better identify and manage your DB instances. You can add a maximum of 20 tags for each instance.  |
-      |                                   |                                                                                                                                                   |
-      |                                   | A tag is composed of a key-value pair.                                                                                                            |
-      |                                   |                                                                                                                                                   |
-      |                                   | -  A tag key is mandatory if the instance will be tagged.                                                                                         |
-      |                                   |                                                                                                                                                   |
-      |                                   |    Each tag key is unique for each instance. The key can contain 1 to 36 characters, including digits, letters, underscores (_), and hyphens (-). |
-      |                                   |                                                                                                                                                   |
-      |                                   | -  A tag value is optional if the instance will be tagged.                                                                                        |
-      |                                   |                                                                                                                                                   |
-      |                                   |    The value can contain up to 43 characters, including digits, letters, underscores (_), periods (.), and hyphens (-).                           |
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                                                                          |
+      +===================================+======================================================================================================================================================================+
+      | Tags                              | The setting is optional. Adding tags helps you better identify and manage your DB instances. You can add a maximum of 20 tags for each instance.                     |
+      |                                   |                                                                                                                                                                      |
+      |                                   | A tag is composed of a key-value pair.                                                                                                                               |
+      |                                   |                                                                                                                                                                      |
+      |                                   | -  A tag key is mandatory if the instance will be tagged.                                                                                                            |
+      |                                   |                                                                                                                                                                      |
+      |                                   |    Each tag key is unique for each instance. A key can contain 1 to 36 characters. Only digits, letters, underscores (_), at signs (@), and hyphens (-) are allowed. |
+      |                                   |                                                                                                                                                                      |
+      |                                   | -  A tag value is optional if the instance will be tagged.                                                                                                           |
+      |                                   |                                                                                                                                                                      |
+      |                                   |    The value can contain up to 43 characters, including digits, letters, underscores (_), at signs (@), and hyphens (-).                                             |
+      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #. On the displayed page, confirm the DB instance details.
 

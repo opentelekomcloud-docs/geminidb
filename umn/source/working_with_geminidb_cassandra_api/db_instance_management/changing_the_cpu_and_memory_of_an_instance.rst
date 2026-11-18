@@ -21,14 +21,14 @@ Usage Notes
 
       A data definition language (DDL) is a syntax for defining data structures and database objects. Common examples of DDL statements include CREATE, ALTER, and DROP. DDL is used to create, modify, and delete database objects, such as tables, indexes, views, functions, stored procedures, and triggers.
 
-Procedure
----------
+Method 1
+--------
 
-#. :ref:`Log in to the GeminiDB console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console <nosql_login>`.
 
-#. On the **Instances** page, locate the target instance and click its name.
+#. On the **Instances** page, click the target instance name.
 
-#. In the in **DB Information** area on the **Basic Information** page, click **Change** next to the **Specifications** field.
+#. In the **DB Information** area on the **Basic Information** page, click **Change** next to the **Specifications** field.
 
 #. On the displayed page, select the desired vCPUs and memory and click **Next**.
 
@@ -37,14 +37,14 @@ Procedure
    -  If you need to modify your settings, click **Previous** to go back to the page where you specify details.
    -  If you do not need to modify your settings, click **Submit**.
 
-#. View the DB instance class change result.
+#. Check the change results.
 
    Go to the **Basic Information** page and in the **Specifications** area you can see the new specifications.
 
 Method 2
 --------
 
-#. :ref:`Log in to the GeminiDB console. <nosql_login>`
+#. :ref:`Log in to the GeminiDB console <nosql_login>`.
 
 #. On the **Instances** page, locate the instance whose specifications you want to change and choose **Change Specifications** in the **Operation** column.
 
@@ -55,6 +55,6 @@ Method 2
    -  If you need to modify your settings, click **Previous** to go back to the page where you specify details.
    -  If you do not need to modify your settings, click **Submit**.
 
-#. View the DB instance class change result.
+#. Check the change results.
 
    Go to the **Basic Information** page and in the **Specifications** area you can see the new specifications.

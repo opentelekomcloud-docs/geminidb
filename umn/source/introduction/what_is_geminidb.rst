@@ -5,7 +5,7 @@
 What Is GeminiDB?
 =================
 
-GeminiDB is a distributed, multi-model NoSQL database service with decoupled compute and storage architecture. This high availability database is secure and scalable, can be deployed, backed up, or restored quickly, and includes monitoring and alarm management. GeminiDB Cassandra and GeminiDB Influx APIs are compatible with the corresponding mainstream NoSQL databases, Cassandra and InfluxDB. With superior I/O performance and low costs, they are well suited to IoT, meteorology, Internet, and gaming sectors.
+GeminiDB is a distributed, multi-model NoSQL database service with decoupled compute and storage architecture. This high availability database is secure and scalable, can be deployed, backed up, or restored quickly, and includes monitoring and alarm management. GeminiDB Cassandra, GeminiDB Influx, GeminiDB DynamoDB-Compatible APIs are compatible with the corresponding mainstream NoSQL databases, Cassandra, InfluxDB, and DynamoDB. With superior I/O performance and low costs, they are well suited to IoT, meteorology, Internet, and gaming sectors.
 
 GeminiDB Cassandra API
 ----------------------
@@ -25,3 +25,19 @@ GeminiDB Influx API is a cloud-native NoSQL time-series database with decoupled 
 -  It is widely used to monitor resources, services, IoT devices, and industrial production processes, evaluate production quality, and trace faults.
 -  It meets the demand of high concurrent read and write, compressed storage, and SQL-like query.
 -  It supports multi-dimensional aggregation computing and visualized data analysis.
+
+GeminiDB DynamoDB-Compatible API
+--------------------------------
+
+GeminiDB is fully compatible with Amazon DynamoDB, allowing you to access GeminiDB DynamoDB-Compatible API through DynamoDB SDKs or CLIs and smoothly migrate data from DynamoDB to GeminiDB without application refactoring. GeminiDB DynamoDB-Compatible API is secure, reliable, and free from the constraints of closed-source software.
+
+-  Security and reliability
+
+   -  A multi-layer security system, including VPCs, subnets, and security groups, ensures database security and user privacy.
+   -  Cross-region active-active disaster recovery (DR) is supported, allowing you to deploy an instance across three AZs and quickly back up or restore data.
+   -  The distributed architecture provides superior fault tolerance for up to *N*-1 node failures.
+
+-  No constraints of closed-source software
+
+   -  Storage can be scaled in seconds without affecting workloads.
+   -  Compute nodes can be added in minutes, with any resulting jitter lasting only a few seconds.

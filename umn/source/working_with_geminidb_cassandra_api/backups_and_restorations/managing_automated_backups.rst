@@ -7,8 +7,6 @@ Managing Automated Backups
 
 GeminiDB Cassandra API creates automated backups to ensure data reliability. If a database or table is maliciously or accidentally deleted, backups can help you ensure you do not lose your data.
 
-.. _nosql_03_0007__section7348925133816:
-
 Automated Backup Policy
 -----------------------
 
@@ -41,11 +39,11 @@ Modifying an Automated Backup Policy
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. On the **Instances** page, click the target instance. The **Basic Information page** is displayed.
+#. On the **Instances** page, click the target instance. The **Basic Information** page is displayed.
 
 #. On the **Backups & Restorations** page, click **Modify Backup Policy**. In the displayed dialog box, set the backup policy. Then, click **Yes** to save the configuration.
 
-   For details about how to set a backup policy, see :ref:`Automated Backup Policy <nosql_03_0007__section7348925133816>`.
+   For details about how to set a backup policy, see :ref:`Automated Backup Policy <nosql_dynamodb_0083__section456243921816>`.
 
 #. Check or manage the generated backups on the **Backups** or **Backups & Restorations** page.
 
@@ -54,7 +52,7 @@ Disabling Automated Backup Policy
 
 #. :ref:`Log in to the GeminiDB console. <nosql_login>`
 
-#. On the **Instances** page, click the target instance. The **Basic Information page** is displayed.
+#. On the **Instances** page, click the target instance. The **Basic Information** page is displayed.
 
 #. On the **Backups & Restorations** page, click **Modify Backup Policy**.
 
@@ -63,11 +61,9 @@ Disabling Automated Backup Policy
    When disabling the automated backup policy, you can decide whether to delete the automated backups by selecting **Delete automated backups**.
 
    -  If you select it, all backup files within the retention period will be deleted. No automated backups are displayed in the backup list until you enable the automated backup policy again.
-   -  If you do not select it, all backup files within the retention period will be retained, but you can still manually delete them later if needed. For details, see section :ref:`Deleting an Automated Backup <nosql_03_0007__section106721241354>`.
+   -  If you do not select it, all backup files within the retention period will be retained, but you can still manually delete them later if needed. For details, see section :ref:`Deleting an Automated Backup <nosql_dynamodb_0083__section106721241354>`.
 
    If the automated backup policy is disabled, any automated backups in progress stop immediately.
-
-.. _nosql_03_0007__section106721241354:
 
 Deleting an Automated Backup
 ----------------------------
@@ -82,7 +78,7 @@ If the automated backup policy is enabled, the system will delete automated back
 
 -  **Method 1**
 
-   #. On the **Instances** page, click the target instance. The **Basic Information page** is displayed.
+   #. On the **Instances** page, click the target instance. The **Basic Information** page is displayed.
    #. On the **Backups & Restorations** page, locate the backup you wish to delete and click **Delete**.
    #. In the **Delete Backup** dialog box, confirm the backup information and click **Yes**.
 
