@@ -13,10 +13,11 @@ This API is used to set the maintenance period of a specified instance.
 Constraints
 -----------
 
-This API supports the following types of instances:
+This API supports the following instance types:
 
--  GeminiDB Influx
 -  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB-Compatible
 
 URI
 ---

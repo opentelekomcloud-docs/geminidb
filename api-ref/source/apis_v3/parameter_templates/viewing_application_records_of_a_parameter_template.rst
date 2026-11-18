@@ -17,6 +17,7 @@ This API supports the following instance types:
 
 -  GeminiDB Cassandra
 -  GeminiDB Influx
+-  GeminiDB DynamoDB
 
 After an instance is deleted, application records of the parameter template that the instance uses are also deleted.
 

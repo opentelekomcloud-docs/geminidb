@@ -6,6 +6,7 @@ Logs
 ====
 
 -  :ref:`Querying Database Slow Logs <listslowlogs>`
+-  :ref:`Querying Slow Query Logs of a GeminiDB Influx Instance <nosql_10_0009>`
 -  :ref:`Querying Slow Query Logs of a GeminiDB Cassandra Instance <nosql_10_0003>`
 
 .. toctree::
@@ -13,4 +14,5 @@ Logs
    :hidden: 
 
    querying_database_slow_logs
+   querying_slow_query_logs_of_a_geminidb_influx_instance
    querying_slow_query_logs_of_a_geminidb_cassandra_instance

@@ -13,9 +13,10 @@ This API is used to query the time window when a backup can be restored.
 Constraints
 -----------
 
-This API supports the following instances:
+This API supports the following instance types:
 
 -  GeminiDB Cassandra
+-  GeminiDB DynamoDB-Compatible
 
 Make sure that full backup, incremental backup, and automated backup have been enabled. To enable incremental backup, contact customer service. This function can be used only when the next automated backup is performed.
 

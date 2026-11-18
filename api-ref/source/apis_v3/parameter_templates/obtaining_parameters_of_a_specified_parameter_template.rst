@@ -13,7 +13,11 @@ This API is used to obtain information about parameters of a specified parameter
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
+This API supports the following instance types:
+
+-  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB
 
 URI
 ---
@@ -33,7 +37,7 @@ GET https://{Endpoint}/v3/{project_id}/configurations/{config_id}
 Request Parameters
 ------------------
 
-.. table:: **Table 2** Request header parameter
+.. table:: **Table 2** Request header parameters
 
    ============ ========= ====== ===========
    Parameter    Mandatory Type   Description

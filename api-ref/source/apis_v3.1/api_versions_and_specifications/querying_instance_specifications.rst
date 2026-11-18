@@ -13,7 +13,11 @@ This API is used to query all instance specifications under a specified conditio
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
+This API supports the following instance types:
+
+-  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB-Compatible
 
 URI
 ---
@@ -35,7 +39,13 @@ GET https://{Endpoint}/v3.1/{project_id}/flavors
    +=================+=================+=================+==================================================================================================================================================================================+
    | engine_name     | No              | String          | Database type.                                                                                                                                                                   |
    |                 |                 |                 |                                                                                                                                                                                  |
-   |                 |                 |                 | -  **cassandra**: GeminiDB Cassandra instance specifications are queried.                                                                                                        |
+   |                 |                 |                 | -  **cassandra**: GeminiDB Cassandra or GeminiDB DynamoDB-Compatible instance specifications are queried.                                                                        |
+   |                 |                 |                 |                                                                                                                                                                                  |
+   |                 |                 |                 |    .. note::                                                                                                                                                                     |
+   |                 |                 |                 |                                                                                                                                                                                  |
+   |                 |                 |                 |       -  If the **mode** parameter is not transferred, GeminiDB Cassandra instance specifications are queried.                                                                   |
+   |                 |                 |                 |       -  If **mode** is set to **CloudNativeCluster**, GeminiDB DynamoDB-Compatible instance specifications are queried.                                                         |
+   |                 |                 |                 |                                                                                                                                                                                  |
    |                 |                 |                 | -  **influxdb**: GeminiDB Influx instance specifications are queried.                                                                                                            |
    |                 |                 |                 | -  If this parameter is not transferred, the default value is **cassandra**.                                                                                                     |
    +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

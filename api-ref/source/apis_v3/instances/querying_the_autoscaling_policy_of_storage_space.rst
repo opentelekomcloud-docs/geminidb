@@ -13,16 +13,17 @@ This API is used to query the autoscaling policy of storage space.
 Constraints
 -----------
 
-This API supports the following types of instances:
+This API supports the following instance types:
 
 -  GeminiDB Cassandra
+-  GeminiDB DynamoDB-Compatible
 
 URI
 ---
 
 GET https://{Endpoint}/v3/{project_id}/instances/{instance_id}/disk-auto-expansion
 
-.. table:: **Table 1** Path parameters
+.. table:: **Table 1** URI parameters
 
    +-------------+-----------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter   | Mandatory | Type   | Description                                                                                                                                                                                                                                         |
@@ -46,7 +47,7 @@ Request Parameters
 Response Parameters
 -------------------
 
-**Status code: 200**
+Status code: 200
 
 .. table:: **Table 3** Response body parameters
 
@@ -74,8 +75,8 @@ Response Parameters
    | size      | Integer | Storage limit in GB that autoscaling can increase storage space to.                                                                                                                                                                                                                                                        |
    +-----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Example Requests
-----------------
+Example Request
+---------------
 
 -  URI example
 
@@ -87,10 +88,10 @@ Example Requests
 
    None
 
-Example Responses
------------------
+Example Response
+----------------
 
-**Status code: 200**
+Status code: 200
 
 Success
 
@@ -107,9 +108,9 @@ Success
 Status Codes
 ------------
 
-For details, see :ref:`Status Codes <nosql_status_code>`.
+See :ref:`Status Codes <nosql_status_code>`.
 
 Error Codes
 -----------
 
-For details, see :ref:`Error Codes <nosql_error_code>`.
+See :ref:`Error Codes <nosql_error_code>`.

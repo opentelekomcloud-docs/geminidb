@@ -13,10 +13,11 @@ This API is used to create a manual backup.
 Constraints
 -----------
 
-This API supports the following instances:
+This API supports the following instance types:
 
 -  GeminiDB Cassandra
 -  GeminiDB Influx
+-  GeminiDB DynamoDB-Compatible
 
 URI
 ---

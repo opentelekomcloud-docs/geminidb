@@ -13,10 +13,11 @@ This API is used to patch databases in batches.
 Constraints
 -----------
 
--  This API supports the following types of instances:
+-  This API supports the following instance types:
 
    -  GeminiDB Cassandra
    -  GeminiDB Influx
+   -  GeminiDB DynamoDB-Compatible
 
 -  Upgrade is triggered immediately, so patch databases during off-peak hours.
 

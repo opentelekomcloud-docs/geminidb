@@ -19,7 +19,6 @@ Instances
 -  :ref:`Patching Databases In Batches <batchupgradedbversion>`
 -  :ref:`Enabling or Disabling SSL <nosql_05_0107>`
 -  :ref:`Restarting an Instance <nosql_05_0108>`
--  :ref:`Configuring an Autoscaling Policy for Storage Space <nosql_05_0109>`
 -  :ref:`Checking Password Strength <nosql_05_0110>`
 -  :ref:`Deleting the Node that Fails to Be Added <nosql_05_0113>`
 -  :ref:`Querying IP Addresses Required for Creating an Instance or Adding Nodes <nosql_05_0114>`
@@ -45,7 +44,6 @@ Instances
    patching_databases_in_batches
    enabling_or_disabling_ssl
    restarting_an_instance
-   configuring_an_autoscaling_policy_for_storage_space
    checking_password_strength
    deleting_the_node_that_fails_to_be_added
    querying_ip_addresses_required_for_creating_an_instance_or_adding_nodes

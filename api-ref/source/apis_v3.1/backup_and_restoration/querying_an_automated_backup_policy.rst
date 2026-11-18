@@ -13,7 +13,10 @@ This API is used to query an automated backup policy.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra instances.
+This API supports the following instance types:
+
+-  GeminiDB Cassandra
+-  GeminiDB DynamoDB-Compatible
 
 URI
 ---
@@ -119,10 +122,6 @@ Response when an automated backup policy is enabled
        "differential_period": null
      }
    }
-
-Response when an automated backup policy is disabled
-
-.. code-block::
 
 Status Codes
 ------------

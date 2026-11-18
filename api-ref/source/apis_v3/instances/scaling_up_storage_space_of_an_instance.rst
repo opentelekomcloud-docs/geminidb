@@ -13,7 +13,11 @@ This API is used to scale up storage space of an instance.
 Constraints
 -----------
 
-This API can be used for GeminiDB Cassandra and GeminiDB Influx instances.
+This API supports the following instance types:
+
+-  GeminiDB Cassandra
+-  GeminiDB Influx
+-  GeminiDB DynamoDB-Compatible
 
 URI
 ---

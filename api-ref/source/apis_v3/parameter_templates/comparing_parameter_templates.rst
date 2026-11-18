@@ -13,10 +13,11 @@ This API is used to compare two parameter templates.
 Constraints
 -----------
 
-This API supports the following types of instances:
+This API supports the following instance types:
 
 -  GeminiDB Cassandra
 -  GeminiDB Influx
+-  GeminiDB DynamoDB
 
 This API only compares parameter templates with one of the same node type and DB engine to learn about configurations of the current template.
 
@@ -25,7 +26,7 @@ URI
 
 POST https://{Endpoint}/v3/{project_id}/configurations/comparison
 
-.. table:: **Table 1** URI parameter
+.. table:: **Table 1** URI parameters
 
    +------------+-----------+--------+----------------------------------------------------------------------------------------------------------------+
    | Parameter  | Mandatory | Type   | Description                                                                                                    |

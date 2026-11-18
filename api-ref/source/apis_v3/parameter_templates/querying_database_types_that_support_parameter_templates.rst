@@ -62,6 +62,7 @@ Response Parameters
    |                       |                       |                                                                                                              |
    |                       |                       | -  **Cluster**: GeminiDB Cassandra cluster instance                                                          |
    |                       |                       | -  **CloudNativeCluster**: GeminiDB Influx cluster (performance-enhanced) instance with cloud native storage |
+   |                       |                       | -  **CloudNativeCluster**: GeminiDB DynamoDB-Compatible cluster instance with cloud native storage           |
    +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------+
 
 Example Requests
