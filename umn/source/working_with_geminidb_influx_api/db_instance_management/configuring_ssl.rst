@@ -7,6 +7,14 @@ Configuring SSL
 
 After a GeminiDB Influx instance is created, you can enable or disable SSL.
 
+.. note::
+
+   The SSL configuration described in this section configures InfluxDB to operate as an HTTPS server.
+
+   It meets the following requirements: encrypting data in transit to prevent plaintext transmission and authenticating the server.
+
+   Client certificates are not used because InfluxDB does not use mutual TLS (mTLS) authentication by default. Instead, client authentication is performed at the application layer using username/password credentials or tokens.
+
 Usage Notes
 -----------
 

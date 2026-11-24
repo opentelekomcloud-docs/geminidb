@@ -44,7 +44,7 @@ Python code example:
    import boto3
 
 
-   url = 'http://ip'
+   url = 'https://ip'
    dynamodb = boto3.resource('dynamodb',
                              endpoint_url=url,
                              aws_access_key_id='rwuser',
