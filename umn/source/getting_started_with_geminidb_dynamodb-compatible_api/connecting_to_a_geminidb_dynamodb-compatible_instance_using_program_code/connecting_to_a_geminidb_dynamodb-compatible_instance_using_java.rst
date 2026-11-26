@@ -44,7 +44,7 @@ Java code example:
        public static AWSCredentialsProvider myCredentials = new AWSStaticCredentialsProvider(new BasicAWSCredentials("rwuser", "your_pwd"));
        public static void main(String[] args) {
            AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
-               .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("http://ip", "eu-de"))
+               .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("https://ip", "eu-de"))
                .withCredentials(myCredentials)
                .build();
            DynamoDB dynamoDB = new DynamoDB(client);
